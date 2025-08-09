@@ -1,0 +1,98 @@
+@include cardContainer;
+
+.skillCategory
+{
+    margin-bottom: $space2;
+
+    
+   
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+.skillCategoryTitle
+{
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    margin-bottom: $space1;
+
+    color: rgb($codeTextPri);
+}
+
+.skillGrid
+{
+    display: flex;
+    flex-direction: column;
+
+    gap: $space1;
+}
+    
+
+
+.skillItem
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: $space1;
+}
+
+.skillName
+{
+    font-size: $fs16;
+    font-weight: $fw5;
+
+    min-width: 100px;
+
+    color: rgb($codeTextPri);
+}
+
+.skillLevel
+{
+    overflow: hidden;
+    flex: 1;
+
+    height: 8px;
+
+    border-radius: $radius1;
+    background-color: rgb($codeWhite);
+}
+
+.skillBar
+{
+    height: 100%;
+
+    transition: width .5s ease-in-out;
+
+    border-radius: $radius1;
+    background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+
+    &[data-level='95']
+    {
+        width: 95%;
+    }
+    &[data-level='90']
+    {
+        width: 90%;
+    }
+    &[data-level='85']
+    {
+        width: 85%;
+    }
+    &[data-level='80']
+    {
+        width: 80%;
+    }
+    &[data-level='75']
+    {
+        width: 75%;
+    }
+    &[data-level='70']
+    {
+        width: 70%;
+    }
+}

@@ -1,0 +1,160 @@
+
+.richText
+{
+    font-size: $fs16;
+    line-height: $baseH;
+
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    // Automatische Silbentrennung
+    hyphens: auto;
+
+    color: rgb($codeTextSec);
+
+    -ms-hyphens: auto;
+    overflow-wrap: break-word;
+}
+
+.paragraph
+{
+    margin-bottom: $space1n5;
+
+    text-align: justify;
+
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+.list
+{
+    margin: $space1 0 $space1n5 0;
+    padding-left: 0;
+
+    list-style: none;
+}
+
+.listItem
+{
+    line-height: $baseH;
+
+    position: relative;
+
+    margin-bottom: $space0n75;
+    padding-left: $space2;
+
+    color: rgb($codeTextSec);
+
+    &::before
+    {
+        font-weight: bold;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        content: '→';
+
+        color: rgb($codeBlue);
+    }
+
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+// Image Styles
+.imageContainer
+{
+    margin: $space2 0;
+
+    text-align: center;
+
+    &:first-child
+    {
+        margin-top: 0;
+    }
+
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+.image
+{
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+
+    transition: all .3s ease;
+
+    border-radius: $radius1;
+    box-shadow: $shadSm;
+
+    &:hover
+    {
+        transform: translateY(-2px);
+
+        box-shadow: $shadMd;
+    }
+
+    // Responsive sizing
+    @media (max-width: $lg)
+    {
+        max-width: 90%;
+    }
+
+    @media (max-width: $md)
+    {
+        max-width: 100%;
+    }
+}
+
+.imageCaption
+{
+    font-size: $fs14;
+    font-style: italic;
+
+    max-width: 100%;
+    margin-top: $space2;
+    margin-right: auto;
+    margin-left: auto;
+    padding: $space0n75 $space1;
+
+    text-align: center;
+
+    color: rgb($codeTextTer);
+    border-radius: 4px;
+    background: rgba($codeTextTer, .05);
+
+    &::before
+    {
+        content: '';
+    }
+}
+
+// Responsive
+@media (max-width: $md)
+{
+    .richText
+    {
+        font-size: $fs14;
+    }
+
+    .listItem
+    {
+        padding-left: $space1n5;
+    }
+
+    .imageCaption
+    {
+        font-size: $fs12;
+
+        max-width: 100%;
+    }
+}

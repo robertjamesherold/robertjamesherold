@@ -1,0 +1,549 @@
+
+.related
+{
+    margin-top: $space6;
+    padding: $space4 0;
+
+    border-top: 1px solid rgba($codeTextTer, .2);
+    background: linear-gradient(135deg, rgba($codeBlue, .05), rgba($codePurple, .05));
+}
+
+.container
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $space2;
+
+    transform: translateY(30px);
+    animation: fadeInUp .8s ease forwards;
+    animation-delay: .2s;
+    // Animation beim Laden
+
+    opacity: 0;
+}
+
+.title
+{
+    font-size: $fs4;
+    font-weight: $fw6;
+
+    position: relative;
+
+    margin-bottom: $space3;
+
+    text-align: center;
+
+    color: rgb($codeTextPri);
+
+    &::before
+    {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+
+        width: 80px;
+        height: 4px;
+
+        content: '';
+        transform: translateX(-50%);
+
+        border-radius: 2px;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codePurple));
+    }
+
+    &::after
+    {
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+
+        width: 120px;
+        height: 2px;
+
+        content: '';
+        transform: translateX(-50%);
+
+        border-radius: 1px;
+        background: rgba($codeBlue, .3);
+    }
+}
+
+.grid
+{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $space3;
+
+    @media (max-width: $md)
+    {
+        grid-template-columns: 1fr;
+        gap: $space2;
+    }
+}
+
+.card
+{
+    position: relative;
+
+    overflow: hidden;
+
+    transition: all .3s ease;
+    transform: translateY(30px);
+    animation: fadeInUp .6s ease forwards;
+    text-decoration: none;
+    // Staggered Animation
+
+    opacity: 0;
+    color: inherit;
+    border: $border1;
+    border-radius: $radius1;
+    background: rgb($codeBgSec);
+    box-shadow: $shadSm;
+
+    &:hover
+    {
+        transform: translateY(-8px);
+
+        border-color: rgb($codeBlue);
+        box-shadow: $shadLg;
+
+        .imageWrapper img
+        {
+            transform: scale(1.1);
+        }
+
+        .content
+        {
+            background: rgba($codeBlue, .05);
+        }
+
+        .studyTitle
+        {
+            color: rgb($codeBlue);
+        }
+    }
+
+    &:focus
+    {
+        outline: 2px solid rgb($codeBlue);
+        outline-offset: 4px;
+    }
+
+    @for $i from 1 through 6
+    {
+        &:nth-child(#{$i})
+        {
+            animation-delay: #{.4 + $i * .1}s;
+        }
+    }
+}
+
+.imageWrapper
+{
+    position: relative;
+
+    overflow: hidden;
+
+    height: 200px;
+
+    background: rgb($codeBgTer);
+
+    img
+    {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        transition: transform .3s ease;
+
+        object-fit: cover;
+    }
+
+    // Overlay beim Hover
+    &::after
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        content: '';
+        transition: opacity .3s ease;
+
+        opacity: 0;
+        background: rgba($codeBlue, .1);
+    }
+
+    .card:hover &::after
+    {
+        opacity: 1;
+    }
+
+    // Play Button Overlay
+    &::before
+    {
+        font-size: $fs2;
+        font-weight: bold;
+
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 50px;
+        height: 50px;
+
+        content: '→';
+        transition: all .3s ease;
+        transform: translate(-50%, -50%);
+
+        opacity: 0;
+        color: rgb($codeWhite);
+        border-radius: 50%;
+        background: rgba($codeBlue, .9);
+    }
+
+    .card:hover &::before
+    {
+        transform: translate(-50%, -50%) scale(1.1);
+
+        opacity: 1;
+    }
+}
+
+.content
+{
+    padding: $space2;
+
+    transition: background .3s ease;
+
+    background: rgb($codeBgSec);
+}
+
+.studyTitle
+{
+    font-size: $fs2;
+    font-weight: $fw6;
+    line-height: $tightH;
+    // Text Truncation für lange Titel
+
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+
+    margin-bottom: $space0n75;
+
+    transition: color .3s ease;
+
+    color: rgb($codeTextPri);
+
+    -webkit-line-clamp: 2;
+}
+
+.studyClient
+{
+    font-size: $fs14;
+    font-weight: $fw4;
+
+    position: relative;
+
+    padding-left: $space1;
+
+    color: rgb($codeTextTer);
+
+    &::before
+    {
+        font-size: $fs12;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        content: '👤';
+    }
+}
+
+// Tag System für Related Studies
+.card[data-category='video']::after
+{
+    font-size: $fs12;
+
+    position: absolute;
+    top: $space1;
+    right: $space1;
+
+    padding: $space0n25 $space0n5;
+
+    content: '🎬';
+
+    color: rgb($codeWhite);
+    border-radius: 4px;
+    background: rgba($codeRed, .9);
+}
+
+.card[data-category='web']::after
+{
+    font-size: $fs12;
+
+    position: absolute;
+    top: $space1;
+    right: $space1;
+
+    padding: $space0n25 $space0n5;
+
+    content: '💻';
+
+    color: rgb($codeWhite);
+    border-radius: 4px;
+    background: rgba($codeBlue, .9);
+}
+
+.card[data-category='branding']::after
+{
+    font-size: $fs12;
+
+    position: absolute;
+    top: $space1;
+    right: $space1;
+
+    padding: $space0n25 $space0n5;
+
+    content: '🎨';
+
+    color: rgb($codeWhite);
+    border-radius: 4px;
+    background: rgba($codePurple, .9);
+}
+
+// Loading State
+.card.loading
+{
+    .imageWrapper
+    {
+        background: rgb($codeBgTer);
+
+        &::before
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            width: 40px;
+            height: 40px;
+
+            content: '';
+            transform: translate(-50%, -50%);
+            animation: spin 1s linear infinite;
+
+            border: 3px solid rgba($codeBlue, .3);
+            border-top: 3px solid rgb($codeBlue);
+            border-radius: 50%;
+        }
+    }
+
+    .studyTitle,
+    .studyClient
+    {
+        animation: pulse 1.5s ease-in-out infinite;
+
+        color: transparent;
+        border-radius: 4px;
+        background: rgb($codeBgTer);
+    }
+}
+
+// Empty State
+.grid:empty::after
+{
+    font-style: italic;
+
+    padding: $space4;
+
+    content: 'Keine weiteren Fallstudien verfügbar';
+    text-align: center;
+
+    color: rgb($codeTextTer);
+    border: 2px dashed rgba($codeTextTer, .2);
+    border-radius: $radius1;
+    background: rgba($codeTextTer, .05);
+
+    grid-column: 1 / -1;
+}
+
+// Responsive Anpassungen
+@media (max-width: $lg)
+{
+    .related
+    {
+        padding: $space3 0;
+    }
+
+    .container
+    {
+        padding: 0 $space1n5;
+    }
+
+    .grid
+    {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: $md)
+{
+    .title
+    {
+        font-size: $fs3;
+
+        margin-bottom: $space2;
+    }
+
+    .card
+    {
+        &:hover
+        {
+            transform: translateY(-4px);
+        }
+    }
+
+    .imageWrapper
+    {
+        height: 180px;
+    }
+
+    .content
+    {
+        padding: $space1n5;
+    }
+}
+
+@media (max-width: $sm)
+{
+    .grid
+    {
+        grid-template-columns: 1fr;
+    }
+
+    .imageWrapper
+    {
+        height: 200px;
+    }
+}
+
+// Animations
+@keyframes fadeInUp
+{
+    from
+    {
+        transform: translateY(30px);
+
+        opacity: 0;
+    }
+    to
+    {
+        transform: translateY(0);
+
+        opacity: 1;
+    }
+}
+
+@keyframes spin
+{
+    0%
+    {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes pulse
+{
+    0%,
+    100%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: .5;
+    }
+}
+
+// Print Styles
+@media print
+{
+    .related
+    {
+        background: none;
+
+        page-break-before: always;
+    }
+
+    .card
+    {
+        border: 1px solid #ccc;
+        box-shadow: none;
+
+        break-inside: avoid;
+
+        &:hover
+        {
+            transform: none;
+        }
+    }
+
+    .imageWrapper::before,
+    .imageWrapper::after
+    {
+        display: none;
+    }
+}
+
+// High Contrast Mode
+@media (prefers-contrast: high)
+{
+    .card
+    {
+        border: 2px solid rgb($codeTextPri);
+
+        &:hover
+        {
+            color: rgb($codeWhite);
+            border-color: rgb($codeBlue);
+            background: rgb($codeBlue);
+        }
+    }
+}
+
+// Reduced Motion
+@media (prefers-reduced-motion: reduce)
+{
+    .card,
+    .imageWrapper img,
+    .content,
+    .studyTitle
+    {
+        transition: none;
+        animation: none;
+    }
+
+    .card:hover
+    {
+        transform: none;
+    }
+
+    .imageWrapper img
+    {
+        transform: none !important;
+    }
+}

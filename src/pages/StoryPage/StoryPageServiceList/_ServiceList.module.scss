@@ -1,0 +1,20 @@
+
+@use '@scss/mixins/_card.scss' as *;
+
+@include cardContainer;
+
+.serviceIcon
+{
+    font-size: $fs6;
+    @include cardicon
+}
+
+.serviceTitle
+{
+    @include cardtitle;
+}
+
+.cardDescription
+{
+    @include carddescription;
+}

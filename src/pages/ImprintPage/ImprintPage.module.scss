@@ -1,0 +1,153 @@
+.imprintPage {
+  min-height: 100vh;
+  padding: $space3 $space1 $space4;
+  background: rgba($codeBgPri);
+}
+
+.content {
+  margin: 0 auto;
+}
+
+.mainTitle {
+  font-size: clamp($fs4, 4vw, $fs6);
+  font-weight: $fw7;
+  color: rgba($codeTextPri);
+  margin-bottom: $space2;
+  line-height: $tightH;
+}
+
+.section {
+  margin-bottom: $space2n5;
+  
+  h2 {
+    font-size: clamp($fs2, 2.5vw, $fs3);
+    font-weight: $fw6;
+    color: rgba($codeTextPri);
+    margin: $space3 0 $space1 0;
+    padding-bottom: $space0n5;
+    border-bottom: 2px solid rgba($codeTextTer, 0.2);
+  }
+  
+  h3 {
+    font-size: $fs1;
+    font-weight: $fw5;
+    color: rgba($codeTextPri);
+    margin: $space1n5 0 $space0n75 0;
+  }
+  
+  p {
+    font-size: $fs16;
+    line-height: $baseH;
+    color: rgba($codeTextSec);
+    margin-bottom: $space1;
+  }
+  
+  ul {
+    margin: $space1 0 $space1 $space1n5;
+    
+    li {
+      font-size: $fs16;
+      line-height: $baseH;
+      color: rgba($codeTextSec);
+      margin-bottom: $space0n5;
+      
+      &::marker {
+        color: rgba($codeBlue);
+      }
+    }
+  }
+}
+
+.infoBlock {
+  margin: $space1 0;
+  padding: $space1n5;
+  background: rgba($codeBgTer, 0.3);
+  border-left: 3px solid rgba($codeBlue);
+}
+
+.name {
+  font-size: $fs1;
+  font-weight: $fw6;
+  color: rgba($codeTextPri);
+  margin-bottom: $space0n5;
+}
+
+.address {
+  font-style: normal;
+  font-size: $fs16;
+  line-height: $baseH;
+  color: rgba($codeTextSec);
+}
+
+.contactInfo {
+  margin: $space1 0;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: $space0n75;
+  font-size: $fs16;
+  color: rgba($codeTextSec);
+  
+  .label {
+    font-weight: $fw5;
+    margin-right: $space0n75;
+    min-width: 80px;
+    color: rgba($codeTextPri);
+  }
+}
+
+.link {
+  color: rgba($codeBlue);
+  text-decoration: none;
+  transition: $all0n3;
+  border-bottom: 1px solid transparent;
+  
+  &:hover {
+    color: rgba($codeBlueBright);
+    border-bottom-color: rgba($codeBlueBright);
+  }
+}
+
+.subsection {
+  margin: $space2 0;
+  
+  &:first-child {
+    margin-top: $space1;
+  }
+}
+
+.footer {
+  margin-top: $space4;
+  padding-top: $space2;
+  border-top: 1px solid rgba($codeTextTer, 0.2);
+}
+
+.lastUpdate {
+  font-size: $fs14;
+  color: rgba($codeTextTer);
+  font-style: italic;
+  text-align: center;
+}
+
+@media (max-width: $md) {
+  .imprintPage {
+    padding: $space2 $space1 $space3;
+  }
+  
+  .section {
+    h2 {
+      margin-top: $space2;
+    }
+  }
+  
+  .contactItem {
+    flex-direction: column;
+    align-items: flex-start;
+    
+    .label {
+      margin-bottom: $space0n25;
+    }
+  }
+}

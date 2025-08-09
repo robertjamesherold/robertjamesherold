@@ -1,0 +1,436 @@
+
+.content
+{
+    font-family: $fontFamily;
+    line-height: $baseH;
+
+    position: relative;
+
+    width: $space100;
+    max-width: 100%;
+    background-color: rgb($codeBgSec);
+
+    color: rgb($codeTextPri);
+}
+
+.section
+{
+    position: relative;
+
+    display: none;
+    overflow: hidden;
+
+    width: $space100;
+    grid-column: span 2;
+    grid-row: span 2;
+
+
+    
+
+
+
+}
+.span1n2 { display: flex; width: 33%; @include gap; flex-direction: row; 
+ 
+
+
+@media (min-width: $xs) {
+
+}
+
+
+
+// Alles über 640px
+@media (min-width: $sm) {
+
+flex: 1 1 60%;
+
+}
+
+
+
+// Alles über 768px
+@media (min-width: $md) {
+
+}
+
+
+// Alles über 1024px
+@media (min-width: $lg) {
+
+}
+
+
+
+// Alles über 1280px
+@media (min-width: $xl) {
+
+}}
+.sectionHeader
+{
+    position: relative;
+
+    width: 100%;
+    padding: $space1;
+
+    border-bottom: 2px solid rgba($codeBlue, .2);
+    background: rgba($codeBlue, .1);
+}
+
+.sectionTitle
+{
+    font-size: $fs3;
+    font-weight: $fw6;
+
+    position: relative;
+
+    width: 100%;
+    margin: 0;
+    padding: $space0 $space1;
+
+    color: rgb($codeBlue);
+}
+
+// Aktive Section Styling
+
+.sectionContent
+{
+    // Slide-in Animation
+    padding: $space2;
+
+
+    border-top: 1px solid rgba($codeTextTer, .2);
+    background: rgb($codeBgSec);;
+}
+.section.active
+{
+    display: block;
+}
+
+.sectionMainText
+{
+    font-size: $fs16;
+    line-height: $baseH;
+
+    margin-bottom: $space2;
+
+    text-align: justify;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    // Automatische Silbentrennung
+    hyphens: auto;
+
+    color: rgb($codeTextSec);
+
+    -ms-hyphens: auto;
+    overflow-wrap: break-word;
+}
+
+
+
+.subsection
+{
+    position: relative;
+
+    padding-top: $space1;
+
+    border: none;
+    border-left: none;
+    border-radius: 0;
+    // Kein Card-Design mehr - einfacher Fließtext
+    background: none;
+
+
+&:first-child{
+    padding-top: 0;
+}
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+
+    // Nur ein subtiler Abstand zwischen Subsections
+    &:not(:last-child)
+    {
+        padding-bottom: $space1;
+
+        border-bottom: 1px solid rgba($codeTextTer, .4);
+    }
+}
+
+.subtitle
+{
+    font-size: $fs2;
+    font-weight: $fw6;
+    line-height: $tightH;
+
+    color: rgb($codeBlue);
+
+    margin-block: $space1;
+
+    // Entferne das Icon
+    &::before
+    {
+        display: none;
+    }
+
+    &:first-child
+    {
+        margin-top: $space0;
+    }
+}
+
+.subSub
+{
+    font-size: $fs1;
+    font-weight: $fw5;
+
+    margin: $space1 0 $space0n75 0;
+
+    letter-spacing: normal;
+    text-transform: none;
+
+    color: rgb($codeBlue);
+
+    // Entferne das Icon
+    &::before
+    {
+        display: none;
+    }
+}
+.subtext
+{
+    font-size: $fs16;
+    line-height: $baseH;
+
+    margin-bottom: $space1n5;
+
+    text-align: justify;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    // Bessere Lesbarkeit
+    hyphens: auto;
+
+    color: rgb($codeTextPri);
+
+    -ms-hyphens: auto;
+    overflow-wrap: break-word;
+
+    // Liste Styles innerhalb von subtext
+    ul,
+    ol
+    {
+        margin: $space1 0;
+        padding-left: $space2;
+
+        li
+        {
+            line-height: $baseH;
+
+            margin-bottom: $space0n5;
+
+            color: rgb($codeTextSec);
+        }
+    }
+
+    ul li
+    {
+        position: relative;
+
+        list-style-type: none;
+
+        &::before
+        {
+            font-weight: bold;
+
+            position: absolute;
+            left: -$space1n5;
+
+            content: '→';
+
+            color: rgb($codeBlue);
+        }
+    }
+
+    ol li
+    {
+        &::marker
+        {
+            font-weight: bold;
+
+            color: rgb($codeBlue);
+        }
+    }
+
+    // Normale Absatz-Formatierung
+    p
+    {
+        margin-bottom: $space1;
+
+        &:last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+
+.imageContainer
+{
+    margin: $space2 0;
+
+    text-align: center;
+
+    border-radius: 0;
+
+    .subimage
+    {
+        display: block;
+
+        width: 100%;
+        max-width: 700px;
+        height: auto;
+        margin: 0 auto;
+
+        transition: all .3s ease;
+
+        box-shadow: $shadSm;
+
+        &:hover
+        {
+            box-shadow: $shadMd;
+        }
+    }
+
+    .subtech
+    {
+        font-size: $fs14;
+        font-style: italic;
+
+        margin-top: $space0n75;
+        padding: $space0n5 0;
+
+        text-align: center;
+
+        color: rgb($codeTextTer);
+
+        &::before
+        {
+            content: '';
+        }
+    }
+}
+
+
+// Print Styles
+@media print
+{
+    .section
+    {
+        border: 1px solid #ccc;
+        box-shadow: none;
+
+        break-inside: avoid;
+    }
+
+    .sectionHeader
+    {
+        background: #f5f5f5 !important;
+
+        &::after
+        {
+            display: none;
+        }
+    }
+
+    .sectionContent
+    {
+        display: block !important; // Alle Sections beim Drucken öffnen
+    }
+
+    .subimage
+    {
+        max-width: 400px;
+
+        page-break-inside: avoid;
+    }
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce)
+{
+    .section,
+    .subsection,
+    .sectionHeader,
+    .subimage
+    {
+        transition: none;
+        animation: none;
+    }
+}
+
+// Focus Management
+.sectionHeader:focus-visible
+{
+    outline: 2px solid rgb($codeBlue);
+    outline-offset: 2px;
+}
+
+
+// Animations
+@keyframes fadeInUp
+{
+    from
+    {
+        transform: translateY(20px);
+
+        opacity: 0;
+    }
+    to
+    {
+        transform: translateY(0);
+
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown
+{
+    from
+    {
+        max-height: 0;
+
+        transform: translateY(-10px);
+
+        opacity: 0;
+    }
+    to
+    {
+        max-height: 2000px;
+
+        transform: translateY(0);
+
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft
+{
+    from
+    {
+        transform: translateX(-20px);
+
+        opacity: 0;
+    }
+    to
+    {
+        transform: translateX(0);
+
+        opacity: 1;
+    }
+}

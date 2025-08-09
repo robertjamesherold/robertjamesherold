@@ -1,0 +1,5 @@
+export { CloseIcon } from './CloseIcon'
+export { ViewIcon } from './ViewIcon'
+export { GitHubIcon } from './GitHubIcon'
+export { LinkedInIcon } from './LinkedInIcon'
+export { MailIcon } from './MailIcon'

@@ -1,0 +1,350 @@
+@use '@scss/_variables.scss'as *;
+@use './mixins/card'as *;
+@import './mixins/padding';
+@import './mixins/header';
+@import './mixins/margin';
+@import './mixins/grid';
+
+
+// CARDS
+
+@mixin cardContainer {
+    .card {
+        @include card;
+        @include paddingSmall;
+
+    }
+
+    .cardicon {
+        @include cardicon;
+    }
+
+    .cardiconXL {
+        @include cardiconXL;
+
+    }
+
+    .cardtitle {
+        @include cardtitle;
+    }
+
+    .cardcontent {
+        @include gapMini;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .carddescription {
+        @include carddescription;
+                padding:0;
+
+    }
+
+    .cardtags {
+        @include cardtags;
+    }
+
+    .timelinecardtags {
+         @include timelinecardtags;
+
+    }
+
+    .cardtag {
+        @include cardtag
+    }
+}
+
+// SECTIONS
+
+@mixin section {
+    justify-content: center;
+    width: $space100;
+}
+
+@mixin sectionDescription {
+    font-size: $fs16;
+    line-height: $baseH;
+
+    max-width: 600px;
+    margin-right: auto;
+    margin-bottom: $space2n5;
+    margin-left: auto;
+
+    opacity: .95;
+    color: rgb($codeTextSec);
+
+    @media (max-width: $sm - 1px) {
+        font-size: $fs14;
+    }
+}
+
+// HEADERS
+
+
+
+// BIG CARDS
+
+@mixin bigCardContainer {
+    .bigcard {
+        @include bigcard;
+    }
+
+    .bigcardcontent {
+        @include bigcardcontent;
+        @include paddingSmall;
+        @include gapMini;
+    }
+
+    .bigcardimage {
+        @include bigcardimage;
+    }
+
+    .bigcardtitle {
+        @include cardtitle;
+    }
+
+    .bigcarddescription {
+        @include carddescription;
+    }
+
+    .bigcardtags {
+        @include bigcartags;
+        @include gapMini;
+        @include paddingTopSmall
+    }
+
+    .bigcardtag {
+        @include cardtag;
+    }
+
+
+    .bigcardoverlay {
+        @include bigcardoverlay;
+    }
+
+    .bigcardviewproject {
+        @include viewproject
+    }
+
+}
+
+
+// META CARDS
+
+@mixin metaCardLabel {
+    .metaLabel {
+        font-size: $fs14;
+        font-weight: $fw6;
+
+        margin-top: $space0n5;
+        margin-bottom: $space0n25;
+
+        letter-spacing: .5px;
+        text-transform: uppercase;
+
+        color: rgb($codeTextTer);
+    }
+
+    .metalabel:nth-of-type(1) {
+        margin-right: $space0n5;
+
+        color: rgb($codeBlue);
+    }
+}
+
+@mixin metaCardTags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    height: space100;
+    margin-top: $space0n5;
+
+    gap: $space0n5;
+}
+
+// BUTTONS
+
+@mixin ctaButtonPrimary {
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 160px;
+    padding: $space1 $space2;
+
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+
+    color: rgb($codeWhite);
+    border: $border2;
+    border-radius: $radius1;
+    background: linear-gradient(90deg, rgb($codePink), rgb($codeOrange));
+    box-shadow: $shadMd;
+
+    &:hover {
+        transform: translateY(-2px);
+
+        color: rgb($codeWhite);
+        background-color: rgb($codeBlue);
+        box-shadow: $shadLg;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($codeBgPri, .3);
+    }
+}
+
+@mixin ctaButtonSecondary {
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 160px;
+    padding: $space1 $space2;
+
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    text-wrap: nowrap;
+
+    color: rgb($codeBlue);
+    border: $border2;
+    border-radius: $radius1;
+    background-color: rgb($codeWhite);
+
+    &:hover {
+        transform: translateY(-2px);
+
+        color: rgb($codeWhite);
+        background-color: rgb($codeBlue);
+        box-shadow: $shadLg;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($codeBgPri, .3);
+    }
+}
+
+
+
+// GAP
+
+@mixin gap {
+   @each $breakpoint, $value in $gapNormal {
+    @if $breakpoint == null {
+      gap: $value;
+    } @else {
+      @media (min-width: $breakpoint) {
+        gap: $value;
+      }
+    }
+  }
+}
+
+@mixin gapSmall {
+   @each $breakpoint, $value in $gapSmall {
+    @if $breakpoint == null {
+      gap: $value;
+    } @else {
+      @media (min-width: $breakpoint) {
+        gap: $value;
+      }
+    }
+  }
+}
+
+@mixin gapMini {
+   @each $breakpoint, $value in $gapMini {
+    @if $breakpoint == null {
+      gap: $value;
+    } @else {
+      @media (min-width: $breakpoint) {
+        gap: $value;
+      }
+    }
+  }
+}
+
+
+// TEXTALIGN
+
+@mixin textalign {
+  $alignments: (
+    "textleft": left,
+    "textcenter": center,
+    "textright": right
+  );
+
+  @each $class, $value in $alignments {
+    @each $suffix, $breakpoint in $breakpoints {
+      $full-class: if($suffix == "", ".#{$class}", ".#{$class}-#{$suffix}");
+
+    #{$full-class} {
+        @if $breakpoint == null {
+                text-align: $value;
+         
+        } @else {
+          @media (min-width: $breakpoint) {
+            text-align: $value;
+          }
+        }
+    }
+  }}
+}
+
+// ALIGNITEMS
+
+@mixin alignItems {
+  $alignments: (
+    "alignleft": flex-start,
+    "aligncenter": center,
+    "alignright": flex-end
+  );
+
+  @each $class, $value in $alignments {
+    @each $suffix, $breakpoint in $breakpoints {
+      $full-class: if($suffix == "", ".#{$class}", ".#{$class}-#{$suffix}");
+
+      #{$full-class} {
+        @if $breakpoint == null {
+                align-items: $value;
+         
+        } @else {
+          @media (min-width: $breakpoint) {
+            align-items: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// ANIMATIONS
+
+@mixin gradientanimation {
+    @keyframes gradientAnimation {
+        0% {
+            background-size: 250% 200%;
+        }
+
+        50% {
+            background-position: 200% 150%;
+        }
+
+        100% {
+            background-position: 200% 250%;
+        }
+    }
+
+}

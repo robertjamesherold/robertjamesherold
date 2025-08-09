@@ -1,0 +1,237 @@
+
+
+.codeBlock
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+
+    width: $space100;
+    height: $space100;
+    min-height: $space11 * 1.5;
+
+
+
+@media (min-width: $xs)
+    {
+            min-height: $space12 * 1.5;
+    }
+
+    @media (min-width: $lg)
+    {
+        order: 1;
+
+        width: $space100;
+        height: $space100;
+    }
+}
+
+
+.codeAnimation
+{
+    font-family: $FontMono;
+    font-size: $fs12;
+
+    position: relative;
+
+    overflow: hidden;
+
+    width: $space100;
+    height: $spaceFit;
+    min-height: $space100;
+    margin: $space0 $spaceAuto;
+    padding: $space1;
+
+    white-space: nowrap;
+    text-wrap: truncate;
+    text-overflow: ellipsis;
+
+    color: rgb($codeWhite);
+    border-radius: $radius1;
+    background: rgb($codeBg);
+    box-shadow: $shadMd;
+
+    @media (min-width: $xs)
+    {
+        font-size: $fs14;
+    }
+
+    @media (min-width: $sm)
+    {
+        font-size: $fs16;
+    }
+    @media (min-width: $md)
+    {
+        font-size: $fs1;
+    }
+
+    @media (min-width: $lg)
+    {
+        min-height: $space100;
+    }
+}
+
+
+
+
+.generatedElement
+{
+    position: absolute;
+    top: $space50;
+    right: $space0;
+    bottom: $space0;
+    left: $space0;
+
+    margin: $spaceAuto;
+
+    text-align: center;
+
+    //  H1
+
+    h1
+    {
+        font-size: $fs5;
+
+        animation: fadeIn .4s ease-out forwards;
+
+        color: rgb($codeGreen);
+
+
+
+        // Alles über 480px
+        @media (min-width: $xs)
+        {
+            font-size: $fs6;
+        }
+    }
+    @keyframes fadeIn
+    {
+        from
+        {
+            transform: translateY(30px);
+
+            opacity: 0;
+        }
+
+        to
+        {
+            transform: translateY(0);
+
+            opacity: 1;
+        }
+    }
+}
+
+
+.codeLine
+{
+    line-height: $baseH;
+
+    position: absolute;
+
+    overflow: hidden;
+
+    width: $space100;
+    padding-right: $space1n5;
+
+    white-space: nowrap;
+    text-wrap: truncate;
+    text-overflow: ellipsis;
+
+    color: rgb($codeBgPri);
+
+
+
+
+    &:nth-child(2)
+    {
+        margin-top: $space1n5;
+    }
+    &:nth-child(3)
+    {
+        margin-top: $space3;
+    }
+    &:nth-child(4)
+    {
+        margin-top: $space4n5;
+    }
+    &:nth-child(5)
+    {
+        margin-top: $space6;
+    }
+}
+
+.codeRed
+{
+    color: rgb($codeRedBright);
+}
+
+.codeWhite
+{
+    color: rgb($codeBgSec);
+}
+
+.codeBlue
+{
+    color: rgb($codeBlueBright);
+}
+
+.codeGreen
+{
+    color: rgb($codeGreen);
+}
+
+.codeLila
+{
+    color: rgb($codeLila);
+}
+
+.codeYellow
+{
+    color: rgb($codeYellow);
+}
+
+.codePink
+{
+    color: rgb($codePink);
+}
+
+.codeNone
+{
+    user-select: $no;
+
+    color: $codeNone;
+}
+
+.runButton
+{
+    font-weight: $fw5;
+
+    position: absolute;
+    right: $space1;
+    bottom: $space1;
+
+    margin-top: $space1;
+    padding: $space0n5 $space1;
+
+    cursor: pointer;
+    transition: .2s;
+
+    color: rgb($codeBg);
+    border: $border0;
+    border-radius: $radius1;
+    background: rgb($codeGreen);
+
+    &:hover
+    {
+        background: codeGreen;
+    }
+}
+
+.none
+{
+    user-select: $no;
+
+    color: $codeNone;
+}

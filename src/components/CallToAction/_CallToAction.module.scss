@@ -1,0 +1,137 @@
+.ctaSection
+{
+    width: $space100;
+@include paddingNormal;    position: relative;
+
+    text-align: center;
+    display: flex;
+    color: rgb($codeBgPri);
+    border-radius: $radius1;
+    border: $border1;
+    align-items: center;
+    background: linear-gradient(135deg, rgb($codePink), rgb($codeBlue));
+
+}
+
+.ctaTitle
+{
+    font-size: $fs4;
+    font-weight: $fw7;
+    line-height: $tightH;
+    text-align: center;;
+    margin-bottom: 0;
+    color: rgb($codeWhite);
+
+    @media (max-width: $sm - 1px)
+    {
+        font-size: $fs2;
+    }
+}
+
+.ctaDescription
+{
+    font-size: $fs1;
+    line-height: $baseH;
+
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+
+    opacity: .95;
+    color: rgb($codeWhite);
+
+    @media (max-width: $sm - 1px)
+    {
+        font-size: $fs16;
+    }
+}
+
+.ctaButtons
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    gap: $space1;
+
+    @media (min-width: $sm)
+    {
+        flex-direction: row;
+        justify-content: center;
+
+        gap: $space1n5;
+    }
+}
+
+.ctaButton
+{
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 160px;
+    padding: $space1 $space2;
+
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+
+    color: rgb($codeBlue);
+    border: $border2;
+    border-radius: $radius1;
+    background-color: rgb($codeWhite);
+    box-shadow: $shadMd;
+
+    &:hover
+    {
+        transform: translateY(-2px);
+
+        color: rgb($codeWhite);
+        background-color: rgb($codeBlue);
+        box-shadow: $shadLg;
+    }
+
+    &:focus
+    {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($codeBgPri, .3);
+    }
+}
+
+.ctaButtonSecondary
+{
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 160px;
+    padding: $space1 $space2;
+
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+
+    color: rgb($codeBgPri);
+    border: 2px solid rgb($codeBgPri);
+    border-radius: $radius1;
+    background-color: transparent;
+
+    &:hover
+    {
+        transform: translateY(-2px);
+
+        color: rgb($codeBlue);
+        background-color: rgb($codeBgPri);
+        box-shadow: $shadLg;
+    }
+
+    &:focus
+    {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($codeBgPri, .3);
+    }
+}

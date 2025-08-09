@@ -1,0 +1,276 @@
+
+
+:root
+{
+    --code-bg: 30, 30, 30; // rgb(30,30,30)
+    --code-white: 255, 255, 255; // rgb(248,248,242)
+    --code-red: 215, 58, 73; // rgba(225, 93, 106, 1)
+    --code-red-bright: 250, 131, 115; // rgba(250, 131, 115, 1)
+    --code-red-dark: 212, 0, 0; // rgba(212, 0, 0, 1)
+    --code-blue-bright: 97, 175, 239; // rgb(97,175,239)
+    --code-blue-dark: 86, 95, 194; // rgb(86,95,194)
+    --code-blue: 86, 95, 194; // rgb(137,221,255)
+    --code-green: 195, 232, 141; // rgba(51, 82, 4, 1)
+    --code-green-dark: 51, 82, 4 ;
+    --code-lila: 130, 170, 255; // rgb(130,170,255)
+    --code-yellow: 255, 203, 107; // rgb(255,203,107)
+    --code-orange: 255, 106, 0; // rgb(255,106,0)
+    --code-purple: 198, 120, 221; // rgb(198,120,221)
+    --code-gray: 171, 178, 191; // rgb(171,178,191)
+    --code-pink: 255, 121, 198; // rgb(255,121,198)
+    --code-none: transparent; // transparent
+    --code-text-pri: 17, 17, 17; // rgb(17,17,17)
+    --code-text-sec: 170, 170, 170; // rgb(170,170,170)
+    --code-text-ter: 125, 125, 125; // rgb(85,85,85)
+    --code-background-pri: 243, 244, 249; // rgba(243, 244, 249, 1)
+    --code-background-sec: 255, 255, 255; // rgba(255, 255, 255, 1)
+    --code-background-ter: 237, 241, 245; // rgba(237, 241, 245, 1)
+}
+@media (prefers-color-scheme: dark)
+{
+    :root
+    {
+        --code-bg: 229, 234, 244; // rgb(229,234,244) 
+        --code-white: 255, 255, 255;
+        --code-green-dark: 153, 255, 0 ;
+        --code-red: 215, 58, 73; // rgba(225, 93, 106, 1)
+        --code-red-bright: 212, 0, 0; // rgba(250, 131, 115, 1)
+        --code-red-dark: 250, 131, 115; // rgba(212, 0, 0, 1)
+        --code-blue-bright: 86, 95, 194;// rgb(97,175,239)
+        --code-blue-dark: 97, 175, 239;  // rgb(86,95,194)
+        --code-blue: 86, 150, 240;  // rgb(97,175,239)
+        --code-green: 46, 87, 16   ; //rgba(0, 3, 4, 1)6, 1)
+        --code-lila: 198, 120, 221; // rgb(198,120,221)
+        --code-yellow: 229, 192, 123; // rgb(229,192,123)
+        --code-text: 238, 238, 238; // rgb(238,238,238)
+        --code-orange: 255, 106, 0; // rgb(209,154,102)
+        --code-purple: 198, 120, 221; // rgb(198,120,221)
+        --code-gray: 92, 99, 112; // rgb(92,99,112)
+        --code-pink: 255, 121, 198; // rgb(255,121,198)
+        --code-none: transparent; // transparent
+        --code-text-pri: 242, 242, 242; // rgb(242,242,242)
+        --code-text-sec: 239, 239, 239; // rgb(239,239,239)
+        --code-text-ter: 214, 214, 214; // rgb(214,214,214)
+        --code-background-pri: 7, 14, 32; // rgba(73, 74, 79, 1)
+        --code-background-sec: 18, 19, 12; // #12130cff
+        --code-background-ter: 30, 30, 30; // rgb(30,30,30);
+    }
+}
+
+
+
+// Spacing
+$space0: 0;
+$spacepx: 1px;
+$space0n25: .25rem;
+$space0n5: .5rem;
+$space0n75: .75rem;
+$space1: 1rem;
+$space1n25: 1.25rem;
+$space1n5: 1.5rem;
+$space1n75: 1.75rem;
+$space2: 2rem;
+$space2n25: 2.25rem;
+$space2n5: 2.5rem;
+$space2n75: 2.75rem;
+$space3: 3rem;
+$space3n5: 3.5rem;
+$space4: 4rem;
+$space4n5: 4.5rem;
+$space5: 5rem;
+$space5n5: 5.5rem;
+$space6: 6rem;
+$space7: 7rem;
+$space8: 8rem;
+$space9: 9rem;
+$space10: 10rem;
+$space11: 11rem;
+$space12: 12rem;
+$space13: 13rem;
+$space14: 14rem;
+$space15: 15rem;
+$space25: 25%;
+$space50: 50%;
+$space75: 75%;
+$space100: 100%;
+$spaceAuto: auto;
+$spaceFull: 100vw;
+$spaceScreen: 100vh;
+$spaceMin: min-content;
+$spaceMax: max-content;
+$spaceFit: fit-content;
+
+// Typography
+$fontFamily: 'Fira Sans','system-ui', sans-serif;
+$FontMono: 'Fira Code', monospace;
+
+// Font Weights 
+$fw1: 100; $fw2: 200; $fw3: 300; $fw4: 400; $fw5: 500; $fw6: 600; $fw7: 700; $fw8: 800; $fw9: 900;
+
+// Font Sizes
+$fs12: .75rem; // 12px
+$fs14: .875rem; // 14px
+$fs16: 1rem; // 16px
+$fs1: 1.125rem; // 18px
+$fs2: 1.25rem; // 20px
+$fs3: 1.5rem; // 24px
+$fs4: 1.875rem; // 30px
+$fs5: 2.25rem; // 36px
+$fs6: 3rem; // 48px
+$fs7: 3.75rem; // 60px
+$fs8: 4.5rem; // 72px
+$fs9: 6rem; // 96px
+
+// Border Radius
+$radius1: 1rem;
+$radius2: 2rem;
+$radius3: 3rem;
+$radius4: 4rem;
+
+// Breakpoints
+$xs: 480px;
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+
+// Line Heights
+$lineH: 1.5;
+$tightH: 1.3;
+$baseH: 1.6;
+$looseH: 2;
+
+
+// Code Colors
+$codeBg: var(--code-bg);
+$codeWhite: var(--code-white);
+$codeRed: var(--code-red);
+$codeGreenDark: var(--code-green-dark);
+$codeRedBright: var(--code-red-bright);
+$codeRedDark: var(--code-red-dark);
+$codeBlueBright: var(--code-blue-bright);
+$codeBlueDark: var(--code-blue-dark);
+$codeLila: var(--code-blue-dark);
+$codeBlue: var(--code-blue);
+$codeGreen: var(--code-green);
+$codeLila: var(--code-lila);
+$codeYellow: var(--code-yellow);
+$codeOrange: var(--code-orange);
+$codePurple: var(--code-purple);
+$codeGray: var(--code-gray);
+$codePink: var(--code-pink);
+$codeNone: var(--code-none);
+$codeTextPri: var(--code-text-pri);
+$codeTextSec: var(--code-text-sec);
+$codeTextTer: var(--code-text-ter);
+$codeBgPri: var(--code-background-pri);
+$codeBgSec: var(--code-background-sec);
+$codeBgTer: var(--code-background-ter);
+
+
+// Shadows
+$shadXs: 0 0 .25rem rgba($codeTextPri, .1);
+$shadSm: 0 0 .5rem rgba($codeTextPri, .2);
+$shadMd: 0 0 .75rem rgba($codeTextPri, .3);
+$shadLg: 0 0 1rem rgba($codeTextPri, .4);
+
+
+// Borders
+$border0: 0;
+$border1: 1px solid rgba($codeTextTer);
+$border2: 2px solid rgba($codeTextTer);
+$border3: 3px solid rgba($codeTextTer);
+
+
+
+
+
+
+
+// Transitions
+$all0n3: all 0.333332s ease-in-out;
+
+
+
+// Code Font
+
+
+// None
+$no: none;
+
+
+
+// Grid-Spalten (z. B. 12er Grid)
+$grid-columns: 12;
+
+$breakpoints: (
+  "": null, 
+  "xs": 480px,
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1440px
+);
+
+ $gapNormal: (
+    null: $space1,
+    $xs: $space1n25,
+    $sm: $space1n5,
+    $md: $space1n75,
+    $lg: $space2,
+    $xl: $space2n5
+  );
+
+$gapSmall: (
+    null: $space1,
+    $xs: $space1 + $space0n25 / 2,
+    $sm: $space1n25,
+    $md: $space1n25 + $space0n25 / 2,
+    $lg: $space1n5,
+    $xl: $space1n5 + $space0n25 / 2
+  );
+
+$gapMini: (
+    null: $space1 / 2,
+    $xs: ($space1 + $space0n25 / 2) / 2,
+    $sm: $space1n25 / 2,
+    $md: ($space1n25 + $space0n25 / 2) / 2,
+    $lg: ($space1n5) / 2,
+    $xl: ($space1n5 + $space0n25 / 2) / 2
+  );
+
+  $spacingBig: (
+    null: $space1,
+    $xs: $space2,
+    $sm: $space2n5,
+    $md: $space3,
+    $lg: $space4,
+    $xl: $space5
+  );
+
+
+  $spacingNormal: (
+    null: $space1,
+    $xs: $space1n25,
+    $sm: $space1n5,
+    $md: $space1n75,
+    $lg: $space2,
+    $xl: $space2n5
+  );
+
+$spacingMini: (
+    null: $space1,
+    $xs: $space1 + $space1n25 / 2,
+    $sm: $space1n25,
+    $md: $space1n5,
+    $lg: $space1n75,
+    $xl: $space2
+  );
+
+$closedButtonSpacing: (
+    null: ($space0n25 / 2) * 3 ,
+    $xs: ($space0n25 / 2) * 4,
+    $sm: ($space0n25 / 2) * 5,
+    $md: ($space0n25 / 2) * 6,
+    $lg: ($space0n25 / 2) * 7,
+    $xl: ($space0n25 / 2) * 8,)

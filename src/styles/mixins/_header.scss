@@ -1,0 +1,209 @@
+@use '@scss/_variables.scss' as *;
+
+// HEADER
+
+
+@mixin h1 {
+
+    font-size: $fs5;
+    font-weight: $fw7;
+    line-height: $tightH;
+    margin: $space0;
+    padding: 0;
+
+    color: rgb($codeBg);
+
+    @media (min-width: $sm) {
+        font-size: $fs6;
+    }
+
+    &.colored {
+
+        animation: gradientAnimation 10s infinite;
+
+        background: linear-gradient(120deg, rgb($codePink), rgb($codePurple), rgb($codeOrange), rgba($codeBlueDark), rgb($codePink), rgb($codePurple));
+        background-repeat: repeat;
+        -webkit-background-clip: text;
+        background-size: 300% 300%;
+
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@mixin h2 {
+    font-size: $fs4;
+    font-weight: $fw7;
+    line-height: $tightH;
+    position: relative;
+    color: rgb($codeTextPri);
+    padding-bottom: $space0n75;
+    margin-bottom: $space1;
+ @media (min-width: $sm) {
+        font-size: $fs5;
+    }
+}
+
+@mixin h3 {
+    font-size: $fs2;
+    font-weight: $fw7;
+    line-height: $tightH;
+
+    position: relative;
+
+    color: rgb($codeTextPri);
+    margin-bottom: 0;
+
+    @media (min-width: $sm) {
+        font-size: $fs3;
+
+    }
+}
+
+
+@mixin underlined {
+   .underlined-mid::after {
+        position: absolute;
+        bottom: -$space0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 4px;
+        content: '';
+        border-radius: $radius4;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+    }
+    .underlined-left::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: 0;
+        width: 80px;
+        height: 4px;
+        content: '';
+
+        border-radius: $radius4;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+        }
+
+     @media (min-width: $xs) {
+        .underlined-mid-xs::after {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        content: '';
+        border-radius: $radius4;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+    }
+    .underlined-left-xs::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: 0;
+        width: 80px;
+        height: 4px;
+        content: '';
+        border-radius: $radius4;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+        }} 
+
+          @media (min-width: $sm) {
+        .underlined-mid-sm::after {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        content: '';
+        border-radius: $radius4;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+    }
+    .underlined-left-sm::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: 0;
+        width: 80px;
+        height: 4px;
+        content: '';
+        border-radius: $radius4;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+        }} 
+
+          @media (min-width: $md) {
+        .underlined-mid-md::after {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        content: '';
+        border-radius: $radius4;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+    }
+    .underlined-left-md::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: 0;
+        width: 80px;
+        height: 4px;
+        content: '';
+        border-radius: $radius4;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+        }} 
+
+          @media (min-width: $lg) {
+        .underlined-mid-lg::after {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        content: '';
+        border-radius: $radius4;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+    }
+    .underlined-left-lg::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: 0;
+        width: 80px;
+        height: 4px;
+        content: '';
+        border-radius: $radius4;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+        }} 
+
+          @media (min-width: $xl) {
+        .underlined-mid-xl::after {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        content: '';
+        border-radius: $radius4;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+    }
+    .underlined-left-xl::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: 0;
+        width: 80px;
+        height: 4px;
+        content: '';
+        border-radius: $radius4;
+        background: linear-gradient(90deg, rgb($codeBlue), rgb($codeLila));
+        }} 
+        
+        }
+

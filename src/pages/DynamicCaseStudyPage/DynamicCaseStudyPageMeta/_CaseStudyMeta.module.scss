@@ -1,0 +1,25 @@
+// components/casestudy/components/CaseStudyMeta/CaseStudyMeta.module.scss
+
+.metaItem
+{
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: $space1n5;
+
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+.metaValue
+{
+    font-size: $fs16;
+    font-weight: $fw5;
+
+    color: rgb($codeTextPri);
+}

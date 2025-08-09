@@ -1,0 +1,217 @@
+@use '@scss/_variables.scss' as *;
+// Card Mixin
+
+
+@mixin card {
+
+    transition: all .3s ease-in-out;
+    border: $border1;
+    border-radius: $radius1;
+    display:flex;flex-direction: column;
+    background-color: rgb($codeBgSec);
+    overflow: hidden;
+    height: $space100;
+    justify-content: flex-start;
+    &:hover {
+
+        border-color: rgb($codeBlue);
+    }
+
+}
+
+@mixin cardicon {
+    display: block;
+}
+
+@mixin cardiconXL {
+    display: block;
+    font-size: $fs6;
+
+
+}
+
+@mixin cardtitle {
+    font-size: $fs2;
+    font-weight: $fw7;
+    line-height: $tightH;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    
+    position: relative;
+    overflow: visible;
+
+    color: rgb($codeTextPri);
+
+    @media (min-width: $md) {
+        font-size: $fs3;
+
+    }
+
+   
+}
+
+@mixin carddescription {
+    font-size: $fs16;
+    line-height: $baseH;
+    // Optional: Maximale Breite setzen
+    flex-shrink:1;
+    max-width: 100%;
+    margin: 0;
+    // Lange Wörter umbrechen
+
+    word-wrap: break-word;
+
+    color: rgb($codeTextPri);
+
+    -ms-hyphens: auto;
+    overflow-wrap: break-word;
+}
+
+@mixin cardtags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    height: space100;
+
+    gap: $space0n5;
+}
+@mixin timelinecardtags {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    height: space100;
+    padding-top: $space0n25;
+    gap: $space0n5;
+}
+@mixin cardtag {
+    font-size: $fs16;
+    font-weight: $fw5;
+
+    display: inline-block;
+
+    padding: $space0n25 $space0n75;
+
+    color: rgb($codeBlueDark);
+    border-radius: $radius1 / 2;
+    background-color: rgba($codeBlueBright, .3);
+}
+
+
+// Big Card Mixin
+
+@mixin bigcard {
+    overflow: hidden;
+
+    transition: all .3s ease-in-out;
+
+    border: $border1;
+    border-radius: $radius1;
+    background-color: rgb($codeBgSec);
+    box-shadow: $shadMd;
+
+    &:hover {
+        transform: translateY(-8px);
+        border-color: rgb($codeBlue);
+        box-shadow: $shadLg;
+    }
+
+    @media (max-width: $sm - 1px) {
+        &:hover {
+            transform: translateY(-4px);
+        }
+    }
+}
+
+@mixin bigcardcontent {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: $space100;
+    position: relative;
+  
+}
+
+@mixin bigcardimage {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 250px;
+
+    img {
+        width: $space100;
+        height: $space100;
+
+        transition: transform .3s ease-in-out;
+
+        object-fit: cover;
+    }
+
+
+    @media (max-width: $sm - 1px) {
+        height: 200px;
+    }
+}
+
+@mixin bigcardoverlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: opacity .3s ease-in-out;
+
+    opacity: 0;
+    color: rgb($codeBlue);
+    background: linear-gradient(135deg, rgba($codeBlue, .4), rgba($codeLila, .4));
+
+    .bigcard:hover & {
+        opacity: 1;
+    }
+}
+
+@mixin viewproject {
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: $space0n75 $space2;
+
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+
+    color: rgb($codeBlue);
+    border-radius: $radius1;
+    background-color: rgb($codeBgPri);
+    box-shadow: $shadMd;
+
+    &:hover {
+        transform: translateY(-2px);
+
+        color: rgb($codeBlue);
+        background-color: rgb($codeWhite);
+        box-shadow: $shadLg;
+    }
+}
+
+@mixin bigcartags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: space100;
+
+
+}

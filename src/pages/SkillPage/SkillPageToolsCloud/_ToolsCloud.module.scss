@@ -1,0 +1,55 @@
+
+
+.toolsCloud
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+      margin: 0 auto;
+@include paddingInline;
+    gap: $space1;
+
+    &.animated .toolTag
+    {
+        animation: popIn .5s ease-out both;
+    }
+
+    @media (min-width: $lg)
+    {
+        gap: $space1n5;
+    }
+
+    @media (max-width: $sm)
+    {
+        padding:0;
+}}
+
+.toolTag
+{
+    font-size: $fs16;
+    font-weight: $fw6;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: $space0n75 $space1n5;
+
+    transition: all .3s ease-in-out;
+    transform: scale(.8);
+    text-decoration: none;
+
+    opacity: 0;
+    color: rgb($codeTextPri);
+    border: 2px solid var(--tool-color, rgb($codeRed));
+    border-radius: $radius1;
+    background-color: rgb($codeBgPri);
+
+    &:hover
+    {
+        transform: scale(1.05);
+
+        background-color: var(--tool-color, rgb($codeBlue));
+        box-shadow: $shadMd;
+    }
+}

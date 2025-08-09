@@ -1,0 +1,346 @@
+@import './styles/global.scss';
+
+// HTML BODY 
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: rgb($codeBgPri);
+    color: rgb($codeTextPri);
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
+
+body.menu-open {
+    overflow-y: hidden;
+    touch-action: none;
+}
+
+// MAIN
+
+main {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    grid-template-rows: auto;
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+    overflow: hidden;
+
+
+    width: $space100;
+    height: $space100;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    @include paddingInline;
+    @include paddingMain;
+    @include gap;
+
+}
+
+.spangrid {
+    display: flex;
+    flex-direction: column;
+    @include gap;
+    flex-flow: wrap;
+}
+
+// HEADERS
+
+h1 {
+    @include h1
+}
+
+h2 {
+    @include h2
+}
+
+h3 {
+    @include h3
+}
+
+h4 {
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    margin-bottom: $space1;
+
+    color: rgb($codeTextPri);
+}
+
+// SECTION
+
+section {
+    @include section;
+}
+
+// GRIDS
+.grid {
+    @include grid((default: 1));
+    @include gap;
+}
+
+.grid2-sm4 {
+    @include grid((default: 2, sm: 4));
+    @include gap;
+}
+
+.grid2-xl1 {
+    @include grid((default: 2, xl: 1));
+    @include gap;
+}
+
+.grid-md2-lg1 {
+    @include grid((default: 1, md: 2, lg: 1));
+    @include gap;
+    height: $space100;
+}
+
+.grid2-md4 {
+    @include grid((default: 2, md: 4));
+    @include gap;
+}
+
+.grid-md2 {
+    @include grid((default: 1, md: 2));
+    @include gap;
+}
+
+.grid-sm2-xl3 {
+    @include grid((default: 1, sm: 2, xl: 3));
+    @include gap;
+}
+
+.grid-md2-xl3 {
+    @include grid((default: 1, md: 2, xl: 3));
+    @include gap;
+}
+
+.grid-md2-lg4 {
+    @include grid((default: 1, md: 2, lg: 4));
+    @include gap;
+}
+
+.grid-sm2 {
+    @include grid((default: 1, sm: 2));
+    @include gap;
+}
+
+.grid-sm2-xl4 {
+    @include grid((default: 1, sm: 2, xl: 4));
+    @include gap;
+}
+
+.grid-lg2 {
+    @include grid((default: 1, lg: 2));
+    @include gap;
+}
+
+.grid-sm2-lg3 {
+    @include grid((default: 1, sm: 2, lg: 3));
+    @include gap;
+}
+
+.grid-sm2-lg4 {
+    @include grid((default: 1, sm: 2, lg: 4));
+    @include gap;
+}
+
+.grid-sm2-lg1 {
+    @include grid((default: 1, sm: 2, lg: 1));
+    @include gap;
+}
+
+.grid-sm2-xl1 {
+    @include grid((default: 1, sm: 2, xl: 1));
+    @include gap;
+}
+
+.grid-md2-xl1 {
+    @include grid((default: 1, md: 2, xl: 1));
+    @include gap;
+}
+
+.grid-sm2-lg3 {
+    @include grid((default: 1, sm: 2, lg: 3));
+    @include gap;
+}
+
+.grid-sm2-lg4 {
+    @include grid((default: 1, sm: 2, lg: 4));
+    @include gap;
+}
+
+.grid-sm2-lg3-xl2 {
+    @include grid((default: 1, sm: 2, lg: 3, xl: 2));
+    @include gap;
+}
+
+.grid-sm2-lg1-xl2 {
+    @include grid((default: 1, sm: 2, lg: 1));
+    @include gap;
+}
+
+.grid-xl2 {
+    @include grid((default: 1, xl: 2));
+    @include gap;
+}
+
+// CARDS
+
+@include cardContainer;
+@include bigCardContainer;
+
+// BUTTONS 
+
+.buttonprimary {
+    @include ctaButtonPrimary;
+}
+
+.buttonsecondary {
+    @include ctaButtonSecondary;
+}
+
+.filterNav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include gapSmall;
+    max-width: 600px;
+    margin-inline: auto;
+
+    @media (min-width: $xl) {
+        max-width: 100%;
+    }
+
+
+}
+
+.filterButton {
+    font-size: $fs16;
+    font-weight: $fw5;
+
+    padding: $space0n75 $space1n5;
+
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    color: rgb($codeTextPri);
+    border: 1px solid rgb($codeTextSec);
+    border-radius: $radius1;
+    background-color: rgb($codeBgPri);
+
+    &:hover {
+        color: rgb($codeBlue);
+        border-color: rgb($codeBlue);
+        background-color: rgba($codeBlue, .1);
+    }
+
+    &.active {
+        color: rgb($codeBgPri);
+        border-color: rgb($codeBlue);
+        background-color: rgb($codeBlue);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($codeBlue, .3);
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs16;
+
+        padding: $space0n5 $space1;
+    }
+}
+
+
+// PADDINGS
+
+
+.marginTop {
+    @include marginTop;
+}
+
+.marginBottom {
+    @include marginBottom;
+}
+
+.marginTopSmall {
+    @include marginTopSmall;
+}
+
+.marginBottomSmall {
+    @include marginBottomSmall;
+}
+
+@include textalign;
+@include underlined;
+@include alignItems;
+
+.backgroundGradient {
+    background: linear-gradient(120deg, rgb($codePink), rgb($codeBlue))
+}
+
+.grow {
+    flex-grow: 1
+}
+
+.shrink {
+    flex-shrink: 1
+}
+
+@include gradientanimation;
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: $space4;
+    height: $space4;
+
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb($codeTextPri);
+    border: 1px solid rgb($codeTextSec);
+    border-radius: $radius1;
+    background-color: rgb($codeBgPri);
+
+    &:hover {
+
+        color: rgb($codeBgPri);
+        background-color: rgb($codeBlue);
+        box-shadow: $shadMd;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($codeBlue, .3);
+    }
+}
+
+;
+
+.twoRowGrid {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    @include gap;
+    height: 100%;
+}
+
+.twoRowGridFirst {
+    display: grid;
+    grid-template-rows: auto auto;
+    @include gap;
+    height: fit-content;
+}

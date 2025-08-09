@@ -1,0 +1,133 @@
+@use '@scss/_variables.scss' as *;
+
+//MARGINS
+
+@mixin marginBlock {
+   @each $breakpoint, $value in $spacingBig {
+    @if $breakpoint == null {
+      margin-top: $value;
+      margin-bottom: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       margin-top: $value;
+       margin-bottom: $value
+      }
+    }
+  }
+}
+
+@mixin marginClosed {
+   @each $breakpoint, $value in $closedButtonSpacing {
+    @if $breakpoint == null {
+      top: $value;
+      right: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       top: $value;
+       right: $value
+      }
+    }
+  }
+}
+
+
+
+@mixin marginBottom {
+   @each $breakpoint, $value in $spacingNormal{
+    @if $breakpoint == null {
+         margin-bottom: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+         margin-bottom: $value
+      }
+    }
+  }
+}
+
+
+
+@mixin marginLeft {
+   @each $breakpoint, $value in $spacingNormal{
+    @if $breakpoint == null {
+         margin-left: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+         margin-left: $value
+      }
+    }
+  }
+}
+
+@mixin marginRight {
+   @each $breakpoint, $value in $spacingNormal{
+    @if $breakpoint == null {
+         margin-right: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+         margin-right: $value
+      }
+    }
+  }
+}
+
+@mixin marginTop {
+   @each $breakpoint, $value in $spacingNormal{
+    @if $breakpoint == null {
+         margin-top: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+         margin-top: $value
+      }
+    }
+  }
+}
+
+
+@mixin marginBottomSmall {
+   @each $breakpoint, $value in $gapSmall{
+    @if $breakpoint == null {
+      margin-bottom: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       margin-bottom: $value
+      }
+    }
+  }
+}
+
+
+@mixin marginLeftSmall {
+   @each $breakpoint, $value in $gapSmall{
+    @if $breakpoint == null {
+      margin-left: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       margin-left: $value
+      }
+    }
+  }
+}
+
+@mixin marginRightSmall {
+   @each $breakpoint, $value in $gapSmall{
+    @if $breakpoint == null {
+      margin-right: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       margin-right: $value
+      }
+    }
+  }
+}
+
+@mixin marginTopSmall {
+   @each $breakpoint, $value in $gapSmall{
+    @if $breakpoint == null {
+      margin-top: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       margin-top: $value
+      }
+    }
+  }
+}

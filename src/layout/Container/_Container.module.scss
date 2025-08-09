@@ -1,0 +1,24 @@
+.container {
+    width: $space100;
+    height: $space100;
+    grid-column: span 1;
+}
+
+
+// Default (für default: span)
+@for $i from 1 through 12 {
+  .span-xs-#{$i} {
+    grid-column: span #{$i};
+  }
+}
+
+// Klassen pro Breakpoint und Spaltenanzahl
+@each $breakpoint, $min-width in $breakpoints {
+  @for $i from 1 through 12 {
+    .span-#{$breakpoint}-#{$i} {
+      @media (min-width: $min-width) {
+        grid-column: span #{$i};
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+/* GLOBAL CSS FIXES - Füge diese in deine globale CSS-Datei ein */
+
+/* 1. RESET PROBLEMATIC VIDEO STYLES */
+video {
+  pointer-events: auto ;
+  position: relative;
+  z-index: auto ;
+  overflow: hidden;
+  border: $border1;
+  border-radius: $radius1;
+
+}
+
+/* 2. ENSURE VIDEO CONTROLS ARE ACCESSIBLE */
+video::-webkit-media-controls {
+  display: flex ;
+  pointer-events: auto ;
+}
+
+video::-webkit-media-controls-panel {
+  display: flex ;
+}
+
+video::-webkit-media-controls-play-button {
+  pointer-events: auto ;
+}

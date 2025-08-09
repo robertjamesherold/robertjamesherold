@@ -1,0 +1,211 @@
+
+.successContainer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 65vh;
+
+}
+
+.successCard
+{
+    width: $space100;
+    max-width: 600px;
+    padding: $space4;
+
+    text-align: center;
+
+    border: $border1;
+    border-radius: $radius2;
+    background: rgb($codeBgSec);
+    box-shadow: $shadLg;
+
+    @media (max-width: $md)
+    {
+        margin: $space1;
+        padding: $space3;
+    }
+}
+
+.iconWrapper
+{
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: $space2;
+}
+
+.successIcon
+{
+    width: $space6;
+    height: $space6;
+    padding: $space1;
+
+    color: rgb($codeGreen);
+    border-radius: 50%;
+    background: rgba($codeGreen, .1);
+
+    @media (prefers-color-scheme: dark)
+    {
+        color: rgb($codeGreenDark);
+        background: rgba($codeGreenDark, .1);
+    }
+}
+
+.title
+{
+    font-family: $fontFamily;
+    font-size: $fs5;
+    font-weight: $fw7;
+    line-height: $tightH;
+
+    margin-bottom: $space1n5;
+
+    color: rgb($codeTextPri);
+
+    @media (max-width: $md)
+    {
+        font-size: $fs4;
+    }
+}
+
+.message
+{
+    font-family: $fontFamily;
+    font-size: $fs2;
+    line-height: $baseH;
+
+    margin-bottom: $space3;
+
+    color: rgb($codeTextSec);
+
+    @media (max-width: $md)
+    {
+        font-size: $fs1;
+    }
+}
+
+.actions
+{
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: $space3;
+
+    gap: $space1;
+
+    @media (max-width: $sm)
+    {
+        flex-direction: column;
+    }
+}
+
+.homeButton
+{
+    font-family: $fontFamily;
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    display: inline-block;
+
+    padding: $space0n75 $space2;
+
+    transition: $all0n3;
+    text-decoration: $no;
+
+    color: rgb($codeWhite);
+    border-radius: $radius1;
+    background: linear-gradient(135deg,
+    rgb($codeBlue),
+    rgb($codeBlueBright)
+    );
+
+    &:hover
+    {
+        transform: translateY(-2px);
+
+        box-shadow: $shadMd;
+    }
+
+    &:active
+    {
+        transform: translateY(0);
+    }
+}
+
+.contactButton
+{
+    font-family: $fontFamily;
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    display: inline-block;
+
+    padding: $space0n75 $space2;
+
+    transition: $all0n3;
+    text-decoration: $no;
+
+    color: rgb($codeTextPri);
+    border: $border2;
+    border-radius: $radius1;
+    background: transparent;
+
+    &:hover
+    {
+        transform: translateY(-2px);
+
+        color: rgb($codeBgSec);
+        background: rgb($codeTextPri);
+        box-shadow: $shadMd;
+    }
+
+    &:active
+    {
+        transform: translateY(0);
+    }
+}
+
+.additionalInfo
+{
+    padding: $space2;
+
+    text-align: left;
+
+    border: $border1;
+    border-radius: $radius1;
+    background: rgb($codeBgTer);
+}
+
+.infoText
+{
+    font-family: $fontFamily;
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    margin-bottom: $space1;
+
+    color: rgb($codeTextPri);
+}
+
+.infoList
+{
+    font-family: $fontFamily;
+    font-size: $fs16;
+    line-height: $baseH;
+
+    padding-left: $space1n5;
+
+    color: rgb($codeTextSec);
+
+    li
+    {
+        margin-bottom: $space0n5;
+
+        &:last-child
+        {
+            margin-bottom: $space0;
+        }
+    }
+}

@@ -1,0 +1,249 @@
+
+// _ErrorPopup.module.scss
+
+.overlay
+{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: $space1;
+
+    animation: fadeIn .3s ease-out;
+
+    background: rgba(0, 0, 0, .5);
+
+    backdrop-filter: blur(4px);
+}
+
+@keyframes fadeIn
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
+}
+
+.popup
+{
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 600px;
+
+    animation: slideIn .3s ease-out;
+
+    border: $border1;
+    border-radius: $radius2;
+    background: rgb($codeBgSec);
+    box-shadow: $shadLg;
+}
+
+@keyframes slideIn
+{
+    from
+    {
+        transform: translateY(-50px);
+
+        opacity: 0;
+    }
+    to
+    {
+        transform: translateY(0);
+
+        opacity: 1;
+    }
+}
+
+.header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: $space2;
+
+    border-bottom: $border1;
+    background: rgba($codeRed, .1);
+}
+
+.iconWrapper
+{
+    display: flex;
+    align-items: center;
+}
+
+.errorIcon
+{
+    width: $space2;
+    height: $space2;
+
+    color: rgb($codeRed);
+
+    @media (prefers-color-scheme: dark)
+    {
+        color: rgb($codeRedBright);
+    }
+}
+
+.closeButton
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: $space0n25;
+
+    cursor: pointer;
+    transition: $all0n3;
+
+    border: $no;
+    border-radius: $radius4;
+    background: transparent;
+
+    svg
+    {
+        width: $space1n5;
+        height: $space1n5;
+
+        color: rgb($codeTextSec);
+    }
+
+    &:hover
+    {
+        background: rgba($codeTextTer, .1);
+
+        svg
+        {
+            color: rgb($codeTextPri);
+        }
+    }
+
+    &:active
+    {
+        transform: scale(.95);
+    }
+}
+
+.content
+{
+    padding: $space2;
+}
+
+.title
+{
+    font-family: $fontFamily;
+    font-size: $fs3;
+    font-weight: $fw7;
+    line-height: $tightH;
+
+    margin: 0 0 $space1 0;
+
+    color: rgb($codeTextPri);
+}
+
+.message
+{
+    font-family: $fontFamily;
+    font-size: $fs1;
+    line-height: $baseH;
+
+    margin: 0;
+
+    color: rgb($codeTextSec);
+}
+
+.actions
+{
+    display: flex;
+
+    padding: $space2;
+
+    border-top: $border1;
+    background: rgb($codeBgTer);
+
+    gap: $space1;
+
+    @media (max-width: $sm)
+    {
+        flex-direction: column;
+    }
+}
+
+.retryButton
+{
+    font-family: $fontFamily;
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    flex: 1;
+
+    padding: $space0n75 $space2;
+
+    cursor: pointer;
+    transition: $all0n3;
+
+    color: rgb($codeWhite);
+    border: $no;
+    border-radius: $radius1;
+    background: linear-gradient(135deg,
+    rgb($codeRed),
+    rgb($codeRedBright)
+    );
+
+    &:hover
+    {
+        transform: translateY(-2px);
+
+        box-shadow: $shadMd;
+    }
+
+    &:active
+    {
+        transform: translateY(0);
+    }
+}
+
+.cancelButton
+{
+    font-family: $fontFamily;
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    flex: 1;
+
+    padding: $space0n75 $space2;
+
+    cursor: pointer;
+    transition: $all0n3;
+
+    color: rgb($codeTextPri);
+    border: $border2;
+    border-radius: $radius1;
+    background: transparent;
+
+    &:hover
+    {
+        transform: translateY(-2px);
+
+        color: rgb($codeBgSec);
+        background: rgb($codeTextPri);
+        box-shadow: $shadMd;
+    }
+
+    &:active
+    {
+        transform: translateY(0);
+    }
+}

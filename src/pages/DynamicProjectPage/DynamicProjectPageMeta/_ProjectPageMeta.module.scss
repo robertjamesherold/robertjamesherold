@@ -1,0 +1,61 @@
+// components/casestudy/components/CaseStudyMeta/CaseStudyMeta.module.scss
+
+.metaItem
+{
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: $space1n5;
+
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+.metaValue
+{
+    font-size: $fs16;
+    font-weight: $fw5;
+
+    color: rgb($codeTextPri);
+}
+.span1n2 { display: flex; width: 100%; 
+ 
+
+
+@media (min-width: $xs) {
+
+}
+
+
+
+// Alles über 640px
+@media (min-width: $sm) {
+
+flex: 0 1 30%;
+
+}
+
+
+
+// Alles über 768px
+@media (min-width: $md) {
+
+}
+
+
+// Alles über 1024px
+@media (min-width: $lg) {
+
+}
+
+
+
+// Alles über 1280px
+@media (min-width: $xl) {
+
+}}

@@ -1,0 +1,156 @@
+@include cardContainer;
+
+
+.timelineItem
+{
+    position: relative;
+
+    display: grid;
+    height: $space100;
+
+    grid-template-columns: 1fr;
+    @include gap;
+   @media (min-width: $sm)
+        {
+    
+        grid-template-columns: auto 1fr;
+        
+    &:only-child {
+        grid-template-columns: 1fr;}
+    
+    &:not(:last-child)::after
+    {
+        position: absolute;
+        top: 40px;
+        bottom: -$space5;
+        left: 60px;
+
+        width: 2px;
+
+        content: '';
+            display: block;
+
+        background-color: rgb($codeTextSec);
+        @media (min-width: $sm)
+        {
+                bottom: -$space2n5;
+
+            display: block;
+            
+        }
+
+     
+}}
+
+.timelinePeriod
+{
+    font-size: $fs16;
+    font-weight: $fw6;
+
+    min-width: 120px;
+    height: fit-content;
+    padding: $space0n5 $space1;
+
+    text-align: center;
+    white-space: nowrap;
+
+    color: rgb($codeBgPri);
+    border-radius: $radius1 / 2;
+    background-color: rgb($codeBlue);
+
+}
+
+.timelineContent
+{
+    padding-top: $space0n25;
+   
+}
+
+.timelineTitle
+{
+    font-size: $fs1;
+    font-weight: $fw6;
+    line-height: $tightH;
+
+
+    color: rgb($codeTextPri);
+}
+
+.timelineInstitutions
+{
+    font-size: $fs16;
+    font-weight: $fw6;
+
+    margin-bottom: $space0n75;
+
+    color: rgb($codeBlue);
+}
+
+.timelineDescription
+{
+    font-size: $fs16;
+    line-height: $baseH;
+
+    margin-bottom: $space1;
+
+    color: rgb($codeTextPri);
+}
+
+.timelineMetrics
+{
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-bottom: $space1;
+
+    gap: $space1;
+}
+
+.metric
+{
+    font-size: $fs16;
+    font-weight: $fw6;
+
+    padding: $space0n25 $space0n75;
+
+    color: rgb($codeBlue);
+    border-radius: $radius1 /2 ;
+    background-color: rgba($codeBlue, .1);
+}
+
+.taskList
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    li
+    {
+        font-size: $fs16;
+        line-height: $baseH;
+
+        position: relative;
+
+        margin-bottom: $space0n5;
+        padding-left: $space1n5;
+
+        color: rgb($codeTextPri);
+
+        &::before
+        {
+            font-weight: bold;
+
+            position: absolute;
+            left: 0;
+
+            content: '▸';
+
+            color: rgb($codeBlue);
+        }
+
+        &:last-child
+        {
+            margin-bottom: 0;
+        }
+    }}}

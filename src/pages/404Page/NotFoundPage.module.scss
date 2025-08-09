@@ -1,0 +1,112 @@
+.notFound {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space2 $space1;
+  background: rgba($codeBgPri);
+}
+
+.content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.errorCode {
+  font-size: clamp($fs8, 15vw, 12rem);
+  font-weight: $fw9;
+  line-height: 1;
+  margin: 0 0 $space1 0;
+  background: linear-gradient(135deg, 
+    rgba($codeBlue) 0%, 
+    rgba($codePurple) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+  0%, 100% {
+    text-shadow: 
+      0.02em 0 rgba($codeRedBright),
+      -0.02em 0 rgba($codeBlueBright);
+  }
+  50% {
+    text-shadow: 
+      -0.02em 0 rgba($codeRedBright),
+      0.02em 0 rgba($codeBlueBright);
+  }
+}
+
+.title {
+  font-size: clamp($fs3, 3vw, $fs5);
+  font-weight: $fw7;
+  color: rgba($codeTextPri);
+  margin: 0 0 $space1 0;
+}
+
+.description {
+  font-size: $fs1;
+  color: rgba($codeTextSec);
+  margin: 0 0 $space2 0;
+  line-height: $baseH;
+}
+
+.actions {
+  display: grid;
+  @include gap;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-block;
+  padding: $space0n75 $space2;
+  border-radius: $space0n5;
+  text-decoration: none;
+  font-weight: $fw5;
+  transition: $all0n3;
+  font-size: $fs16;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, 
+    rgba($codeBlue) 0%, 
+    rgba($codePurple) 100%
+  );
+  color: white;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.secondaryButton {
+  background: transparent;
+  color: rgba($codeTextPri);
+  border: 2px solid rgba($codeTextTer);
+  
+  &:hover {
+    border-color: rgba($codeBlue);
+    color: rgba($codeBlue);
+  }
+}
+
+@media (max-width: $sm) {
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 250px;
+  }
+}

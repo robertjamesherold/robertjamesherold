@@ -1,0 +1,381 @@
+@use '@scss/_variables.scss' as *;
+// =============================================================================
+// SCSS RESET - Modern CSS Reset with SCSS enhancements
+// =============================================================================
+
+// Box sizing reset
+*,
+*::before,
+*::after
+{
+    box-sizing: border-box;
+}
+
+// Remove default margin and padding
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+// HTML & Body setup
+html
+{
+    font-size: 1rem;
+    // Prevent font size inflation
+
+    -webkit-text-size-adjust: 100%;
+       -moz-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+    // Smooth scrolling
+    scroll-behavior: smooth;
+    // Better font rendering
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body
+{
+    // Default font stack (can be overridden with variables)
+    font-family: $fontFamily;
+    // Line height for better readability
+    line-height: 1.5;
+    // Prevent horizontal scroll
+
+    overflow-x: hidden;
+    // Remove default body margin
+
+    margin: 0;
+    // Better font ren;dering
+
+    text-rendering: optimizeSpeed;
+}
+
+// Media elements
+img,
+picture,
+video,
+canvas,
+svg
+{
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+}
+
+// Form elements reset
+input,
+button,
+textarea,
+select
+{
+    font: inherit;
+
+    color: inherit;
+}
+
+button
+{
+    cursor: pointer;
+
+    border: none;
+    background: none;
+
+    &:focus
+    {
+        outline: none;
+        outline-offset: 2px;
+    }
+}
+
+input,
+textarea
+{
+    border: none;
+    outline: none;
+
+    &:focus
+    {
+        outline: none;
+        outline-offset: 2px;
+    }
+}
+
+// Remove default button and input styles in Safari
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+button
+{
+    -webkit-appearance: none;
+            appearance: none;
+}
+
+// Remove default input styles
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+textarea
+{
+    -webkit-appearance: none;
+            appearance: none;
+}
+
+// List reset
+ul,
+ol
+{
+    list-style: none;
+}
+
+// Link reset
+a
+{
+    text-decoration: none;
+
+    color: inherit;
+
+    &:focus
+    {
+        outline: none;
+        outline-offset: 2px;
+    }
+}
+
+// Heading reset
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin:0;
+    padding: 0;
+}
+
+// Remove default table spacing
+table
+{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+// Better default for horizontal rules
+hr
+{
+    margin: 1rem 0;
+
+    border: none;
+    border-top: 1px solid currentColor;
+}
+
+// Remove default fieldset styles
+fieldset
+{
+    margin: 0;
+    padding: 0;
+
+    border: none;
+}
+
+legend
+{
+    padding: 0;
+}
+
+// Remove default details/summary styles
+details
+{
+    display: block;
+}
+
+summary
+{
+    display: list-item;
+
+    cursor: pointer;
+}
+
+// Better defaults for interactive elements
+[role='button'],
+[role='link']
+{
+    cursor: pointer;
+}
+
+// Disable text selection for UI elements
+.no-select
+{
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+// Better focus management for accessibility
+[tabindex='-1']:focus
+{
+    outline: none !important;
+}
+
+// Remove focus outline for mouse users (keep for keyboard users)
+[data-focus-method='mouse'] *:focus
+{
+    outline: none;
+}
+
+// Improve spacing for flow content
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+figure,
+pre
+{
+    margin-bottom: 1rem;
+
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+// Remove margins from nested elements
+* + *
+{
+    margin-top: 0;
+}
+
+// Better defaults for code elements
+pre,
+code,
+kbd,
+samp
+{
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Consolas,
+    'Liberation Mono', Menlo, monospace;
+}
+
+pre
+{
+    overflow-x: auto;
+
+    white-space: pre;
+}
+
+// Better blockquote defaults
+blockquote
+{
+    font-style: italic;
+
+    padding-left: 1rem;
+
+    border-left: 4px solid currentColor;
+}
+
+// Remove default iframe border
+iframe
+{
+    border: none;
+}
+
+// Better abbreviation defaults
+abbr[title]
+{
+    cursor: help;
+    text-decoration: underline dotted;
+}
+
+// Remove default mark background
+mark
+{
+    color: inherit;
+    background: transparent;
+}
+
+// Better defaults for small text
+small
+{
+    font-size: .875em;
+}
+
+// Prevent sub and sup from affecting line height
+sub,
+sup
+{
+    font-size: .75em;
+    line-height: 0;
+
+    position: relative;
+
+    vertical-align: baseline;
+}
+
+sub
+{
+    bottom: -.25em;
+}
+
+sup
+{
+    top: -.5em;
+}
+
+// =============================================================================
+// UTILITY CLASSES
+// =============================================================================
+
+// Screen reader only content
+.sr-only
+{
+    position: absolute;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+// Hidden elements
+.hidden
+{
+    display: none !important;
+}
+
+// Visually hidden but accessible
+.visually-hidden
+{
+    position: absolute !important;
+
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+
+    white-space: nowrap !important;
+
+    border: 0 !important;
+}

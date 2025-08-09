@@ -1,0 +1,89 @@
+.privacyPage {
+  min-height: 100vh;
+  padding: $space3 $space1 $space4;
+  background: rgba($codeBgPri);
+}
+
+.content {
+  margin: 0 auto;
+}
+
+.mainTitle {
+  font-size: clamp($fs4, 4vw, $fs6);
+  font-weight: $fw7;
+  color: rgba($codeTextPri);
+  margin-bottom: $space0n5;
+  line-height: $tightH;
+}
+
+.lastUpdate {
+  font-size: $fs14;
+  color: rgba($codeTextTer);
+  margin-bottom: $space3;
+  font-style: italic;
+}
+
+.section {
+  margin-bottom: $space2n5;
+  
+  h2 {
+    font-size: clamp($fs2, 2.5vw, $fs3);
+    font-weight: $fw6;
+    color: rgba($codeTextPri);
+    margin: $space3 0 $space1 0;
+    padding-bottom: $space0n5;
+    border-bottom: 2px solid rgba($codeTextTer, 0.2);
+  }
+  
+  h3 {
+    font-size: $fs1;
+    font-weight: $fw5;
+    color: rgba($codeTextPri);
+    margin: $space2 0 $space0n75 0;
+  }
+  
+  p {
+    font-size: $fs16;
+    line-height: $baseH;
+    color: rgba($codeTextSec);
+    margin-bottom: $space1;
+  }
+  
+  ul {
+    margin: $space1 0 $space1 $space1n5;
+    
+    li {
+      font-size: $fs16;
+      line-height: $baseH;
+      color: rgba($codeTextSec);
+      margin-bottom: $space0n5;
+      
+      &::marker {
+        color: rgba($codeBlue);
+      }
+    }
+  }
+}
+
+.address {
+  font-style: normal;
+  font-size: $fs16;
+  line-height: $baseH;
+  color: rgba($codeTextSec);
+  margin: $space1 0;
+  padding: $space1;
+  background: rgba($codeBgTer, 0.3);
+  border-left: 3px solid rgba($codeBlue);
+}
+
+@media (max-width: $md) {
+  .privacyPage {
+    padding: $space2 $space1 $space3;
+  }
+  
+  .section {
+    h2 {
+      margin-top: $space2;
+    }
+  }
+}

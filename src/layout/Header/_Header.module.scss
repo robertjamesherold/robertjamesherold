@@ -1,0 +1,37 @@
+.header
+{
+    width: $space100;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+
+   @include paddingInline;
+   @include marginBlock;
+}
+
+
+
+ 
+
+
+.title
+{
+
+ @include sectionTitle
+}
+
+.subtitle
+{
+    font-size: $fs1;
+    line-height: $baseH;
+
+    max-width: 600px;
+    margin: 0 auto;
+
+    color: rgb($codeTextPri);
+
+    @media (min-width: $md)
+    {
+        font-size: $fs2;
+    }
+}

@@ -1,0 +1,170 @@
+@use '@scss/_variables.scss' as *;
+
+
+@mixin paddingMain {
+  @each $breakpoint, $space in $spacingNormal {
+    $pt: $space * 2 + $space5;
+    $pb: $space * 2;
+
+    @if $breakpoint == null {
+      padding-top: $pt;
+      padding-bottom: $pb;
+    } @else {
+      @media (min-width: $breakpoint) {
+        padding-top: $pt;
+        padding-bottom: $pb;
+      }
+    }
+  }
+}
+
+@mixin paddingInline {
+   @each $breakpoint, $value in $spacingBig {
+    @if $breakpoint == null {
+      padding-left: $value;
+      padding-right: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       padding-left: $value;
+       padding-right: $value
+      }
+    }
+  }
+}
+
+@mixin paddingNormal {
+   @each $breakpoint, $value in $spacingBig{
+    @if $breakpoint == null {
+      padding-left: $value;
+      padding-right: $value;
+      padding-top: $value;
+      padding-bottom: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       padding-left: $value;
+       padding-right: $value;
+       padding-top: $value;
+       padding-bottom: $value
+      }
+    }
+  }
+}
+
+@mixin paddingSmall {
+   @each $breakpoint, $value in $spacingMini{
+    @if $breakpoint == null {
+      padding-left: $value;
+      padding-right: $value;
+      padding-top: $value;
+      padding-bottom: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       padding-left: $value;
+       padding-right: $value;
+       padding-top: $value;
+       padding-bottom: $value
+      }
+    }
+  }
+}
+
+
+@mixin paddingBottom {
+   @each $breakpoint, $value in $spacingNormal{
+    @if $breakpoint == null {
+         padding-bottom: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+         padding-bottom: $value
+      }
+    }
+  }
+}
+
+
+
+@mixin paddingLeft {
+   @each $breakpoint, $value in $spacingNormal{
+    @if $breakpoint == null {
+         padding-left: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+         padding-left: $value
+      }
+    }
+  }
+}
+
+@mixin paddingRight {
+   @each $breakpoint, $value in $spacingNormal{
+    @if $breakpoint == null {
+         padding-right: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+         padding-right: $value
+      }
+    }
+  }
+}
+
+@mixin paddingTop {
+   @each $breakpoint, $value in $spacingNormal{
+    @if $breakpoint == null {
+         padding-top: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+         padding-top: $value
+      }
+    }
+  }
+}
+
+
+@mixin paddingBottomSmall {
+   @each $breakpoint, $value in $gapSmall{
+    @if $breakpoint == null {
+      padding-bottom: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       padding-bottom: $value
+      }
+    }
+  }
+}
+
+
+@mixin paddingLeftSmall {
+   @each $breakpoint, $value in $gapSmall{
+    @if $breakpoint == null {
+      padding-left: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       padding-left: $value
+      }
+    }
+  }
+}
+
+@mixin paddingRightSmall {
+   @each $breakpoint, $value in $gapSmall{
+    @if $breakpoint == null {
+      padding-right: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       padding-right: $value
+      }
+    }
+  }
+}
+
+@mixin paddingTopSmall {
+   @each $breakpoint, $value in $gapSmall{
+    @if $breakpoint == null {
+      padding-top: $value
+    } @else {
+      @media (min-width: $breakpoint) {
+       padding-top: $value
+      }
+    }
+  }
+}

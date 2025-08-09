@@ -1,0 +1,22 @@
+@use '@scss/_variables.scss' as *;
+
+// GRIDS
+
+@mixin grid($config) {
+  display: grid;
+  width: 100%;
+  height: fit-content;
+  grid-auto-rows: auto;
+  position: relative;
+
+  @each $bp, $val in $config {
+    @if $bp == default {
+      grid-template-columns: repeat(#{$val}, 1fr);
+    } @else {
+      $min-width: map-get($breakpoints, $bp);
+      @media (min-width: #{$min-width}) {
+        grid-template-columns: repeat(#{$val}, 1fr);
+      }
+    }
+  }
+}

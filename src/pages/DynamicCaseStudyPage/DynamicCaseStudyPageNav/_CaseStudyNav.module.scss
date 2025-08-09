@@ -1,0 +1,163 @@
+
+.navList
+{
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    gap: $space0n75;
+}
+
+.navItem
+{
+    font-size: $fs14;
+    font-weight: $fw4;
+
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+    padding: $space0n75 $space1;
+
+    cursor: pointer;
+    transition: all .3s ease;
+    transform: translateX(-10px);
+    animation: slideInItem .4s ease forwards;
+    text-align: left;
+    // Staggered Animation für Items
+
+    opacity: 0;
+    color: rgb($codeTextPri);
+    border: none;
+    border-radius: 6px;
+    background: none;
+
+    &::before
+    {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        width: 0;
+
+        content: '';
+        transition: width .3s ease;
+
+        background: rgb($codeBlue);
+    }
+
+    &::after
+    {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        right: $space1;
+
+        content: '▸';
+        transition: all .3s ease;
+        transform: translateY(-50%);
+
+        opacity: 0;
+        color: rgb($codeBlue);
+    }
+
+    // Text Container
+    & > span
+    {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:hover
+    {
+        transform: translateX(4px);
+
+        color: rgb($codeBlue);
+        background: rgba($codeBlue, .1);
+        box-shadow: 0 2px 4px rgba($codeBlue, .2);
+    }
+
+    &:focus
+    {
+        outline: 2px solid rgb($codeBlue);
+        outline-offset: 2px;
+    }
+
+    &.active
+    {
+        font-weight: $fw6;
+
+        transform: translateX(6px);
+
+        color: rgb($codeWhite);
+        background: rgb($codeBlue);
+        box-shadow: 0 3px 6px rgba($codeBlue, .3);
+
+
+
+        &:hover
+        {
+            transform: translateX(8px);
+
+            background: rgb($codeBlueBright);
+        }
+    }
+
+    @for $i from 1 through 10
+    {
+        &:nth-child(#{$i})
+        {
+            animation-delay: #{.3 + $i * .1}s;
+        }
+    }
+}
+
+
+// Animations
+@keyframes slideInLeft
+{
+    from
+    {
+        transform: translateX(-20px);
+
+        opacity: 0;
+    }
+    to
+    {
+        transform: translateX(0);
+
+        opacity: 1;
+    }
+}
+
+@keyframes slideInItem
+{
+    from
+    {
+        transform: translateX(-10px);
+
+        opacity: 0;
+    }
+    to
+    {
+        transform: translateX(0);
+
+        opacity: 1;
+    }
+}
+
+// Print Styles
+@media print
+{
+    .nav
+    {
+        display: none;
+    }
+}

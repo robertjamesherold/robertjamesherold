@@ -1,0 +1,94 @@
+@include cardContainer;
+
+.achievement
+{ 
+    display: flex;
+    flex-direction: column;
+
+
+    h4
+    {
+        font-size: $fs1;
+        font-weight: $fw6;
+
+        margin-bottom: $space0n75;
+
+        color: rgb($codeTextPri);
+    }
+
+    ul
+    {
+        margin: 0;
+        padding: 0;
+        
+        list-style: none;
+
+        li
+        {
+            font-size: $fs16;
+
+            position: relative;
+
+            margin-bottom: $space0n5;
+            padding-left: $space1n5;
+
+            color: rgb($codeTextPri);
+
+            &::before
+            {
+                position: absolute;
+                left: 0;
+
+                content: '★';
+
+                color: rgb($codeBlue);
+            }
+
+            &:last-child
+            {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.languageList
+{
+    display: flex;
+    flex-direction: column;
+
+    gap: $space1;
+}
+
+.languageItem
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: $space0n75 $space1;
+
+    border: 1px solid rgb($codeWhite);
+    border-radius: $radius1;
+    background-color: rgb($codeBgPri);
+
+    @media (min-width: $xs)
+    {
+        flex-direction: row;
+    }
+}
+
+.language
+{
+    font-weight: $fw6;
+
+    color: rgb($codeTextPri);
+}
+
+.languageLevel
+{
+    font-size: $fs16;
+
+    color: rgb($codeTextPri);
+}

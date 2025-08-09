@@ -1,0 +1,407 @@
+// =============================================================================
+// FOOTER COMPONENT - Responsive Footer mit deinen Variablen
+// =============================================================================
+.fullscreenOverlay
+{
+    position: fixed;
+    z-index: 3000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: $spaceFull;
+    height: $spaceScreen;
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-bottom: $space3;
+    padding-top: 0;
+    background-color: transparent;
+    opacity: 0;
+@include paddingInline;
+    pointer-events: none;
+
+    transition:$all0n3;
+    &.open
+   
+    {
+    opacity: 1;
+        visibility: visible;
+            max-height: $spaceScreen;
+        pointer-events: auto;
+touch-action: none;
+    background-color: rgba(0,0,0, 0.8);
+
+        transform: translateX(0);
+
+
+      
+    }}
+
+
+.footer
+{
+    padding-top: $space3;
+    padding-bottom: $space2;
+
+    color: rgb($codeTextSec);
+    border-top: 1px solid rgb($codeTextTer);
+    background-color: rgb($codeBgSec);
+}
+
+
+// =============================================================================
+// MAIN GRID LAYOUT
+// =============================================================================
+
+.grid
+{
+    display: grid;
+
+    width: $space100;
+    margin-bottom: $space3;
+
+    grid-template-columns: 1fr;
+    gap: $space2;
+
+    @media (min-width: $sm)
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $lg)
+    {
+        grid-template-columns: repeat(3, 1fr);
+        gap: $space3;
+    }
+}
+
+// =============================================================================
+// SECTION STYLES
+// =============================================================================
+
+.section
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionTitle
+{
+    font-size: $fs1;
+    font-weight: $fw7;
+    line-height: $tightH;
+
+    margin-bottom: $space1;
+
+    color: rgb($codeTextPri);
+}
+
+.linkList
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    li
+    {
+        margin-bottom: $space0n5;
+    }
+}
+
+.link
+{
+    font-size: $fs16;
+    line-height: $baseH;
+
+    transition: color .2s ease-in-out;
+    text-decoration: none;
+
+    color: rgb($codeTextTer);
+
+    &:hover
+   
+    {
+        color: rgb($codeBlue);
+        outline: none;
+    }
+
+}
+
+// =============================================================================
+// NEWSLETTER SECTION - Entfernt für Portfolio
+// =============================================================================
+
+// Newsletter Styles entfernt da nicht benötigt für Portfolio
+
+// =============================================================================
+// BOTTOM SECTION
+// =============================================================================
+
+.bottom
+{
+    width: $space100;
+    padding-top: $space2;
+
+    border-top: 1px solid rgb($codeTextTer);
+}
+
+.bottomContent
+{
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: $space1n5;
+
+    gap: $space1n5;
+
+    @media (min-width: $md)
+    {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+
+        gap: $space2;
+    }
+}
+
+// =============================================================================
+// SOCIAL MEDIA SECTION
+// =============================================================================
+
+.socialSection
+{
+    display: flex;
+    flex-direction: column;
+
+    gap: $space0n5;
+
+    @media (min-width: $sm)
+    {
+        align-items: center;
+        flex-direction: row;
+
+        gap: $space1;
+    }
+}
+
+.socialTitle
+{
+    font-size: $fs16;
+    font-weight: $fw5;
+
+    color: rgb($codeTextPri);
+}
+
+.socialLinks
+{
+    display: flex;
+
+    gap: $space1;
+}
+
+.socialLink
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 72px;
+    height: 72px;
+    border: $border1;
+    border-radius: $radius1 / 2;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+
+    color: rgb($codeTextPri);
+    border-radius: $radius1;
+
+    &:hover
+    {
+        transform: translateY(-2px);
+background-color: rgba($codeBlue, .1);
+        color: rgb($codeBlue);
+        
+    }
+
+    &:focus
+    {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($codeBlue, .3);
+    }
+
+    svg
+    {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+// =============================================================================
+// LEGAL SECTION
+// =============================================================================
+
+.legalSection
+{
+    display: flex;
+    flex-direction: column;
+
+    gap: $space1;
+
+    @media (min-width: $sm)
+    {
+        align-items: flex-end;
+    }
+}
+
+.legalLinks
+{
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: $space1;
+
+    @media (min-width: $sm)
+    {
+        gap: $space1n5;
+    }
+}
+
+.legalLink
+{
+    font-size: $fs16;
+
+    transition: color .2s ease-in-out;
+    white-space: nowrap;
+    text-decoration: none;
+
+    color: rgb($codeTextSec);
+
+    &:hover,
+    &:focus
+    {
+        color: rgb($codeBlue);
+        outline: none;
+    }
+
+    &:focus
+    {        color: rgb($codeBlue);
+
+    }
+}
+
+// =============================================================================
+// COPYRIGHT
+// =============================================================================
+
+.copyright
+{
+    padding-top: $space1;
+
+    text-align: center;
+
+    border-top: 1px solid rgb($codeTextTer);
+
+    p
+    {
+        font-size: $fs16;
+
+        margin: 0;
+
+        color: rgb($codeTextSec);
+    }
+
+    @media (min-width: $md)
+    {
+        text-align: left;
+    }
+}
+
+
+@include cardContainer;
+
+.card { position: relative;
+    height: $spaceFit;
+} 
+.open { transform: scale(1.0); };
+.closed { transform: scale(0.8); };
+
+
+
+
+.closeButton
+{
+position: absolute;
+ @include marginClosed;
+  border-radius: $radius4;
+  padding: $space0n25;
+  z-index: 5000;
+      cursor: pointer;
+
+  
+&:hover
+{
+    background-color: rgba($codeBlue, .1);
+    color: rgb($codeBlue);
+
+
+  }}
+
+  .availability {
+    font-size: $fs1;
+    font-weight: $fw6;
+     color: rgba(3, 150, 33, 1);
+   
+    display: flex;
+    background-color: rgba(0,125,0,0.2);
+    align-items: center;
+    padding: $space0n5 $space1;
+    width: fit-content;
+    border-radius: $radius1;
+    margin-top: $space1n5
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(3, 150, 33, 1);
+    margin-right: $space1;
+    animation: pulse 1.5s infinite ease-in-out;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(3, 150, 33, 0.5);
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .availability {
+      background-color: rgba(0,125,0,0.2);
+     color: rgb(0, 255, 0); }
+     .dot {
+      background-color: rgb(0, 255, 0);
+     }}
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

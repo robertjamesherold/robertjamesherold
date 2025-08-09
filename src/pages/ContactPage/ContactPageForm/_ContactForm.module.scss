@@ -1,0 +1,65 @@
+
+.contactForm
+{
+    position: relative;
+
+    display: grid;
+
+    width: $space100;
+    max-width: $space100;
+    margin: $space0;
+
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    row-gap: $space1n5;
+    column-gap: $space1n5;
+
+
+    @media (max-width: $xl)
+    {
+        width: $space100;
+    }
+
+    @media (max-width: $md)
+    {
+        width: $space100;
+
+        border-right: none;
+    }
+    @media (max-width: $sm)
+    {
+        display: flex;
+        flex-direction: column;
+
+        width: $space100;
+
+        border-right: none;
+
+        gap: $space1n5;
+        grid-area: span 3 / span 12;
+    }
+}
+
+
+
+*.colSix
+{
+    display: flex;
+    flex-direction: column;
+
+    grid-column: span 6;
+
+    @media (max-width: $sm)
+    {
+        grid-column: span 12;
+    }
+}
+
+*.colFull
+{
+    display: flex;
+    flex-direction: column;
+
+    grid-column: span 12;
+}
+

@@ -1,0 +1,17 @@
+// PADDINGS
+
+.paddingTop {
+    @include paddingTop;
+}
+
+.paddingBottom {
+    @include paddingBottom;
+}
+
+.paddingTopSmall {
+    @include paddingTopSmall;
+}
+
+.paddingBottomSmall {
+    @include paddingBottomSmall;
+}
