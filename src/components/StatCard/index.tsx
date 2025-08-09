@@ -1,7 +1,6 @@
 export type StatCardProps = {
   title: string,
   text: string,
-
 }
 export function StatCard({ title, text }: StatCardProps) {
     return (

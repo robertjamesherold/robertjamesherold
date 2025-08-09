@@ -1,4 +1,3 @@
-import React from 'react';
 import webdesign from '/src/assets/images/elearning/game.png'
 import grafikdesign from '/src/assets/images/oliveto/g4.webp'
 
