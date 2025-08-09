@@ -3,12 +3,10 @@ import { useState, useEffect } from 'react'
 import { statsData, serviceData, projectData } from './HomePageData'
 import { Container } from '../../layout/Container'
 import { Hero } from './HomePageHero' 
-import { CodeAnimation } from './HomePageHero/HeroCodeAnimation'
 import { StatsCards } from './HomePageStatsCards'
-import { ServiceList } from './HomePageServiceList'
+import { CardGrid } from '@ly/CardGrid'
 import { ProjectList } from './HomePageProjectList'
-import { CallToAction } from '/src/components/CallToAction'
-import clsx from 'clsx'
+import { CallToAction } from '@cm/CallToAction'
 
 
 
@@ -38,7 +36,7 @@ export function HomePage() {
   <main>
     <Container span={{ default: 12}}><Hero /></Container>
     <Container span={{ default: 12 }}><StatsCards data={statsData} /></Container>
-    <Container span={{ default: 12 }}><ServiceList title="Meine Dienstleistungen" data={serviceData}/></Container>
+    <Container span={{ default: 12 }}><CardGrid className='grid-sm2-xl4' data={serviceData}><h2>Meine Dienstleistungen</h2></CardGrid></Container>
     <Container span={{ default: 12 }}>
         <ProjectList
                 title="Meine Projekte"s
