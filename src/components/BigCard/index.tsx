@@ -3,7 +3,7 @@ import styles from './_ProjectList.module.scss'
 import { Link } from 'react-router-dom';
 import { ViewIcon } from '/src/assets/icons';
 
-type BigCardProps = {
+export type BigCardProps = {
   image: string; 
   alt: string; 
   title: string; 
@@ -33,26 +33,3 @@ export function BigCard({  image, alt, title, description, link, tags  }: BigCar
      </div>
   </div>
 )}
-
-type BigCardGridProps ={
-  
-  data: BigCardProps[],
-  showButton: boolean,
-  className: string,
-  children?: ReactNode,
-}
-export function BigCardGrid({  data, showButton, children, classname = 'grid-lg2'}: BigCardGridProps) {
-  return (
-   <section>
-          {children}
-          <div className={className}>
-            {data.map((project, index) => (
-              <BigCard key={index} {...project} />
-            ))}
-          </div>
-          {showButton && <div style={{width:'100%', display:'flex', justifyContent:'center'}}>
-            <Link to='/projekte' className='buttonprimary'>Alle Projekte</Link>
-          </div>}
-        </section>
-  );
-}
