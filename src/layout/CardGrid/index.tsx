@@ -1,6 +1,6 @@
-import { ReactNode } from 'react'
-import { Card } from '@cm/Card'
-import type { CardProps } from '@cm/Card'
+import type { ReactNode } from 'react'
+import { Card } from '../../components/Card'
+import type { CardProps } from '../../components/Card'
 
 type CardGridProps = {
   data: CardProps[],
