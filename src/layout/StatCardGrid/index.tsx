@@ -3,12 +3,12 @@ import type { StatCardProps } from '../../components/StatCard'
 import { StatCard } from '../../components/StatCard'
 
 
-type StatGridProps = {
+type StatCardGridProps = {
   data: StatsCardProps[],
   className: string
 }
 
-export function StatGrid({ data, className = 'grid2-md4' }: StatGridProps) {
+export function StatCardGrid({ data, className = 'grid2-md4' }: StatCardGridProps) {
   return (
     <section>
       <div className={className}>
