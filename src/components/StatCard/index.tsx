@@ -1,4 +1,5 @@
 import { type ReactNode } from 'react';
+import styles from './StatCard.module.scss';
 
 export type StatCardProps = {
   title: string,
@@ -13,3 +14,12 @@ export function StatCard({ title, text }: StatCardProps) {
       </div></div>
   );
 }
+
+export function Stat({ title, text }: StatCardProps){
+return(
+  <div className='stat'>
+    <span className='statNumber'>{title}</span>
+    <span className='statLabel'>{text}</span>
+  </div>
+  )
+};

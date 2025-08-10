@@ -23,7 +23,7 @@ export function StoryPage() {
         <Personal 
           title={personalData.title}
           text={personalData.text}
-          stats={personalData.stats}
+          data={personalData.stats}
         />
       </Container>
     
