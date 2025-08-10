@@ -1,9 +1,12 @@
+
 export type CardProps = {
   icon: string; 
-  title: string; 
+  title: React.ReactNode; 
   text: string;
-  tag?: string
+  tag?: string; 
+  tags?: string[]
 }
+
 export function Card({ icon, title, text, tag }: CardProps) {
   return (
     <div className='card'>
