@@ -4,7 +4,6 @@ export type CardProps = {
   title: React.ReactNode; 
   text: string;
   tag?: string; 
-  tags?: string[]
 }
 
 export function Card({ icon, title, text, tag }: CardProps) {

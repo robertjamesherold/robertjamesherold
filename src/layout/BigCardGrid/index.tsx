@@ -1,20 +1,18 @@
 import { BigCard } from '../../components/BigCard'
 import type { BigCardProps } from '../../components/BigCard'
-import { type ReactNode } from 'react';
 import { Column } from '../../components/Flexbox/Column';
 import { Button } from '../../ui/Button';
 
 type BigCardGridProps ={
-  
   data: BigCardProps[],
   showButton: boolean,
   className: string,
-  children?: ReactNode,
+  title?: string,
 }
-export function BigCardGrid({  data, showButton, children, className = ''}: BigCardGridProps) {
+export function BigCardGrid({  data, showButton, title, className = ''}: BigCardGridProps) {
   return (
    <section>
-          {children}
+        <h2 className='underlined-mid textcenter marginBottomSmall'>{title}</h2>
           <div className={className}>
             {data.map((project, index) => (
               <BigCard key={index} {...project} />

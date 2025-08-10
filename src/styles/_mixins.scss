@@ -74,7 +74,7 @@
     opacity: .95;
     color: rgb($codeTextSec);
 
-    @media (max-width: $sm - 1px) {
+    @media (max-width: $sm) {
         font-size: $fs14;
     }
 }

@@ -11,8 +11,8 @@ export function HomePage() {
   <main>
     <Container span={{ default: 12}}><Hero /></Container>
     <Container span={{ default: 12 }}><StatCardGrid className='grid2-md4' data={statsData} /></Container>
-    <Container span={{ default: 12 }}><CardGrid className='grid-sm2-xl4' data={serviceData}><h2>Meine Dienstleistungen</h2></CardGrid></Container>
-    <Container span={{ default: 12 }}><BigCardGrid className='grid-lg2' data={projectData} showButton={true}><h2>Meine Projekte</h2></BigCardGrid></Container>
+    <Container span={{ default: 12 }}><CardGrid className='grid-sm2-xl4' data={serviceData} title='Meine Dienstleistungen'></CardGrid></Container>
+    <Container span={{ default: 12 }}><BigCardGrid className='grid-lg2' data={projectData} showButton={true} title='Meine Projekte'></BigCardGrid></Container>
     <Container span={{ default: 12 }}><CTASection data={ctaData} /></Container>   
   </main>
   )

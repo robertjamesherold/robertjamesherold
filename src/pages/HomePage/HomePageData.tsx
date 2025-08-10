@@ -5,23 +5,19 @@ import { type CallToActionProps } from '../../components/CallToAction';
 export const statsData = [
 {  
 title: '3+',
-text: 'Jahre',
-textTwo: 'Studium'
+text: (<>Jahre<br />Studium</>)
 },
 {
 title: '140',
-text: 'ECTS',
-textTwo: 'Credits'
+text: (<>ECTS<br />Credits</>)
 },
 {
 title: '1,7',
-text: 'Noten-',
-textTwo: 'durchschnitt'
+text: (<>Noten-<br />durchschnitt</>)
 },
 {
 title: '2024',
-text: 'Freelancer',
-textTwo: 'seit'
+text: (<>Freelancer<br />seit</>)
 }
 ];
 

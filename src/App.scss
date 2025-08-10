@@ -352,3 +352,7 @@ section {
     @include gap;
     height: fit-content;
 }
+
+.textBlue {
+    color: rgb($codeBlue);
+}
