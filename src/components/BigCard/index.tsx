@@ -1,17 +1,18 @@
-import React from 'react';
-import styles from './_ProjectList.module.scss'
 import { Link } from 'react-router-dom';
-import { ViewIcon } from '/src/assets/icons';
+import { ViewIcon } from '../../assets/icons';
 
 export type BigCardProps = {
+  id: string | number;
+  label?: string;
   image: string; 
   alt: string; 
   title: string; 
   text: string; 
   link: string; 
-  tags: string[]; 
+  tags: string[];
+  category?: string;
 }
-export function BigCard({  image, alt, title, description, link, tags  }: BigCardProps){return(
+export function BigCard({  image, alt, title, text, link, tags  }: BigCardProps){return(
   <div className='bigcard'>
       <div className='bigcardimage'>
         <img src={image} alt={alt} />

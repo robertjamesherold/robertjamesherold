@@ -49,19 +49,25 @@ export const serviceData = [
 
 export const projectData = [
 {
+    id: 'elearning',
+    label: 'E-Learning Konzept',
     image: webdesign ,
     alt: 'Fallstudie',
     title: 'E-Learning Konzept für Kinder',
-    description: 'Eine Fallstudie über ein E-Learning-Konzept, das Kinder auf spielerische Weise mit Mathematik in Kontakt bringt.',
+    text: 'Eine Fallstudie über ein E-Learning-Konzept, das Kinder auf spielerische Weise mit Mathematik in Kontakt bringt.',
     link: 'fallstudien/elearning',
     tags: ['Fallstudie'],
+    category: 'E-Learning'
 },
 {
+    id: 'olivenoel',
+    label: 'Olivenöl Branding',
     image: grafikdesign,
     alt: 'Olivenöl-Produktdesign',
-       title: 'Olivenöl Branding',
-    description: 'Entwicklung einer hochwertigen Markenidentität für premium Olivenöl aus Italien mit eleganter Verpackung und Corporate Design.',
+    title: 'Olivenöl Branding',
+    text: 'Entwicklung einer hochwertigen Markenidentität für premium Olivenöl aus Italien mit eleganter Verpackung und Corporate Design.',
     link: 'projekte/oliveto',
     tags: ['Photoshop', 'Illustrator', 'Figma'],
+    category: 'Grafikdesign'
 },
 ];

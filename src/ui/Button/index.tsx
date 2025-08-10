@@ -1,33 +1,44 @@
+import { type ReactNode } from 'react';
 import styles from './Button.module.scss';
 import { Link } from 'react-router-dom';
 
+type ButtonProps = {
+    variant?: 'button' | 'link' | 'alink';
+    isPrimary?: boolean;
+    action?: string;
+    text: string;
+    width?: string;
+    isCentered?: boolean;
+};
 export function Button({ 
-    variant = 'button',     // Default-Werte
-    isPrimary = true,       // Besserer Name als "useStyle"
+    variant = 'button',   
+    isPrimary = true,      
     action = '/',          
-    children,               // Flexibler als "text"
-    ...rest                // Andere Props durchreichen
-}){
-    // Direkt den richtigen Style wählen
+    text,   
+    width,
+    isCentered,
+    ...rest
+                  
+}: ButtonProps){
     const className = isPrimary ? styles.primary : styles.secondary;
-    
+    const margin = isCentered ? 'auto' : undefined;
     switch(variant) {
         case 'button':
             return (
-                <button className={className} type="button" {...rest}>
-                    {children}
+                <button className={className} style={{ width: width, marginInline: margin}} type="button" {...rest}>
+                    {text}
                 </button>
             );
         case 'link':
             return (
-                <Link className={className} to={action} {...rest}>
-                    {children}
+                <Link className={className} style={{ width: width, marginInline: margin}} to={action} {...rest}>
+                    {text}
                 </Link>
             );
         case 'alink':
             return (
-                <a className={className} href={action} {...rest}>
-                    {children}
+                <a className={className} style={{ width: width, marginInline: margin}} href={action} {...rest}>
+                    {text}
                 </a>
             );
         default:
