@@ -139,6 +139,11 @@ section {
     @include gap;
 }
 
+.grid-xs2-lg4 {
+    @include grid((default: 1, xs: 2, lg: 4));
+    @include gap;
+}
+
 .grid-lg2 {
     @include grid((default: 1, lg: 2));
     @include gap;
@@ -188,7 +193,10 @@ section {
     @include grid((default: 1, sm: 2, lg: 1));
     @include gap;
 }
-
+.grid-sm2-lg1 {
+    @include grid((default: 1, sm: 2, lg: 1));
+    @include gap;
+}
 .grid-xl2 {
     @include grid((default: 1, xl: 2));
     @include gap;

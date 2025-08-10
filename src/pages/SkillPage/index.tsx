@@ -1,15 +1,15 @@
-import React from 'react';
+import { CardGrid } from '../../layout/CardGrid'
 import { Container } from '../../layout/Container'
 import { SkillGrid } from './SkillPageSkillGrid'
-import { ProcessGrid } from './SkillPageProcessGrid'
 import { ToolsCloud } from './SkillPageToolsCloud'
-import { AchievementsGrid } from './SkillPageAchievementsGrid'
+import { CTASection } from '../../components/CallToAction'
 import { 
   designSkillsData, 
   webSkillsData, 
   designProcessData, 
   achievementsData, 
-  toolsData 
+  toolsData, 
+  ctaData
 } from './SkillPageData'
 
 export function SkillPage() {
@@ -30,13 +30,8 @@ export function SkillPage() {
         />
               </Container>
 
-      <Container span={{ default: 12}}>
 
-        <ProcessGrid 
-          title="Design Process"
-          data={designProcessData}
-        />
-              </Container>
+      <Container span={{ default: 12 }}><CardGrid className='grid-xs2-lg4' data={designProcessData}><h2>Design Process</h2></CardGrid></Container>
 
       <Container span={{ default: 12}}>
         <ToolsCloud 
@@ -44,15 +39,9 @@ export function SkillPage() {
           data={toolsData}
         />
               </Container>
-
-      <Container span={{ default: 12}}>
-
-        <AchievementsGrid 
-          title="Erfolge & Meilensteine"
-          data={achievementsData}
-        />
-              </Container>
-
+        <Container span={{ default: 12 }}><CardGrid className='grid-xs2-lg4' data={achievementsData}><h2>Erfolge & Meilensteine</h2></CardGrid></Container>
+        <Container span={{ default: 12 }}><CTASection data={ctaData} /></Container>   
+        
     </main>
   )
 }

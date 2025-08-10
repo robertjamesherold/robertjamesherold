@@ -1,3 +1,6 @@
+import { type CardProps } from '../../components/Card';
+import { type CallToActionProps } from '../../components/CallToAction';
+
 export const designSkillsData = [
   { name: 'Figma', level: 95, icon: '🎨', description: 'UI/UX Design, Prototyping' },
   { name: 'Photoshop', level: 90, icon: '🖼️', description: 'Bildbearbeitung, Compositing' },
@@ -16,59 +19,55 @@ export const webSkillsData = [
   { name: 'Git', level: 70, icon: '📚', description: 'Versionskontrolle' }
 ];
 
-export const designProcessData = [
+export const designProcessData: CardProps[] = [
   {
     title: 'Research',
     icon: '🔍',
-    skills: ['User Research', 'Competitive Analysis', 'Stakeholder Interviews', 'Market Research'],
-    description: 'Verstehen der Nutzer und des Marktes durch umfassende Recherche.'
+    text: 'Verstehen der Nutzer und des Marktes durch umfassende Recherche.'
   },
   {
     title: 'Konzept',
     icon: '💡',
-    skills: ['Brainstorming', 'Sketching', 'Mind Mapping', 'User Journey Mapping'],
-    description: 'Entwicklung kreativer Lösungsansätze und Konzepte.'
+    text: 'Entwicklung kreativer Lösungsansätze und Konzepte.'
   },
   {
     title: 'Prototyping',
     icon: '🎨',
-    skills: ['Wireframing', 'Visual Design', 'Prototyping', 'Design Systems'],
-    description: 'Umsetzung der Konzepte in visuelle und interaktive Designs.'
+    text: 'Umsetzung der Konzepte in visuelle und interaktive Designs.'
   },
   {
     title: 'Evaluation',
     icon: '🔄',
-    skills: ['Usability Testing', 'A/B Testing', 'User Feedback', 'Design Iteration'],
-    description: 'Kontinuierliche Verbesserung durch Tests und Nutzerfeedback.'
+    text: 'Kontinuierliche Verbesserung durch Tests und Nutzerfeedback.'
   }
 ];
 
-export const achievementsData = [
+export const achievementsData: CardProps[] = [
   {
     icon: '🎓',
     title: (<>Bachelor<br /> Mediendesign</>),
-    description: 'IU Internationale Hochschule',
-    metric: '1,8 Durchschnitt'
+    text: 'IU Internationale Hochschule',
+    tags: ['1,8 Durchschnitt']
   },
   {
     icon: '👨‍💼',
     title: ( <>
         Studierenden-<br />vertreter
       </>),
-    description: 'Mediendesign 2025',
-    metric: '6 Monate'
+    text: 'Mediendesign 2025',
+    tags: ['6 Monate']
   },
   {
     icon: '💼',
     title: (<>Freelance<br />Designer</>),
-    description: 'Seit 2024',
-    metric: '10+ Projekte'
+    text: 'Seit 2024',
+    tags: ['10+ Projekte']
   },
   {
     icon: '🏆',
     title: (<>Beste<br />Noten</>),
-    description: 'Design-Projekte',
-    metric: 'Mehrere 1,0'
+    text: 'Design-Projekte',
+    tags: ['Mehrere 1,0']
   }
 ];
 
@@ -90,3 +89,14 @@ export const toolsData = [
 
   
 ];
+
+export const ctaData: CallToActionProps[]=  [{
+  title: 'Bereit für Ihr nächstes Design-Projekt?',
+  text: 'Lassen Sie uns gemeinsam Ihre Ideen visuell zum Leben erwecken. Ich freue mich auf Ihre Nachricht!',
+  primaryButtonText: 'Kontaktiere mich',
+  primaryButtonLink: '/kontakt',
+  isTwo: false,
+  secondaryVar: 'button',
+  secondaryButtonText: 'Mehr erfahren',
+  secondaryButtonLink: '/mehr-erfahren'
+}];
