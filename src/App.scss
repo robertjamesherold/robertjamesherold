@@ -44,7 +44,17 @@ main {
     @include paddingMain;
     @include gap;
 
+    @media (min-width: $lg){
+    max-width: 1200px;
+    }
+
+    @media (min-width: $xl){
+    max-width: 1440px;
+    }
 }
+
+header {
+    grid-column: span 12 }
 
 .spangrid {
     display: flex;
@@ -126,6 +136,11 @@ section {
 
 .grid-md2-lg4 {
     @include grid((default: 1, md: 2, lg: 4));
+    @include gap;
+}
+
+.grid-xs2 {
+    @include grid((default: 1, xs: 2));
     @include gap;
 }
 

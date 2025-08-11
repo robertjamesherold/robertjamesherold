@@ -4,19 +4,20 @@
     display: grid;
     grid-template-columns: 1fr;
     @include gapSmall;
+    z-index:1;
     @media (min-width: $sm)
         {
         grid-template-columns: auto 1fr;
     &:only-child {
         grid-template-columns:auto 1fr;}
     
-    &:not(:last-child)::after
+    &:not(:last-child)::before
     {
         position: absolute;
-        top: 40px;
+        top: 0px;
         bottom: -$space5;
         left: 60px;
-
+        z-index:0;
         width: 2px;
 
         content: '';
@@ -45,7 +46,7 @@
 
     text-align: center;
     white-space: nowrap;
-
+    z-index:2;
     color: rgb($codeBgPri);
     border-radius: $radius1 / 2;
     background-color: rgb($codeBlue);

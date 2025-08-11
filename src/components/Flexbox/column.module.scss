@@ -15,9 +15,16 @@
     justify-content: center;
 }
 
-.gap {
+.large {
     @include gap;
 }
+.small   {
+    @include gapMini;
+}
+.medium  {
+    @include gapSmall;
+}
+
 
 .fit-content {
     margin-inline: auto;

@@ -1,53 +1,7 @@
 import webdesign from '/src/assets/images/elearning/game.png'
 import grafikdesign from '/src/assets/images/oliveto/g4.webp'
-import { type CallToActionProps } from '../../components/CallToAction';
-import { type CardProps } from '../../components/Card';
-import { type StatCardProps } from '../../components/StatCard';
 import { type BigCardProps } from '../../components/BigCard';
-
-export const statsData: StatCardProps[] = [
-{  
-title: '3+',
-text: 'Jahre\nStudium'
-},
-{
-title: '140',
-text: 'ECTS\nCredits'
-},
-{
-title: '1,7',
-text: 'Noten-\ndurchschnitt'
-},
-{
-title: '2024',
-text: 'Freelancer\nseit'
-}
-];
-
-export const serviceData: CardProps[]  = [
-  {
-    icon: '🎨',
-    title: 'UI/UX Design',
-    text: 'Benutzerfreundliche Interfaces und durchdachte User Experience mit Figma und modernen Design-Prinzipien.'
-  },
-  {
-    icon: '💻',
-    title: 'Webentwicklung',
-    text: 'Moderne Webanwendungen mit React, Node.js und MongoDB für optimale Performance.'
-  },
-  {
-    icon: '📱',
-    title: 'Mobile Apps',
-    text: 'Entwicklung von plattformübergreifenden Apps mit React Native für iOS und Android.'
-  },
-  {
-    icon: '🎬',
-    title: 'Video-Produktion',
-    text: 'Professionelle Videoproduktion und -bearbeitung für Marketing und Social Media.'
-  }
-];
-
-export const projectData: BigCardProps[] = [
+export const ProjectData: BigCardProps[] = [
 {
     id: 'elearning',
     label: 'E-Learning Konzept',

@@ -1,6 +1,6 @@
 import { BigCard } from '../../components/BigCard'
 import type { BigCardProps } from '../../components/BigCard'
-import { Column } from '../../components/Flexbox/Column';
+import { Flexbox } from '../../components/Flexbox';
 import { Button } from '../../ui/Button';
 
 type BigCardGridProps ={
@@ -18,9 +18,9 @@ export function BigCardGrid({  data, showButton, title, className = ''}: BigCard
               <BigCard key={index} {...project} />
             ))}
           </div>
-          {showButton && <Column width='100%' justify='center' align='center' padding='1rem 0 0 0' >
+          {showButton && <Flexbox width='100%' justify='center' align='center' padding='1rem 0 0 0' >
             <Button action='/projekte' variant='link' isPrimary={false} width='fit-content' isCentered={true} text='Alle Projekte'></Button>
-          </Column>}
+          </Flexbox>}
         </section>
   );
 }
