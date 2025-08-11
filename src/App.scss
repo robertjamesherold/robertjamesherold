@@ -139,6 +139,11 @@ section {
     @include gap;
 }
 
+.grid-xs2 {
+    @include grid((default: 1, xs: 2));
+    @include gap;
+}
+
 .grid-sm2 {
     @include grid((default: 1, sm: 2));
     @include gap;

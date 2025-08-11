@@ -5,8 +5,9 @@ export const CTAData: CallToActionProps[]=  [{
   text: 'Lassen Sie uns gemeinsam Ihre Ideen visuell zum Leben erwecken. Ich freue mich auf Ihre Nachricht!',
   primaryButtonText: 'Kontaktiere mich',
   primaryButtonLink: '/kontakt',
-  isTwo: false,
-  secondaryVar: 'button',
-  secondaryButtonText: 'Mehr erfahren',
-  secondaryButtonLink: '/mehr-erfahren'
+  primaryVar: 'link',
+  isTwo: true,
+  secondaryVar: 'link',
+  secondaryButtonText: 'Meine Projekte',
+  secondaryButtonLink: '/projekte'
 }];

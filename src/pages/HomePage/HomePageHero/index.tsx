@@ -1,7 +1,6 @@
 import styles from './_Hero.module.scss'
-import { Link } from 'react-router-dom'
 import { CodeAnimation } from './HeroCodeAnimation';
-import { GitHubIcon, LinkedInIcon, MailIcon } from '/src/assets/icons';
+import { GitHubIcon, LinkedInIcon, MailIcon } from '../../../assets/icons';
 import { Button } from '../../../ui/Button';
 import { Flexbox } from '../../../components/Flexbox';
 
@@ -18,11 +17,11 @@ export function Hero() {
                     <Button variant='link' isPrimary={true} action='/projekte' text='Meine Projekte' width='100%' isCentered={true} />
                     <Button variant='link' isPrimary={false} action='/kontakt' text='Kontakt aufnehmen' width='100%' isCentered={true} />
                 </div>
-                <Flexbox flex='row' gap='small'>
+                <div className={styles.socialLinks}>
                     <GitHubIcon height='2.75em' width='2.75em'/>
                     <LinkedInIcon height='2.75em' width='2.75em'/>
                     <MailIcon height='2.75em' width='2.75em'/>
-                </Flexbox>
+                </div>
             </div>
             <CodeAnimation />
         </div>

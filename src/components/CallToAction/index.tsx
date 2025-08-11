@@ -35,10 +35,11 @@ export function CallToAction({
         <div className='cardcontent aligncenter'>
           <h3 className='textcenter' style={{ color: 'white' }}>{title}</h3>
           <p className='carddescription textcenter' style={{ maxWidth: '60vw', color: 'white' }} >{text}</p>
-          <Flexbox width='100%' justify='center' align='center'>
-            {isTwo && <Button variant={secondaryVar} action={secondaryButtonLink} isPrimary={true} width='fit-content' text={secondaryButtonText} />}
+          <Flexbox width='fit-content' justify='center' align='center'>
+          <div className={isTwo ? 'grid-xs2' : ''}>
+            {isTwo && <Button variant={secondaryVar} action={secondaryButtonLink} isPrimary={true} width='100% ' text={secondaryButtonText} />}
             <Button variant={primaryVar} action={primaryButtonLink} isPrimary={false} width='fit-content' text={primaryButtonText} />
-
+          </div>
 
 
           </Flexbox>
