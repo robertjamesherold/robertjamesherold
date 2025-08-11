@@ -18,12 +18,12 @@ export function StoryPage() {
           <CTASection data={ctaData} />
         </div>
       </Container>
-      <Container span={{ default: 12, lg: 4 }}><CardGrid className='grid-sm2-lg1' data={serviceData}><h2>Erfolge & Meilensteine</h2></CardGrid></Container>
+      <Container span={{ default: 12, lg: 4 }}><CardGrid className='grid-sm2-lg1' data={serviceData} title='Erfolge & Meilensteine'></CardGrid></Container>
       <Container span={{ default: 12 }}>
         <Personal 
           title={personalData.title}
           text={personalData.text}
-          stats={personalData.stats}
+          data={personalData.stats}
         />
       </Container>
     

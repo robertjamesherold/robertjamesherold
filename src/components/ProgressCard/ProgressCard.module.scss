@@ -1,0 +1,31 @@
+.skillLevel {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include gapMini;
+}
+
+.skillBar {
+  background: #eee;
+  border-radius: 4px;
+  position: relative;
+  display:flex;
+  overflow: hidden;
+  height: 8px;
+  flex-direction: row;
+  width: 100%;
+}
+
+.skillProgress {
+  background: #0070f3;
+  height: 8px;
+}
+
+.skillPercent {
+  position: relative;
+  right: 0;
+  top: 0;
+  font-size: 12px;
+  color: #666;
+}

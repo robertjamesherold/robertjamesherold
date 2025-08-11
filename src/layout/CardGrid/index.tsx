@@ -1,17 +1,16 @@
-import type { ReactNode } from 'react'
 import { Card } from '../../components/Card'
 import type { CardProps } from '../../components/Card'
 
 type CardGridProps = {
   data: CardProps[],
   className?: string,
-  children?: ReactNode
+  title?: string
 }
 
-export function CardGrid({  data, className = "", children }: CardGridProps) {
+export function CardGrid({  data, className = "", title }: CardGridProps) {
   return (
     <section>
-      {children}
+      <h2 className='underlined-mid textcenter marginBottomSmall'>{title}</h2>
       <div className={className}>
         {data.map((content, index) => (
           <Card

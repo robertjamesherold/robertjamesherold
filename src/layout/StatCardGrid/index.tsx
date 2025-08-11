@@ -1,10 +1,8 @@
-import React from 'react';
-import type { StatCardProps } from '../../components/StatCard'
-import { StatCard } from '../../components/StatCard'
+import {StatCard, type StatCardProps } from '../../components/StatCard'
 
 
 type StatCardGridProps = {
-  data: StatsCardProps[],
+  data: StatCardProps[],
   className: string
 }
 
@@ -22,3 +20,5 @@ export function StatCardGrid({ data, className = 'grid2-md4' }: StatCardGridProp
     </section>
   );
 }
+
+

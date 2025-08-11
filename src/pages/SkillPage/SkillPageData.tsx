@@ -2,21 +2,21 @@ import { type CardProps } from '../../components/Card';
 import { type CallToActionProps } from '../../components/CallToAction';
 
 export const designSkillsData = [
-  { name: 'Figma', level: 95, icon: '🎨', description: 'UI/UX Design, Prototyping' },
-  { name: 'Photoshop', level: 90, icon: '🖼️', description: 'Bildbearbeitung, Compositing' },
-  { name: 'Illustrator', level: 85, icon: '✏️', description: 'Vektorgrafiken, Logos' },
-  { name: 'InDesign', level: 80, icon: '📄', description: 'Layout Design, Print Design' },
-  { name: 'After Effects', level: 75, icon: '🎬', description: 'Motion Graphics, Animation' },
-  { name: 'Premiere Pro', level: 70, icon: '🎞️', description: 'Schnitt, Color Grading' }
+  { id:1, name: 'Figma', level: 95, icon: '🎨', text: 'UI/UX Design, Prototyping' },
+  { id:2, name: 'Photoshop', level: 90, icon: '🖼️', text: 'Bildbearbeitung, Compositing' },
+  { id:3, name: 'Illustrator', level: 85, icon: '✏️', text: 'Vektorgrafiken, Logos' },
+  { id:4, name: 'InDesign', level: 80, icon: '📄', text: 'Layout Design, Print Design' },
+  { id:5, name: 'After Effects', level: 75, icon: '🎬', text: 'Motion Graphics, Animation' },
+  { id:6, name: 'Premiere Pro', level: 70, icon: '🎞️', text: 'Schnitt, Color Grading' }
 ];
 
 export const webSkillsData = [
-  { name: 'HTML5', level: 90, icon: '🏗️', description: 'Markup, SEO' },
-  { name: 'CSS3', level: 85, icon: '🎨', description: 'Responsive, Grid/Flexbox' },
-  { name: 'JavaScript', level: 75, icon: '⚡', description: 'React, Interaktivität' },
-  { name: 'SCSS/Sass', level: 80, icon: '💅', description: 'Variables, Mixins' },
-  { name: 'WordPress', level: 80, icon: '📝', description: 'Custom Themes, CMS' },
-  { name: 'Git', level: 70, icon: '📚', description: 'Versionskontrolle' }
+  { id:1, name: 'HTML5', level: 90, icon: '🏗️', text: 'Markup, SEO' },
+  { id:2, name: 'CSS3', level: 85, icon: '🎨', text: 'Responsive, Grid/Flexbox' },
+  { id:3, name: 'JavaScript', level: 75, icon: '⚡', text: 'React, Interaktivität' },
+  { id:4, name: 'SCSS/Sass', level: 80, icon: '💅', text: 'Variables, Mixins' },
+  { id:5, name: 'WordPress', level: 80, icon: '📝', text: 'Custom Themes, CMS' },
+  { id:6, name: 'Git', level: 70, icon: '📚', text: 'Versionskontrolle' }
 ];
 
 export const designProcessData: CardProps[] = [
@@ -47,7 +47,7 @@ export const achievementsData: CardProps[] = [
     icon: '🎓',
     title: (<>Bachelor<br /> Mediendesign</>),
     text: 'IU Internationale Hochschule',
-    tags: ['1,8 Durchschnitt']
+    tag: '1,8 Durchschnitt'
   },
   {
     icon: '👨‍💼',
@@ -55,19 +55,19 @@ export const achievementsData: CardProps[] = [
         Studierenden-<br />vertreter
       </>),
     text: 'Mediendesign 2025',
-    tags: ['6 Monate']
+    tag: '6 Monate'
   },
   {
     icon: '💼',
     title: (<>Freelance<br />Designer</>),
     text: 'Seit 2024',
-    tags: ['10+ Projekte']
+    tag: '10+ Projekte'
   },
   {
     icon: '🏆',
     title: (<>Beste<br />Noten</>),
     text: 'Design-Projekte',
-    tags: ['Mehrere 1,0']
+    tag: 'Mehrere 1,0'
   }
 ];
 

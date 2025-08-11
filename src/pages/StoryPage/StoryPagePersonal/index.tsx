@@ -1,25 +1,16 @@
-import React, { useRef, useEffect } from 'react';
-import styles from './_Personal.module.scss';
+import { useRef, useEffect, type ReactNode } from 'react';
+import { Stat, type StatCardProps } from '../../../components/StatCard';
 
-interface StatProps {
-  number: number;
-  label: string; 
-}
-
-const Stat: React.FC<StatProps> = ({ number, label }) => (
-  <div className={styles.stat}>
-    <span className={styles.statNumber}>{number}</span>
-    <span className={styles.statLabel}>{label}</span>
-  </div>
-);
-
-interface PersonalProps {
+export type PersonalProps = {
   title: string;
-  text: string[];
-  stats: { number: number; label: string }[];
+  text: ReactNode;
+  data: StatCardProps[];
+  className: string;
+  id: string;
+
 }
 
-function Personal({ title, text, stats }: PersonalProps) {
+function Personal({data }: PersonalProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -44,30 +35,30 @@ function Personal({ title, text, stats }: PersonalProps) {
   }, []);
 
   return (
-    <div className={styles.personal}>
-      <div className={styles.personalContent}>
-        <div className={styles.personalGrid}>
+    <div className='card'>
+      <div className='personalContent'>
+        <div className='personalGrid' style={{position: 'relative', gridTemplateRows: 'auto auto'}}>
 
           {/* Desktop-Grid (sichtbar ab lg) */}
-          <div className={styles.personalStats}>
-            {stats.map((stat, index) => (
+          <div className='personalStats'>
+            {data.map((stat, index) => (
               <Stat key={index} {...stat} />
             ))}
           </div>
 
           {/* Mobile-Slider (nur bis lg sichtbar) */}
-          <div className={styles.statsSliderWrapper}>
-            <div className={styles.statsSliderTrack} ref={sliderRef}>
-              {[...stats, ...stats].map((stat, index) => (
+          <div className='statsSliderWrapper'>
+            <div className='statsSliderTrack' ref={sliderRef}>
+              {[...data, ...data].map((stat, index) => (
                 <Stat key={index} {...stat} />
               ))}
             </div>
           </div>
 
-          <div className={styles.personalText}>
-            <h2 className={styles.personalTitle}>{title}</h2>
-            {text.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
+          <div className='personalText'>
+            <h2 className='personalTitle'>{title}</h2>
+            {data.map((text, index) => (
+              <p key={index}>{text}</p>
             ))}
           </div>
         </div>

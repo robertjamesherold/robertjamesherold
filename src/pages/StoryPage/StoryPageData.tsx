@@ -60,34 +60,33 @@ export const serviceData = [
 
 export const personalData = {
   title: "Mehr über mich",
-  text: [
-    "Wenn ich nicht gerade an Designs arbeite, experimentiere ich gerne mit neuen Tools und Technologien oder vertiefe mich in Design-Blogs und Tutorials. Als Studierendenvertreter an der IU bringe ich aktiv Ideen zur Verbesserung der Zusammenarbeit ein.",
+  text: (<>"Wenn ich nicht gerade an Designs arbeite, experimentiere ich gerne mit neuen Tools und Technologien oder vertiefe mich in Design-Blogs und Tutorials. Als Studierendenvertreter an der IU bringe ich aktiv Ideen zur Verbesserung der Zusammenarbeit ein."<br/><br/>
     "Meine Reise von der Fachoberschule über das Praktikum bis zum Studium war geprägt von kontinuierlichem Lernen. Jede Station hat mir geholfen, Design aus verschiedenen Blickwinkeln zu betrachten und kreative Lösungen zu entwickeln."
-  ],
+  </>),
   stats: [
   
     {
-      number: "3+",
-      label: "Jahre Studium"
+      title: "3+",
+      text: (<>Jahre Studium</>)
     }, {
-      number: "100%",
-      label: "Lernbereitschaft"
+      title: "100%",
+      text: (<>Lernbereitschaft</>)
     },
    
     {
-      number: "10+",
-      label: "Jahre Erfahrung"
+      title: "10+",
+      text: (<>Jahre Erfahrung</>)
     }, 
      {
-      number: "100%",
-      label: "Motiviert"
+      title: "100%",
+      text: (<>Motiviert</>)
     }, {
-      number: "1,7",
-      label: "Notendurchschnitt"
+      title: "1,7",
+      text: (<>Notendurchschnitt</>)
     },
     {
-      number: "100%",
-      label: "Engagiert"
+      title: "100%",
+      text: (<>Engagiert</>)
     },
     
   
