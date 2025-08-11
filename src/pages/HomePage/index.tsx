@@ -1,19 +1,20 @@
-import { statsData, serviceData, projectData, ctaData } from './HomePageData';
+import { home } from '../../data/Home' 
 import { Container } from '../../layout/Container'
 import { Hero } from './HomePageHero' 
 import { StatCardGrid } from '../../layout/StatCardGrid'
 import { CardGrid } from '../../layout/CardGrid'
 import { BigCardGrid } from '../../layout/BigCardGrid'
 import { CTASection } from '../../components/CallToAction'
+import { Header } from '../../layout/Header'
 
 export function HomePage() {
   return (
   <main>
-    <Container span={{ default: 12}}><Hero /></Container>
-    <Container span={{ default: 12 }}><StatCardGrid className='grid2-md4' data={statsData} /></Container>
-    <Container span={{ default: 12 }}><CardGrid className='grid-sm2-xl4' data={serviceData} title='Meine Dienstleistungen'></CardGrid></Container>
-    <Container span={{ default: 12 }}><BigCardGrid className='grid-lg2' data={projectData} showButton={true} title='Meine Projekte'></BigCardGrid></Container>
-    <Container span={{ default: 12 }}><CTASection data={ctaData} /></Container>   
+    <Header><Hero /></Header>
+    <Container><StatCardGrid className='grid2-md4' data={home.stats} /></Container>
+    <Container><CardGrid className='grid-sm2-xl4' data={home.services} title='Meine Dienstleistungen'></CardGrid></Container>
+    <Container><BigCardGrid className='grid-lg2' data={home.projects} showButton={true} title='Meine Projekte'></BigCardGrid></Container>
+    <Container><CTASection data={home.cta} /></Container>   
   </main>
   )
 }

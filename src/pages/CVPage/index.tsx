@@ -1,43 +1,21 @@
-import { educationData, additionalData, experienceData, CTAData, sidesectionData } from './CVData'
+import { cv, sidesection } from '../../data/CV'
 import { TimeLine } from '../../layout/TimeLine'
-
 import { CTASection } from '../../components/CallToAction'
 import { Container } from '../../layout/Container'
 import { CVSideSection } from '../../layout/CVSideSection'
+import { Header } from '../../layout/Header'
 
 
 
 export function CVPage() {
 
   return (
-  <main>
-  
-  <Container span={{ default: 12 }}>
-    <h1 className='colored'>Lebenslauf</h1>
-  </Container>
+    <main>
+      <Header title='Lebenslauf'/>
+      <Container span={{ default: 12, md: 7 }}><div className="grid"><TimeLine title="Bildung" data={cv.education} /><TimeLine title="Berufserfahrung" data={cv.experience} /><TimeLine title="Zusätzliche Aktivitäten" data={cv.additional} /></div></Container>
+      <Container span={{ default: 12, md: 5 }}><CVSideSection data={sidesection} /></Container>
+      <Container span={{ default: 12 }}><CTASection data={cv.cta} /></Container>
+    </main>
 
-            <Container span={{ default: 12 , md: 7 }}>
-              <div className="grid">
-               <TimeLine title="Bildung" data={educationData} />
-               <TimeLine title="Berufserfahrung" data={experienceData} />
-                              <TimeLine title="Zusätzliche Aktivitäten" data={additionalData} />
-
-              </div>
-            </Container>
-        
-            <Container span={{ default: 12 ,md: 5}}><CVSideSection data={sidesectionData}/>              </Container>
-     
-                     <Container span={{ default: 12}}>
-
-         <CTASection data={CTAData} />
-
-
-         
-  
-
-        </Container>
-            
-      </main>
-  
   )
 }

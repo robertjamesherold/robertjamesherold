@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import styles from './_Container.module.scss';
 import clsx from 'clsx';
-
 type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 type SpanProps = { default?: number } & Partial<Record<Breakpoint, number>>;
 
@@ -30,6 +29,9 @@ export function Container({ children, span }: ContainerProps) {
     }
   }
 
-  return <div className={clsx(styles.container, ...spanClasses)}>{children}</div>;
+  return <section className={clsx(styles.container, ...spanClasses)}>{children}</section>;
 }
 
+Container.defaultProps = {
+  span: { default: 12 }
+}

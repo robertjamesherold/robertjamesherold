@@ -9,11 +9,12 @@ import {
   achievementsData, 
   ctaData
 } from './SkillPageData'
+import { Header } from '../../layout/Header'
 
 export function SkillPage() {
   return (
     <main>
-      <Container span={{ default: 12 }}><h1 className='colored textcenter'>Skills & Technologien</h1></Container>
+      <Header title='Skills & Technologien'/>
       <Container span={{ default: 12 }}><ProgressCardGrid className='grid-sm2-lg3' data={designSkillsData} title='Design Technologien'/></Container>
       <Container span={{ default: 12 }}><ProgressCardGrid className='grid-sm2-lg3' data={webSkillsData} title='Design Technologien'/></Container>
       <Container span={{ default: 12 }}><CardGrid className='grid-xs2-lg4' data={designProcessData} title='Design Process'></CardGrid></Container>
