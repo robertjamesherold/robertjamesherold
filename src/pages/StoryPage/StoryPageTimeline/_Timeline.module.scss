@@ -4,60 +4,41 @@
 .timelineItem
 {
     position: relative;
-
     display: grid;
     height: $space100;
-
     grid-template-columns: 1fr;
     @include gap;
-   @media (min-width: $sm)
-        {
-    
+    @media (min-width: $sm) {  
         grid-template-columns: auto 1fr;
-        
-    &:only-child {
+    &:only-child { 
         grid-template-columns: 1fr;}
-    
-    &:not(:last-child)::after
-    {
+    &:not(:last-child)::after{
         position: absolute;
         top: 40px;
         bottom: -$space5;
         left: 60px;
-
         width: 2px;
-
         content: '';
-            display: block;
-
+        display: block;
         background-color: rgb($codeTextSec);
-        @media (min-width: $sm)
-        {
-                bottom: -$space2n5;
-
-            display: block;
-            
+    @media (min-width: $sm){
+        bottom: -$space2n5;
+        display: block;    
         }
+    }
+}
 
-     
-}}
-
-.timelinePeriod
-{
+.timelinePeriod {
     font-size: $fs16;
     font-weight: $fw6;
-
     min-width: 120px;
     height: fit-content;
     padding: $space0n5 $space1;
-
     text-align: center;
     white-space: nowrap;
-
     color: rgb($codeBgPri);
     border-radius: $radius1 / 2;
     background-color: rgb($codeBlue);
-
 }
 
 .timelineContent

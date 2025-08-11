@@ -1,0 +1,19 @@
+.toolTag
+{
+    font-size: $fs16;
+    font-weight: $fw6;
+    display: inline-flex;
+    align-items: center;
+    @include paddingSmall;
+    transition: $all0n3;
+    text-decoration: none;
+    color: rgb($codeTextPri);
+    border: 2px solid var(--tool-color, rgb($codeRed));
+    border-radius: $radius1;
+    background-color: rgb($codeBgPri);
+    &:hover
+    {
+        background-color: var(--tool-color, rgb($codeBlue));
+        box-shadow: $shadMd;
+    }
+}

@@ -1,5 +1,5 @@
 import { useRef, useEffect, type ReactNode } from 'react';
-import { Stat, type StatCardProps } from '../../../components/StatCard';
+import { Stat, type StatCardProps } from '../../components/StatCard';
 
 export type PersonalProps = {
   title: string;

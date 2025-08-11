@@ -5,31 +5,31 @@ export const timelineData = [
   {
     title: "Der Anfang - Erste Schritte im Design",
     period: "2015 - 2017",
-    description: "Meine Reise begann an der Gutenbergschule in Frankfurt mit der Fachoberschule Gestaltung. Hier entdeckte ich meine Leidenschaft für visuelles Design und lernte die Grundlagen der kreativen Gestaltung kennen."
+    text: "Meine Reise begann an der Gutenbergschule in Frankfurt mit der Fachoberschule Gestaltung. Hier entdeckte ich meine Leidenschaft für visuelles Design und lernte die Grundlagen der kreativen Gestaltung kennen."
   },
   {
     title: "Erste Praxis - Praktikum bei sixeyesmedia",
     period: "2015 - 2016",
-    description: "Während meines Praktikums bei sixeyesmedia GmbH sammelte ich erste praktische Erfahrungen als Mediengestalter. Hier lernte ich den Arbeitsalltag einer Medienagentur kennen und vertiefte mein Verständnis für professionelles Design."
+    text: "Während meines Praktikums bei sixeyesmedia GmbH sammelte ich erste praktische Erfahrungen als Mediengestalter. Hier lernte ich den Arbeitsalltag einer Medienagentur kennen und vertiefte mein Verständnis für professionelles Design."
   },
   {
     title: "Vertiefung - Mediendesign Studium",
     period: "2022 - 2025",
-    description: "An der IU Internationalen Hochschule studiere ich Mediendesign und erweitere kontinuierlich mein Wissen in UI/UX Design, Webdesign und digitalen Medienformaten. Mit 135 ECTS Credits und einem Durchschnitt von 1,8 bin ich auf dem besten Weg zum Abschluss."
+    text: "An der IU Internationalen Hochschule studiere ich Mediendesign und erweitere kontinuierlich mein Wissen in UI/UX Design, Webdesign und digitalen Medienformaten. Mit 135 ECTS Credits und einem Durchschnitt von 1,8 bin ich auf dem besten Weg zum Abschluss."
   },
   
    {
     title: "Engagement - Studierendenvertretung",
     period: "2025",
-    description: "Als Studierendenvertreter an der IU setze ich mich aktiv für die Interessen meiner Kommilitonen ein. Ich arbeite an der Verbesserung der Studienbedingungen und fördere den Austausch zwischen Studierenden und Dozenten."},
+    text: "Als Studierendenvertreter an der IU setze ich mich aktiv für die Interessen meiner Kommilitonen ein. Ich arbeite an der Verbesserung der Studienbedingungen und fördere den Austausch zwischen Studierenden und Dozenten."},
 {
     title: "Heute - Freelance Webdesigner",
     period: "Heute",
-    description: "Seit 2024 arbeite ich als freiberuflicher Webdesigner und UI/UX-Designer. Ich verbinde mein akademisches Wissen mit praktischer Erfahrung und erstelle moderne, benutzerfreundliche Designs für verschiedene Kunden."
+    text: "Seit 2024 arbeite ich als freiberuflicher Webdesigner und UI/UX-Designer. Ich verbinde mein akademisches Wissen mit praktischer Erfahrung und erstelle moderne, benutzerfreundliche Designs für verschiedene Kunden."
   },{
     title: "Zukunft - Stetige Weiterentwicklung",
     period: "Zukunft",
-    description: "Ich strebe danach, meine Fähigkeiten ständig zu erweitern und neue Trends im Design zu verfolgen. Ob durch Online-Kurse, Workshops oder den Austausch mit anderen Kreativen – Lernen ist für mich ein lebenslanger Prozess."},
+    text: "Ich strebe danach, meine Fähigkeiten ständig zu erweitern und neue Trends im Design zu verfolgen. Ob durch Online-Kurse, Workshops oder den Austausch mit anderen Kreativen – Lernen ist für mich ein lebenslanger Prozess."},
  
 ];
 
