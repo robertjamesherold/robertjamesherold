@@ -1,16 +1,13 @@
-import { cvData } from './CVData'
-import { TimelineSection } from './CVTimeline'
-import { SkillSection } from './CVSkills'
-import { AchievementSection } from './CVAchievements'
-import { LanguageSection } from './CVLanguage'
-import { CallToAction } from '/src/components/CallToAction'
+import { educationData, additionalData, experienceData, CTAData, sidesectionData } from './CVData'
+import { TimeLine } from '../../layout/TimeLine'
+
+import { CTASection } from '../../components/CallToAction'
 import { Container } from '../../layout/Container'
-import { useBreakpoint } from '@ho/useBreakpoint'
+import { CVSideSection } from '../../layout/CVSideSection'
+
 
 
 export function CVPage() {
-  const showDesktopContent = useBreakpoint(1024)
-
 
   return (
   <main>
@@ -19,35 +16,25 @@ export function CVPage() {
     <h1 className='colored'>Lebenslauf</h1>
   </Container>
 
-            <Container span={{ default: 12 , xl: 7}}>
+            <Container span={{ default: 12 , md: 7 }}>
               <div className="grid">
-               <TimelineSection title="Bildung" items={cvData.education} />
-               <TimelineSection title="Berufserfahrung" items={cvData.experience} />
-                              <TimelineSection title="Zusätzliche Aktivitäten" items={cvData.additionalActivities} />
+               <TimeLine title="Bildung" data={educationData} />
+               <TimeLine title="Berufserfahrung" data={experienceData} />
+                              <TimeLine title="Zusätzliche Aktivitäten" data={additionalData} />
 
               </div>
             </Container>
         
-            <Container span={{ default: 12 ,xl: 5}}>
-              <div className="grid">
-            <SkillSection categories={cvData.skills.categories} />
-            <AchievementSection title="Studienleistungen" achievements={cvData.achievements} />
-            <LanguageSection languages={cvData.languages} />
+            <Container span={{ default: 12 ,md: 5}}><CVSideSection data={sidesectionData}/>              </Container>
+     
+                     <Container span={{ default: 12}}>
 
-              </div>  </Container>  
-   
-            <Container span={{ default: 12 }}>
+         <CTASection data={CTAData} />
 
 
          
-        <CallToAction 
-          title='Bereit für Ihr nächstes Design-Projekt?'
-          text='Lassen Sie uns gemeinsam Ihre Ideen visuell zum Leben erwecken. Ich freue mich auf Ihre Nachricht!'
-          primaryButtonText='Kontaktiere mich'
-          primaryButtonLink='/kontakt'
-          showPrimaryButton={true}
-          showSecondaryButton={false}
-        />
+  
+
         </Container>
             
       </main>

@@ -392,11 +392,11 @@ section {
     grid-template-columns: 1fr;
     @include gap;
 
-    @media (min-width: $lg)
+    @media (min-width: $md)
     {
         align-items: center;
 
-        grid-template-columns: 2fr 2fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -432,13 +432,13 @@ section {
     grid-template-columns: repeat(1, 1fr);
     gap: $space1;
 
-    @media (min-width: $sm)
+    @media (min-width: $xs)
     {
         gap: $space1n5;
         grid-template-columns: repeat(3, 1fr);
     }
 
-    @media (min-width: $lg)
+    @media (min-width: $md)
     {
         grid-template-columns: repeat(2, 1fr);
         gap: $space2;
@@ -505,7 +505,7 @@ section {
     margin-top: -$space1n5;
     padding: $space1n5 0;;
 
-    @media (min-width: $md)
+    @media (min-width: $sm)
     {
         display: none;
     }

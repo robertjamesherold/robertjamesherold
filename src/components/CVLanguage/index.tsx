@@ -1,19 +1,18 @@
-import React from 'react';
-import styles from './LanguageSection.module.scss'
+import styles from './CVLanguage.module.scss'
 
-export interface LanguageSectionProps {
-  languages: Array<{
+export type CVLanguageProps = {
+  data: Array<{
     name: string;
     level: string;
   }>;
 }
-function LanguageSection({  languages  }: LanguageSectionProps) {
+export function CVLanguage({  data  }: CVLanguageProps) {
   return (<section>
   <h2 className='underlined-left'>Sprachen</h2>
       <div className='card' style={{height: 'fit-content'}}>
           <div className='cardcontent'>
 
-        {languages.map((language: any, index: number) => (
+        {data.map((language, index) => (
           <div key={index} className={styles.languageItem}>
             <span className={styles.language}>{language.name}</span>
             <span className={styles.languageLevel}>{language.level}</span>
@@ -26,4 +25,3 @@ function LanguageSection({  languages  }: LanguageSectionProps) {
   )
 }
 
-export { LanguageSection };

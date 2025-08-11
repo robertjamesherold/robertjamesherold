@@ -1,17 +1,23 @@
-import { TimeLineItem } from '../../components/TimeLineItem'
+import { TimeLineItem, type TimeLineItemProps } from '../../components/TimeLineItem'
 
-export type TimelineSectionProps = {
-  items: TimelineItemProps[];
+export type TimeLineProps = {
+  title?: string;
+  data: TimeLineItemProps[];
 }
 
-function TimelineSection({ items }: TimelineSectionProps) {
+
+export function TimeLine({ title, data }: TimeLineProps) {
   return (
-    <div className='card'>
-      <div className='cardcontent'>
-        {items.map((item: TimelineItemProps, index: number) => (
-          <TimelineItem key={index} {...item} />
+   <section>
+  {title && <h2 className='underlined-left'>{title}</h2>}
+      <div className='card' style={{height: 'fit-content'}}>
+    <div className='cardcontent'>
+        {data.map((item: TimeLineItemProps, index: number) => (
+          <TimeLineItem key={index} {...item} />
         ))}
-      </div>
-    </div>
+      </div>      </div>
+
+    </section>
   )
 }
+

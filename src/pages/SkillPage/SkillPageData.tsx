@@ -1,7 +1,8 @@
 import { type CardProps } from '../../components/Card';
 import { type CallToActionProps } from '../../components/CallToAction';
+import { type ProgressCardProps } from '../../components/ProgressCard';
 
-export const designSkillsData = [
+export const designSkillsData: ProgressCardProps[] = [
   { id:1, name: 'Figma', level: 95, icon: '🎨', text: 'UI/UX Design, Prototyping' },
   { id:2, name: 'Photoshop', level: 90, icon: '🖼️', text: 'Bildbearbeitung, Compositing' },
   { id:3, name: 'Illustrator', level: 85, icon: '✏️', text: 'Vektorgrafiken, Logos' },
@@ -10,7 +11,7 @@ export const designSkillsData = [
   { id:6, name: 'Premiere Pro', level: 70, icon: '🎞️', text: 'Schnitt, Color Grading' }
 ];
 
-export const webSkillsData = [
+export const webSkillsData: ProgressCardProps[] = [
   { id:1, name: 'HTML5', level: 90, icon: '🏗️', text: 'Markup, SEO' },
   { id:2, name: 'CSS3', level: 85, icon: '🎨', text: 'Responsive, Grid/Flexbox' },
   { id:3, name: 'JavaScript', level: 75, icon: '⚡', text: 'React, Interaktivität' },
@@ -45,49 +46,28 @@ export const designProcessData: CardProps[] = [
 export const achievementsData: CardProps[] = [
   {
     icon: '🎓',
-    title: (<>Bachelor<br /> Mediendesign</>),
+    title: 'Bachelor\nMediendesign',
     text: 'IU Internationale Hochschule',
     tag: '1,8 Durchschnitt'
   },
   {
     icon: '👨‍💼',
-    title: ( <>
-        Studierenden-<br />vertreter
-      </>),
+    title: 'Studierenden-\nvertreter',
     text: 'Mediendesign 2025',
     tag: '6 Monate'
   },
   {
     icon: '💼',
-    title: (<>Freelance<br />Designer</>),
+    title: 'Freelance\nDesigner',
     text: 'Seit 2024',
     tag: '10+ Projekte'
   },
   {
     icon: '🏆',
-    title: (<>Beste<br />Noten</>),
+    title: 'Beste\nNoten',
     text: 'Design-Projekte',
     tag: 'Mehrere 1,0'
   }
-];
-
-export const toolsData = [
-  { name: 'Figma', category: 'Design', color: '#F24E1E' },
-  { name: 'Photoshop', category: 'Design', color: '#31A8FF' },
-  { name: 'Illustrator', category: 'Design', color: '#FF9A00' },
-  { name: 'InDesign', category: 'Design', color: '#FF3366' },
-  { name: 'After Effects', category: 'Video', color: '#9999FF' },
-  { name: 'Premiere Pro', category: 'Video', color: '#9999FF' },
-  { name: 'HTML', category: 'Web', color: '#E34F26' },
-  { name: 'CSS', category: 'Web', color: '#1572B6' },
-  { name: 'JavaScript', category: 'Web', color: '#F7DF1E' },
-  { name: 'WordPress', category: 'CMS', color: '#21759B' },
-  { name: 'Git', category: 'Tools', color: '#F05032' },
-  { name: 'Sketch', category: 'Design', color: '#FDB300' },
-  { name: 'AdobeXD', category: 'Design', color: '#fd00cfff' },
-    { name: 'React', category: 'Design', color: '#31A8FF' },
-
-  
 ];
 
 export const ctaData: CallToActionProps[]=  [{

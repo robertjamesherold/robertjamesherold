@@ -1,27 +1,30 @@
 import webdesign from '/src/assets/images/elearning/game.png'
 import grafikdesign from '/src/assets/images/oliveto/g4.webp'
 import { type CallToActionProps } from '../../components/CallToAction';
+import { type CardProps } from '../../components/Card';
+import { type StatCardProps } from '../../components/StatCard';
+import { type BigCardProps } from '../../components/BigCard';
 
-export const statsData = [
+export const statsData: StatCardProps[] = [
 {  
 title: '3+',
-text: (<>Jahre<br />Studium</>)
+text: 'Jahre\nStudium'
 },
 {
 title: '140',
-text: (<>ECTS<br />Credits</>)
+text: 'ECTS\nCredits'
 },
 {
 title: '1,7',
-text: (<>Noten-<br />durchschnitt</>)
+text: 'Noten-\ndurchschnitt'
 },
 {
 title: '2024',
-text: (<>Freelancer<br />seit</>)
+text: 'Freelancer\nseit'
 }
 ];
 
-export const serviceData = [
+export const serviceData: CardProps[]  = [
   {
     icon: '🎨',
     title: 'UI/UX Design',
@@ -44,7 +47,7 @@ export const serviceData = [
   }
 ];
 
-export const projectData = [
+export const projectData: BigCardProps[] = [
 {
     id: 'elearning',
     label: 'E-Learning Konzept',

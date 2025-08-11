@@ -36,8 +36,8 @@ export function CallToAction({
     <h3 className='textcenter' style={{color: 'white'}}>{title}</h3>
     <p className='carddescription textcenter' style={{ maxWidth: '60vw', color: 'white'}} >{text}</p>
     <Column width='100%' justify='center' align='center'>
-    {isTwo && <Button variant={secondaryVar} action={secondaryButtonLink} isPrimary={true} width='fit-content' text={secondaryButtonText} />}
-    <Button variant={primaryVar} action={primaryButtonLink} isPrimary={false} width='fit-content' text={primaryButtonText} />
+    {isTwo && secondaryButtonText && <Button variant={secondaryVar} action={secondaryButtonLink} isPrimary={true} width='fit-content' text={secondaryButtonText} />}
+    {primaryButtonText && <Button variant={primaryVar} action={primaryButtonLink} isPrimary={false} width='fit-content' text={primaryButtonText} />}
  
            
 
@@ -56,8 +56,8 @@ export function CTASection({  data  }: CTASectionProps) {
     <>
    
     
-        {data.map((content) => (
-          <CallToAction
+        {data.map((content, index) => (
+          <CallToAction key={index}
             {...content}
           />
         ))}

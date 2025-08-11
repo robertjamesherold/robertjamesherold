@@ -1,19 +1,12 @@
-@include cardContainer;
-
-
 .timelineItem
 {
     position: relative;
-
     display: grid;
-
     grid-template-columns: 1fr;
     @include gapSmall;
-   @media (min-width: $sm)
+    @media (min-width: $sm)
         {
-    
         grid-template-columns: auto 1fr;
-        
     &:only-child {
         grid-template-columns:auto 1fr;}
     

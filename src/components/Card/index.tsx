@@ -1,7 +1,7 @@
 
 export type CardProps = {
   icon: string; 
-  title: React.ReactNode; 
+  title: string; 
   text: string;
   tag?: string; 
 }

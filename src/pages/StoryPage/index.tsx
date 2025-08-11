@@ -1,6 +1,6 @@
 import { timelineData, serviceData, personalData, ctaData } from './StoryPageData'
 import { Container } from '../../layout/Container'
-import { Timeline } from '../../layout/Timeline'
+import { TimeLine } from '../../layout/TimeLine'
 import { CardGrid } from '../../layout/CardGrid'
 import { PersonalGrid }from '../../layout/PersonalGrid'
 import { CTASection } from '../../components/CallToAction'
@@ -14,20 +14,12 @@ export function StoryPage() {
       </Container>
       <Container span={{ default: 12, lg: 8 }}>
         <div className='twoRowGrid'>
-          <Timeline items={timelineData}/>
+          <TimeLine data={timelineData}/>
           <CTASection data={ctaData} />
         </div>
       </Container>
-      <Container span={{ default: 12, lg: 4 }}>
-        <CardGrid className='grid-sm2-lg1' data={serviceData} title='Erfolge & Meilensteine'></CardGrid>
-      </Container>
-      <Container span={{ default: 12 }}>
-        <PersonalGrid
-          title='Mehr über mich'
-          text={personalData.text}
-          data={personalData.stats}
-        />
-      </Container>
+      <Container span={{ default: 12, lg: 4 }}><CardGrid className='grid-sm2-lg1' data={serviceData} title='Erfolge & Meilensteine'/></Container>
+      <Container span={{ default: 12 }}><PersonalGrid data={personalData} /></Container>
     </main>
   )
 }

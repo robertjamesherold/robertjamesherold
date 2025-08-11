@@ -1,16 +1,19 @@
-import { useRef, useEffect, type ReactNode } from 'react';
+import { useRef, useEffect} from 'react';
 import { Stat, type StatCardProps } from '../../components/StatCard';
 
 export type PersonalProps = {
-  title: string;
-  text: ReactNode;
-  data: StatCardProps[];
-  className: string;
-  id: string;
-
+    title: string;
+    text: string[];
+    stats: StatCardProps[];
 }
 
-export function PersonalGrid({data, title }: PersonalProps) {
+export type PersonalData = {
+    data: PersonalProps;
+}
+
+
+
+export function PersonalGrid( {data} : PersonalData) {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,11 +40,11 @@ export function PersonalGrid({data, title }: PersonalProps) {
   return (
     <div className='card'>
       <div className='personalContent'>
-        <div className='personalGrid' style={{position: 'relative', gridTemplateRows: 'auto auto'}}>
+      <div className='personalGrid'>
 
           {/* Desktop-Grid (sichtbar ab lg) */}
           <div className='personalStats'>
-            {data.map((stat, index) => (
+            {[...data.stats].map((stat, index) => (
               <Stat key={index} {...stat} />
             ))}
           </div>
@@ -49,19 +52,20 @@ export function PersonalGrid({data, title }: PersonalProps) {
           {/* Mobile-Slider (nur bis lg sichtbar) */}
           <div className='statsSliderWrapper'>
             <div className='statsSliderTrack' ref={sliderRef}>
-              {[...data, ...data].map((stat, index) => (
+              {[...data.stats, ...data.stats].map((stat, index) => (
                 <Stat key={index} {...stat} />
               ))}
             </div>
           </div>
 
           <div className='personalText'>
-            <h2 className='personalTitle'>{title}</h2>
-            {data.map((text, index) => (
-              <p key={index}>{text}</p>
-            ))}
+            <h2 className='personalTitle'>{data.title}</h2>
+              
+              {data.text.map((text, index)=>
+              <p key={index}>{text}</p>)}
           </div>
         </div>
+        
       </div>
     </div>
   );
