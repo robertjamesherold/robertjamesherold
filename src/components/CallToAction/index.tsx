@@ -1,27 +1,33 @@
-import styles from './_CallToAction.module.scss'
-import { Link } from 'react-router-dom'
+import { Column } from '../../components/Flexbox/Column'
+import { Button } from '../../ui/Button'
 
-
-export default interface CallToActionProps {
+export type CallToActionProps = {
   title?: string;
   text?: string;
+  primaryVar?: 'button' | 'link' | 'alink';
   primaryButtonText?: string;
   primaryButtonLink?: string;
+  isTwo?: boolean;
+  secondaryVar?: 'button' | 'link' | 'alink';
   secondaryButtonText?: string;
   secondaryButtonLink?: string;
-  linkOne?: boolean;
-  linkTwo?: boolean;
-  showPrimaryButton?: boolean;
-  showSecondaryButton?: boolean;
-}
-function CallToAction({  
-  title = '',
-  text = '',
-  primaryButtonText = '',
-  primaryButtonLink = '',
+  }
 
-  linkOne = false,
-  showPrimaryButton = true,
+export type CTASectionProps = {
+  data: CallToActionProps[],
+
+}
+
+export function CallToAction({  
+  title,
+  text,
+  primaryVar,
+  primaryButtonText,
+  primaryButtonLink,
+  isTwo,
+  secondaryVar,
+  secondaryButtonText,
+  secondaryButtonLink,
  }: CallToActionProps) {
   return (
     <section>
@@ -29,19 +35,32 @@ function CallToAction({
     <div className='cardcontent aligncenter'>      
     <h3 className='textcenter' style={{color: 'white'}}>{title}</h3>
     <p className='carddescription textcenter' style={{ maxWidth: '60vw', color: 'white'}} >{text}</p>
-      <div className={styles.ctaButtons}>
-        {showPrimaryButton && linkOne && <a href={primaryButtonLink} className='buttonsecondary'>
-          {primaryButtonText}
-        </a>}
-        {showPrimaryButton && !linkOne && <Link to={primaryButtonLink} className='buttonsecondary'>
-          {primaryButtonText}
-        </Link>}
+    <Column width='100%' justify='center' align='center'>
+    {isTwo && secondaryButtonText && <Button variant={secondaryVar} action={secondaryButtonLink} isPrimary={true} width='fit-content' text={secondaryButtonText} />}
+    {primaryButtonText && <Button variant={primaryVar} action={primaryButtonLink} isPrimary={false} width='fit-content' text={primaryButtonText} />}
  
-              </div>
+           
 
+      </Column>
       </div>
-      </div>
+    </div>
     </section>
   )
 }
-export { CallToAction };
+
+
+
+
+export function CTASection({  data  }: CTASectionProps) {
+  return (
+    <>
+   
+    
+        {data.map((content, index) => (
+          <CallToAction key={index}
+            {...content}
+          />
+        ))}
+  </>
+   )
+}

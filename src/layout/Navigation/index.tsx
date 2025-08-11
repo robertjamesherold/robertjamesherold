@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useScrollHide } from '../../hooks/useScrollHide';
+import { useScrollHide } from '../../hooks/useScrollHide.ts';
 import { GitHubIcon, LinkedInIcon } from '../../assets/icons';
 
 import styles from './_Navigation.module.scss';
@@ -34,7 +34,7 @@ const mobileNavigationItems: NavigationItem[] = [
   { label: 'Kontakt', href: '/kontakt' }
 ];
 
-function Navigation(): React.ReactElement {
+export function Navigation(): React.ReactElement {
   const { isVisible } = useScrollHide({ reverse: false, threshold: 100, topThreshold: 10 });
   const [openToggle, setOpenToggle] = useState<boolean>(false);
 
@@ -132,22 +132,11 @@ function Navigation(): React.ReactElement {
               </div>
 
               <div className={styles.overlaySocial}>
-                <a 
-                  href="https://github.com/robertjamesherold" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  aria-label="GitHub Profil"
-                >
+            
                   <GitHubIcon height='2.75em' width='2.75em' />
-                </a>
-                <a 
-                  href="https://linkedin.com/in/robertjamesherold" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn Profil"
-                >
+           
                   <LinkedInIcon height='2.75em' width='2.75em' />
-                </a>
+                
               </div>
             </div>
           </nav>
@@ -182,5 +171,3 @@ function Navigation(): React.ReactElement {
     </nav>
   );
 }
-
-export { Navigation };

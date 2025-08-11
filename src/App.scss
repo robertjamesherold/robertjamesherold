@@ -139,6 +139,11 @@ section {
     @include gap;
 }
 
+.grid-xs2-lg4 {
+    @include grid((default: 1, xs: 2, lg: 4));
+    @include gap;
+}
+
 .grid-lg2 {
     @include grid((default: 1, lg: 2));
     @include gap;
@@ -188,7 +193,10 @@ section {
     @include grid((default: 1, sm: 2, lg: 1));
     @include gap;
 }
-
+.grid-sm2-lg1 {
+    @include grid((default: 1, sm: 2, lg: 1));
+    @include gap;
+}
 .grid-xl2 {
     @include grid((default: 1, xl: 2));
     @include gap;
@@ -343,4 +351,209 @@ section {
     grid-template-rows: auto auto;
     @include gap;
     height: fit-content;
+}
+
+.textBlue {
+    color: rgb($codeBlue);
+}
+
+
+
+
+
+
+.personalContent
+{
+    width: $space100;
+
+    background-color: rgb($codeBgSec);
+
+
+}
+
+.personalTitle
+{
+    font-size: $fs4;
+    font-weight: $fw7;
+    line-height: $tightH;
+
+   
+    color: rgb($codeTextPri);
+}
+
+.personalGrid
+{
+    position: relative;
+
+    display: grid;
+
+    width: $space100;
+
+    grid-template-columns: 1fr;
+    @include gap;
+
+    @media (min-width: $md)
+    {
+        align-items: center;
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.personalText
+{
+    display: flex;
+    flex-direction: column;
+
+
+
+    p
+    {
+        font-size: $fs16;
+        line-height: $baseH;
+
+        width: $space100;
+        margin-bottom: $space1n5;
+
+        text-wrap: wrap;
+
+        color: rgb($codeTextPri);
+    }
+}
+
+.personalStats
+{
+    display: grid;
+
+    width: $space100;
+
+    text-align: center;
+
+    grid-template-columns: repeat(1, 1fr);
+    gap: $space1;
+
+    @media (min-width: $xs)
+    {
+        gap: $space1n5;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: $md)
+    {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $space2;
+    }
+}
+
+
+.stat
+{
+    position: relative;
+
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+
+    height: $space6;
+    padding: $space1;
+
+    transition: all .3s ease-in-out;
+
+    border: $border1;
+    border-radius: $radius1;
+    background-color: rgb($codeBgTer);
+
+    &:hover
+    {
+        transform: translateY(-2px);
+
+        border-color: rgb($codeBlue);
+        box-shadow: $shadMd;
+    }
+}
+
+.statNumber
+{
+    font-size: $fs4;
+    font-weight: $fw7;
+    line-height: $tightH;
+
+    color: rgb($codeBlue);
+}
+
+.statLabel
+{
+    font-size: $fs16;
+    font-weight: $fw5;
+
+    margin-top: $space0n25;
+
+    color: rgb($codeTextPri);
+}
+
+// Wrapper für mobiles Auto-Slider-Verhalten
+.statsSliderWrapper
+{
+    position: absolute;
+    top: 0;
+
+    display: block;
+    overflow: visible;
+
+    width: 100%;
+    margin-top: -$space1n5;
+    padding: $space1n5 0;;
+
+    @media (min-width: $sm)
+    {
+        display: none;
+    }
+}
+
+.statsSliderTrack
+{
+    display: flex;
+
+    width: max-content;
+
+
+    will-change: transform;
+
+    .stat
+    {
+        position: relative;
+
+        flex: 0 0 auto;
+
+        width: 160px;
+        margin-right: 20px;
+
+        transition: all .3s ease-in-out;
+
+        box-shadow: $shadSm;
+
+        &:hover
+        {
+            transform: translateY(-2px);
+
+            border-color: rgb($codeBlue);
+            box-shadow: $shadMd;;;
+        }
+    }
+}
+
+
+// Grid für Tablets und Desktop
+.personalStats
+{
+    @media (max-width: $sm)
+    {
+        display: block;            opacity: 0;
+
+        > .stat:not(:nth-child(1))
+        {
+            display: none;
+        }
+    }
 }

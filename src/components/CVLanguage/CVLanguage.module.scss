@@ -1,0 +1,33 @@
+.languageItem
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: $space100;
+    padding: $space0n75 $space1;
+
+    border: $border1;
+    border-radius: $radius1;
+    background-color: rgb($codeBgPri);
+
+    @media (min-width: $xs)
+    {
+        flex-direction: row;
+    }
+}
+
+.language
+{
+    font-weight: $fw6;
+
+    color: rgb($codeTextPri);
+}
+
+.languageLevel
+{
+    font-size: $fs16;
+
+    color: rgb($codeTextPri);
+}
+

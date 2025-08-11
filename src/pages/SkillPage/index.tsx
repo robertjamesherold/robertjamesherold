@@ -1,58 +1,24 @@
-import React from 'react';
+import { CardGrid } from '../../layout/CardGrid'
 import { Container } from '../../layout/Container'
-import { SkillGrid } from './SkillPageSkillGrid'
-import { ProcessGrid } from './SkillPageProcessGrid'
-import { ToolsCloud } from './SkillPageToolsCloud'
-import { AchievementsGrid } from './SkillPageAchievementsGrid'
+import { ProgressCardGrid } from '../../layout/ProgressCardGrid'
+import { CTASection } from '../../components/CallToAction'
 import { 
   designSkillsData, 
   webSkillsData, 
   designProcessData, 
   achievementsData, 
-  toolsData 
+  ctaData
 } from './SkillPageData'
 
 export function SkillPage() {
   return (
     <main>
       <Container span={{ default: 12 }}><h1 className='colored textcenter'>Skills & Technologien</h1></Container>
-      <Container span={{ default: 12}}>
-        <SkillGrid 
-        title='Design Technologien'
-          data={designSkillsData}
-        />
-      </Container>
-      <Container span={{ default: 12}}>
-
-        <SkillGrid 
-          title="Web Technologien"
-          data={webSkillsData}
-        />
-              </Container>
-
-      <Container span={{ default: 12}}>
-
-        <ProcessGrid 
-          title="Design Process"
-          data={designProcessData}
-        />
-              </Container>
-
-      <Container span={{ default: 12}}>
-        <ToolsCloud 
-          title="Tools & Software"
-          data={toolsData}
-        />
-              </Container>
-
-      <Container span={{ default: 12}}>
-
-        <AchievementsGrid 
-          title="Erfolge & Meilensteine"
-          data={achievementsData}
-        />
-              </Container>
-
+      <Container span={{ default: 12 }}><ProgressCardGrid className='grid-sm2-lg3' data={designSkillsData} title='Design Technologien'/></Container>
+      <Container span={{ default: 12 }}><ProgressCardGrid className='grid-sm2-lg3' data={webSkillsData} title='Design Technologien'/></Container>
+      <Container span={{ default: 12 }}><CardGrid className='grid-xs2-lg4' data={designProcessData} title='Design Process'></CardGrid></Container>
+      <Container span={{ default: 12 }}><CardGrid className='grid-xs2-lg4' data={achievementsData} title='Erfolge & Meilensteine'></CardGrid></Container>
+      <Container span={{ default: 12 }}><CTASection data={ctaData} /></Container>    
     </main>
   )
 }

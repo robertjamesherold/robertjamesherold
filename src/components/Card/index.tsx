@@ -1,9 +1,11 @@
+
 export type CardProps = {
   icon: string; 
   title: string; 
   text: string;
-  tag?: string
+  tag?: string; 
 }
+
 export function Card({ icon, title, text, tag }: CardProps) {
   return (
     <div className='card'>

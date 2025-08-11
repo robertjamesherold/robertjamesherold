@@ -74,7 +74,7 @@
     opacity: .95;
     color: rgb($codeTextSec);
 
-    @media (max-width: $sm - 1px) {
+    @media (max-width: $sm) {
         font-size: $fs14;
     }
 }
@@ -199,13 +199,26 @@
         outline: none;
         box-shadow: 0 0 0 3px rgba($codeBgPri, .3);
     }
+     &.full-width {
+        width: 100%;
+    }
+
+    &.half-width {
+        width: 50%;
+    }
+
+       &.centered {
+        width: fit-content;      
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @mixin ctaButtonSecondary {
     font-size: $fs1;
     font-weight: $fw6;
 
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 
@@ -233,6 +246,22 @@
         outline: none;
         box-shadow: 0 0 0 3px rgba($codeBgPri, .3);
     }
+
+      &.full-width {
+        width: 100%;
+    }
+
+    &.half-width {
+        width: 50%;
+    }
+
+       &.centered {
+        width: fit-content;      
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    
 }
 
 
