@@ -10,7 +10,7 @@ export type PersonalProps = {
 
 }
 
-export function PersonalGrid({data }: PersonalProps) {
+export function PersonalGrid({data, title }: PersonalProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
