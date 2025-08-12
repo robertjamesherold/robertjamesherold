@@ -8,7 +8,7 @@ export const AchievementsData: CardProps[] = [
   },
   {
     icon: '👨‍💼',
-    title: 'Studierenden-\nvertreter',
+    title: 'Studierenden\u00ADvertreter',
     text: 'Mediendesign 2025',
     tag: '6 Monate'
   },

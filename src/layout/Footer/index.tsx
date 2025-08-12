@@ -110,15 +110,11 @@ export function Footer(): React.ReactElement {
             <h3 className={styles.sectionTitle}>Portfolio</h3>
             <ul className={styles.linkList}>
               <li>
-                <Link to='/projekte' className={styles.link}>
-                  Projekte
+                <Link to='/arbeiten' className={styles.link}>
+                  Arbeiten
                 </Link>
               </li>
-              <li>
-                <Link to="/fallstudien" className={styles.link}>
-                  Fallstudien
-                </Link>
-              </li>
+      
               <li>
                 <a 
                   href="https://github.com/robertjamesherold" 
