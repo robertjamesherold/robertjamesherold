@@ -1,27 +1,10 @@
-export const serviceData = [
-  {
-    icon: '📞',
-    title: 'Telefon',
-    text: '+49 151 616 60 444',
-  },
-  {
-    icon: '📬',
-    title: 'E-Mail',
-    text: 'me@robertjamesherold.com'
-    
-  },
-  {
-    icon: '🏡',
-    title: 'Adresse',
-    text: (<>Im Kammerfest 23<br/>63628 Bad Soden-Salmünster</>)
-  },{
 
-    icon: '🕒',
-    title: 'Verfügbarkeit',
-    text: (<>Montag bis Freitag'<br/>09:00 - 18:00 Uhr</>)
-  }
-];
-export const faqData = [
+export type FAQProps = {
+  question: string;
+  answer: string;
+};
+
+export const FAQData: FAQProps[] = [
   {
     question: 'Wie kann ich Sie kontaktieren?',
     answer: 'Sie können mich per E-Mail oder Telefon erreichen. Die Kontaktdaten finden Sie auf dieser Seite.'

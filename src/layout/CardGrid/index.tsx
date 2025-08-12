@@ -10,7 +10,7 @@ type CardGridProps = {
 export function CardGrid({  data, className = "", title }: CardGridProps) {
   return (
     <section>
-      <h2 className='underlined-mid textcenter marginBottomSmall'>{title}</h2>
+      {title && <h2 className='underlined-mid textcenter marginBottomSmall'>{title}</h2>}
       <div className={className}>
         {data.map((content, index) => (
           <Card
