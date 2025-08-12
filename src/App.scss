@@ -572,3 +572,71 @@ section {
         }
     }
 }
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+} 
+
+@media (max-width: $xs) {
+
+.visible-xs {
+    display: block;
+} 
+
+.hidden-xs {
+    display: none;
+    }}
+
+@media (min-width: $xs) and (max-width: $sm) {
+
+.visible-sm {
+    display: block;
+} 
+
+.hidden-sm {
+    display: none;
+    }}
+
+@media (min-width: $sm) and (max-width: $md) {
+
+.visible-md {
+    display: block;
+} 
+
+.hidden-md {
+    display: none;
+    }}
+
+@media (min-width: $md) and (max-width: $lg) {
+
+.visible-lg {
+    display: block;
+} 
+
+.hidden-lg {
+    display: none;
+    }}
+@media (min-width: $lg) and (max-width: $xl) {
+
+.visible-xl {
+    display: block;
+} 
+
+.hidden-xl {
+    display: none;
+    }}
+
+    @media (min-width: $xl) {
+
+.visible-xxl {
+    display: block;
+} 
+
+.hidden-xxl {
+    display: none;
+    }}
+

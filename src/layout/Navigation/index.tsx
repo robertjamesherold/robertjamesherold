@@ -18,7 +18,8 @@ const desktopNavigationItems: NavigationItem[] = [
   { label: 'Story', href: '/story' },
   { label: 'Skills', href: '/skills' },
   { label: 'Lebenslauf', href: '/lebenslauf' },
-  { label: 'Arbeiten', href: '/arbeiten' },
+  { label: 'Projekte', href: '/projekte' },
+  { label: 'Fallstudien', href: '/fallstudien' },
   { label: 'Kontakt', href: '/kontakt' }
 ];
 
@@ -28,7 +29,8 @@ const mobileNavigationItems: NavigationItem[] = [
   { label: 'Story', href: '/story' },
   { label: 'Skills', href: '/skills' },
   { label: 'Lebenslauf', href: '/lebenslauf' },
-  { label: 'Arbeiten', href: '/arbeiten' },
+  { label: 'Projekte', href: '/projekte' },
+  { label: 'Fallstudien', href: '/fallstudien' },
   { label: 'Kontakt', href: '/kontakt' }
 ];
 

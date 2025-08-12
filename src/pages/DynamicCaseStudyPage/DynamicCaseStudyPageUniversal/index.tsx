@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Container } from '../../../layout/Container'
-import { CaseStudyNav } from '../DynamicCaseStudyPageNav'
+import { CaseStudyNav, Pagination } from '../DynamicCaseStudyPageNav'
 import { CaseStudyContent } from '../DynamicCaseStudyPageContent'
 import { CaseStudyMeta } from '../DynamicCaseStudyPageMeta'
 import { CaseStudySidebar } from '../DynamicCaseStudyPageSidebar'
+import { Button } from '../../../ui/Button'
 
 export type CaseStudy = {
   id: string
@@ -59,10 +60,9 @@ export function UniversalCaseStudy({
   return (
     <main>
       {/* Header mit Cover Image */}
-      <Container span={{ default: 12 }}>
-        <h1 className='colored textcenter'>{title}</h1>
-        {subtitle && <p className='textcenter subtitle'>{subtitle}</p>}
-      </Container>
+      <Container title={title} subtitle={subtitle}/>
+        
+      
       
       <Container span={{ default: 12, xl: 5 }}>
         {/* Sidebar mit Meta-Infos und Navigation */}
@@ -95,8 +95,13 @@ export function UniversalCaseStudy({
           imageMap={imageMap}
         />
       </Container>
-      
-     
+
+      <Container>
+      <Pagination sections={sections}
+            activeSection={activeSection}
+            onSectionClick={setActiveSection}/>
+        <button onClick={() => window.scrollTo(0, 0)} style={{width: '100%', minWidth: '100%'}}  className='hidden-md hidden-lg hidden-xl hi'><Button   text='Zum Anfang' isPrimary={false} width='100%' /></button>
+      </Container>
     </main>
   )
 }

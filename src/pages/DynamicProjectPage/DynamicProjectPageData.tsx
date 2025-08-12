@@ -17,6 +17,7 @@ import webdesignP3 from '/src/assets/images/webdesign/p3.webp'
 import motionV1 from '../../assets/videos/avmedia/motion.mp4'
 import motionV2 from '../../assets/videos/film/final.mp4'
 import motionP2 from '../../assets/images/film/poster.jpg'
+import type React from 'react'
 
 export type GalleryItem = {
   id: number
@@ -45,8 +46,8 @@ export type ProjectSection = {
 export type ProjectStudy = {
   id: string
   slug: string
-  title: string
-  subtitle: string
+  title: string | string[] | React.ReactNode
+  subtitle: string | string[] | React.ReactNode
   client: string
   date: string
   duration: string
@@ -81,8 +82,8 @@ const webdesignImageMap: Record<string, string> = {
 export const portfolioProjectData: ProjectStudy = {
   id: 'oliveto',
   slug: 'oliveto',
-  title: "Produktdesign Villa Oliveto",
-  subtitle: "Gestaltung einer Olivenölflasche inkl. Social-Media-Content.",
+  title: (<span>Produktdesign <br className=' hidden-xxl hidden-xl hidden-lg'/>Villa Oliveto</span>),
+  subtitle: (<span>Gestaltung einer Olivenölflasche<br className=' hidden-xxl hidden-xl hidden-lg'/> inkl. Social-Media-Content.</span>),
   client: "Studienprojekt",
   date: "März 2024",
   duration: "9 Wochen",

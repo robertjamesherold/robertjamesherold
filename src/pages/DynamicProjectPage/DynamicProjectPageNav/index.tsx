@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from '../../../layout/Container'
 import styles from './_ProjectPageNav.module.scss'
+import { Button } from '../../../ui/Button';
 
 type ProjectPageNavProps = {
   sections: Array<{ id: string | number; [key: string]: any }>
@@ -16,7 +17,7 @@ export function ProjectPageNav({  sections, activeSection, onSectionClick  }: Pr
   }
   return (
     <>
-  <div className='buttonsecondary'>Zurück</div>
+  <Button variant='link' action='/projekte' text='Zurück' isPrimary={false} />
   <nav className='card'>
       <div className='cardtitle' style={{ paddingBottom: '1rem' }}>Inhaltsverzeichnis</div>
       <ul className={styles.navList}>

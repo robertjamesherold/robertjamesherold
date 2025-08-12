@@ -6,7 +6,7 @@ import { HomePage } from './pages/HomePage'
 import { StoryPage } from './pages/StoryPage'
 import { SkillPage } from './pages/SkillPage'
 import { CVPage } from './pages/CVPage'
-import { BigCardPage } from './pages/BigCardPage'
+import { CaseCardPage, ProjectCardPage } from './pages/BigCardPage'
 import { ContactPage } from './pages/ContactPage'
 import { SuccessPage } from './pages/SuccessPage'
 import { DynamicCaseStudyPage } from './pages/DynamicCaseStudyPage'
@@ -32,9 +32,10 @@ function AnimatedRoutes() {
           <Route path='/story' element={<StoryPage />} />
           <Route path='/skills' element={<SkillPage />} />
           <Route path='/lebenslauf' element={<CVPage />} />
-          <Route path='/arbeiten/:slug' element={<DynamicProjectPage />} />
-          <Route path='/arbeiten' element={<BigCardPage />} />
-          <Route path="/arbeiten/:slug" element={<DynamicCaseStudyPage />} />         
+          <Route path='/projekte/:slug' element={<DynamicProjectPage />} />
+          <Route path='/projekte' element={<ProjectCardPage />} />
+          <Route path='/fallstudien' element={<CaseCardPage/>} />
+          <Route path="/fallstudien/:slug" element={<DynamicCaseStudyPage />} />         
           <Route path='/kontakt' element={<ContactPage />} />
           <Route path='/danke' element={<SuccessPage />} />
           <Route path="/datenschutz" element={<PrivacyPage />} />

@@ -6,11 +6,31 @@
 
     margin: 0;
     padding: 0;
-
     list-style: none;
 
     gap: $space0n75;
 }
+
+.pagination
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+@include paddingBottom;    list-style: none;
+@include gapMini;  
+@media (min-width: $sm)  {
+
+    justify-content: center;
+
+
+}}
+
+
+
 
 .navItem
 {
@@ -22,8 +42,8 @@
     overflow: hidden;
 
     width: 100%;
-    padding: $space0n75 $space1;
-
+padding: $space0n5;
+gap:$space0n5;
     cursor: pointer;
     transition: all .3s ease;
     transform: translateX(-10px);
