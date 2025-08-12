@@ -8,7 +8,7 @@ export type CardProps = {
 
 export function Card({ icon, title, text, tag }: CardProps) {
   return (
-    <div className='card'>
+    <div className='card' style={{display: 'flex', flexDirection: 'column', height: '100%'}} >
       <div className='cardiconXL textcenter'>{icon}</div>
       <div className='cardcontent textcenter'>
         <div className='cardtitle'>{title}</div>

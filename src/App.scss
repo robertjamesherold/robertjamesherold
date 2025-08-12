@@ -73,6 +73,20 @@ h2 {
     @include h2
 }
 
+.h2 {
+   
+    font-size: $fs4;
+    font-weight: $fw7;
+    line-height: $tightH;
+    position: relative;
+    color: rgb($codeTextPri);
+ @media (min-width: $sm) {
+        font-size: $fs5;
+   
+}
+}
+
+
 h3 {
     @include h3
 }
@@ -216,7 +230,10 @@ section {
     @include grid((default: 1, xl: 2));
     @include gap;
 }
-
+.grid-xs2-lg4-xl1 {
+    @include grid((default: 1,xs:2, lg:4, xl: 1));
+    @include gap;
+}
 // CARDS
 
 @include cardContainer;

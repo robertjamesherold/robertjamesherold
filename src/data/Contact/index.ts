@@ -1,7 +1,7 @@
-import { FAQData } from "./FAQData";
 import { ContactData } from "./ContactData";
+import { CTAData } from "./CTAData";
 
 export const contact = {
     data: ContactData,
-    faq: FAQData
+    cta: CTAData
 }

@@ -11,7 +11,7 @@ export function CardGrid({  data, className = "", title }: CardGridProps) {
   return (
     <section>
       {title && <h2 className='underlined-mid textcenter marginBottomSmall'>{title}</h2>}
-      <div className={className}>
+      <div className={className} style={{height: '100%'}}>
         {data.map((content, index) => (
           <Card
             key={index}

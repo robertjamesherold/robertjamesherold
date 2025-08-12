@@ -2,7 +2,7 @@ import { Container } from '../../layout/Container';
 import { FilterNav } from '../../components/FilterNav';
 import { CTASection } from '../../components/CallToAction';
 import { useFilter } from '../../hooks/useFilter';
-import { cases, projects, cta } from '../../data/BigCardPage';
+import { cases, projects  } from '../../data/BigCardPage';
 import { BigCardGrid } from '../../layout/BigCardGrid';
 import { type BigCardProps } from '../../components/BigCard'; 
 import { Header } from '../../layout/Header';
@@ -50,7 +50,7 @@ export function CaseCardPage({
         </Container>
       {showCTA && (
         <Container>
-          <CTASection data={cta} />
+          <CTASection data={cases.cta} />
         </Container>
       )}
     </main>
@@ -82,7 +82,7 @@ export function ProjectCardPage({showCTA = true}: PageProps) {
       </Container>
       {showCTA && (
         <Container>
-          <CTASection data={cta} />
+          <CTASection data={projects.cta} />
         </Container>
       )}
     </main>

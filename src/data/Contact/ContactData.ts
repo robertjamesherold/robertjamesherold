@@ -4,7 +4,7 @@ export type ContactCardProps =  {
     title?: string;
     text?: string | string[];
     tag?: string;}
-s
+
 
 export const ContactData: ContactCardProps[] = [
   {
