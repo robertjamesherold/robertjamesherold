@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Container } from '../../../layout/Container'
 import { CaseStudyNav, Pagination } from '../DynamicCaseStudyPageNav'
 import { CaseStudyContent } from '../DynamicCaseStudyPageContent'
@@ -9,27 +9,26 @@ import { Button } from '../../../ui/Button'
 export type CaseStudy = {
   id: string
   slug: string
-  title: string
+  title?: string
   subtitle?: string
   client?: string
   date?: string
   duration?: string
   category?: string
   tags?: string[]
-  sections: any[]
-  imageMap?: Record<string, any>
+  sections: { key: string ; id: string | number; }
+  imageMap?: Record<string, string>
   thumbnail?: string
   excerpt?: string
 }
 
 export type UniversalCaseStudyProps = {
   caseStudyData: CaseStudy
-  relatedStudies?: CaseStudy[]
 }
 
 export function UniversalCaseStudy({ 
   caseStudyData,
-  relatedStudies
+  
 }: UniversalCaseStudyProps) {
   const [activeSection, setActiveSection] = useState<string>('')
   

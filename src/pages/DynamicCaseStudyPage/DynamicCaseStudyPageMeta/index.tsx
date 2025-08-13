@@ -6,7 +6,7 @@ type CaseStudyMetaProps = {
   date: React.ReactNode
   duration: React.ReactNode
   category: React.ReactNode
-  tags: Array<{ id: string | number; [key: string]: any }>
+  tags: string[]
 }
 export function CaseStudyMeta({  client, date, duration, category, tags  }: CaseStudyMetaProps) {
   return (
@@ -37,7 +37,7 @@ export function CaseStudyMeta({  client, date, duration, category, tags  }: Case
         <div className={styles.metaItem}>
           <h4 style={{marginBottom: '0.5rem'}}>Tags</h4>
           <div className='bigcardtags' style={{paddingTop: '0'}}>
-            {tags.map((tag: any, index: number) => (
+            {tags.map((tag, index) => (
               <span key={index} className='cardtag'>{tag}</span>
             ))}
           </div>
