@@ -10,14 +10,15 @@ export type FilterNavProps = {
   categories: Category[]
   activeFilter: string | number
   onFilterChange: (id: string | number) => void
-  title: React.ReactNode
+  title?: React.ReactNode 
 }
 
 export function FilterNav({
   categories,
   activeFilter,
   onFilterChange,
-  }: FilterNavProps) {
+  
+}: FilterNavProps) {
   return (
     <section>
       <div className="filterNav">

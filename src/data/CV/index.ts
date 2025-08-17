@@ -4,7 +4,7 @@ import { EducationData } from "./EducationData";
 import { ExperienceData } from "./ExperienceData";
 import { SkillsData } from "./SkillsData";
 import { LanguageData } from "./LanguageData";
-import { CTAData } from "./CtAData";
+import { CTAData } from "./ctaData";
 
 
 

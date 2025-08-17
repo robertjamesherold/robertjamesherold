@@ -25,6 +25,7 @@ const goldImageMap = {
 }
 // E-Learning Case Study
 export const elearningData = {
+  
   id: 'elearning',
   slug: 'elearning',
   title: "E-Learning Konzept für Kinder",
@@ -40,7 +41,7 @@ export const elearningData = {
   // Sections mit Subsections
   sections: [{
 
-    id: 'einleitung',
+    id: 1,
     title: 'Einleitung',
     subsections: [
       {
@@ -56,7 +57,7 @@ export const elearningData = {
     ]
   },
   {
-    id: 'überblick',
+    id: '2',
     title: 'Überblick über aktuelle E-Learning Anwendungen für Kinder',
     subsections: [
       {
@@ -92,7 +93,7 @@ Die Nachteile der Plattform sind jedoch, dass das Design im Vergleich zu anderen
     ]
   },
   {
-    id: 'medienplattform',
+    id: '3',
     title: 'Die passende Medienplattform',
 
     subsections: [
@@ -123,7 +124,7 @@ Die Plattform, auf der die Anwendung erscheinen sollte, ist Scoyo. Auf der Platt
 
   },
   {
-    id: 'entwicklung',
+    id: '4',
     title: 'Entwicklung des E-Learning Konzepts',
     subsections: [
       {
@@ -146,7 +147,7 @@ Die Lernumgebung und Aufgaben gestalten sich im Design ähnlich wie die Start- u
 ![Minispiel, Quelle: Eigene Darstellung](game)`}]
    },
   {
-    id: 'interaktionskonzepte',
+    id: '5',
     title: 'Interaktionskonzepte zur Förderung der Motivation',
     subsections: [
       {
@@ -191,7 +192,7 @@ können.`
   },
 
   {
-    id: 'möglichkeiten',
+    id: '6',
     title: 'Möglichkeiten für gemeinsames Lernen mit anderen Kindern',
     subsections: [
       {
@@ -236,7 +237,7 @@ gegenseitige Fördern gelenkt werden.`
   },
 
   {
-    id: 'schlussteil',
+    id: '7',
     title: 'Schlussteil',
     subsections: [
       {
@@ -273,7 +274,7 @@ Motivation ausüben, anstatt das Gegenteil zu bewirken`
     ]
   },
   {
-    id: 'literaturverzeichnis',
+    id: '8',
     title: 'Literaturverzeichnis',
     subsections: [
       {
@@ -342,7 +343,7 @@ export const concreteGoldData = {
 
   // Sections mit Subsections
   sections: [{
-    id: 'einleitung',
+    id: '1',
     title: 'Einleitung',
     subsections: [
       {
@@ -366,7 +367,7 @@ export const concreteGoldData = {
     ]
   },
   {
-    id: 'marktanalyse',
+    id: '2',
     title: 'Marktdurchdringung & Reichweite',
     subsections: [
       {
@@ -383,7 +384,7 @@ export const concreteGoldData = {
     ]
   },
   {
-    id: 'konzeption',
+    id: '3',
     title: 'Inhaltliche Konzeption',
     subsections: [
       {
@@ -444,7 +445,7 @@ export const concreteGoldData = {
     ]
   },
   {
-    id: 'umsetzung',
+    id: '4',
     title: 'Technische Umsetzung',
     subsections: [
       {
@@ -484,7 +485,7 @@ export const concreteGoldData = {
     ]
   },
   {
-    id: 'fazit',
+    id: '5',
     title: 'Fazit',
     subsections: [
       {
@@ -494,7 +495,7 @@ export const concreteGoldData = {
   },
 
   {
-    id: 'literaturverzeichnis',
+    id: '6',
     title: 'Literaturverzeichnis',
     subsections: [
       {

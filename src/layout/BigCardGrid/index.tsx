@@ -12,7 +12,7 @@ type BigCardGridProps ={
 export function BigCardGrid({  data, showButton, title, className = ''}: BigCardGridProps) {
   return (
    <section>
-        <h2 className='underlined-mid textcenter marginBottomSmall'>{title}</h2>
+        {title && <h2 className='underlined-mid textcenter marginBottomSmall'>{title}</h2>}
           <div className={className}>
             {data.map((project, index) => (
               <BigCard key={index} {...project} />

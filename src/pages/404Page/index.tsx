@@ -1,34 +1,35 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+
+import { notfound } from '../../data/404'
 import { Container } from '../../layout/Container'
 import styles from './NotFoundPage.module.scss'
+import { Button } from '../../ui/Button'
+import { Flexbox } from '../../components/Flexbox'
+
+export type NotFoundPageData = {
+  title: string
+  subtitle: string
+  text: string
+  primaryButton: string
+  secondaryButton: string
+}
 
 export function NotFoundPage() {
   return (
     <main style={{minHeight: '65vh', justifyContent: 'center', display:'flex', alignItems:'center'}}>
-      <Container span={{ default: 12 }}>
-        <div className={styles.content}>
-          <h1 className={styles.errorCode}>404</h1>
-          <h2 className={styles.title}>Seite nicht gefunden</h2>
-          <p className={styles.description}>
-            Die gesuchte Seite existiert leider nicht oder wurde verschoben.
-          </p>
+      <Container>
+        <Flexbox justify='center' align='center'>
+          <h1 className={styles.errorCode}>{notfound.title}</h1>
+          <h2 className='textcenter'>{notfound.subtitle}</h2>
+          <p className='textcenter'>{notfound.text}</p>
           <div className={styles.actions}>
-                    <div className='grid-md2'>
-
-            <Link to="/" className='buttonprimary'>
-              Zur Startseite
-            </Link>
-            <Link to="/projekte" className='buttonsecondary'>
-              Meine Projekte
-            </Link>
+            <div className='grid-md2'>
+              <Button variant='link' action='/' isPrimary={true} text={notfound.primary} />
+              <Button variant='link' action='/projekte' isPrimary={false} text={notfound.secondary} />
+            </div>
           </div>
-        </div>
-                </div>
-
+        </Flexbox>
       </Container>
     </main>
   )
 }
-
 export default NotFoundPage

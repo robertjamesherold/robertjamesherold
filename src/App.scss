@@ -73,6 +73,20 @@ h2 {
     @include h2
 }
 
+.h2 {
+   
+    font-size: $fs4;
+    font-weight: $fw7;
+    line-height: $tightH;
+    position: relative;
+    color: rgb($codeTextPri);
+ @media (min-width: $sm) {
+        font-size: $fs5;
+   
+}
+}
+
+
 h3 {
     @include h3
 }
@@ -216,7 +230,10 @@ section {
     @include grid((default: 1, xl: 2));
     @include gap;
 }
-
+.grid-xs2-lg4-xl1 {
+    @include grid((default: 1,xs:2, lg:4, xl: 1));
+    @include gap;
+}
 // CARDS
 
 @include cardContainer;
@@ -572,3 +589,71 @@ section {
         }
     }
 }
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+} 
+
+@media (max-width: $xs) {
+
+.visible-xs {
+    display: block;
+} 
+
+.hidden-xs {
+    display: none;
+    }}
+
+@media (min-width: $xs) and (max-width: $sm) {
+
+.visible-sm {
+    display: block;
+} 
+
+.hidden-sm {
+    display: none;
+    }}
+
+@media (min-width: $sm) and (max-width: $md) {
+
+.visible-md {
+    display: block;
+} 
+
+.hidden-md {
+    display: none;
+    }}
+
+@media (min-width: $md) and (max-width: $lg) {
+
+.visible-lg {
+    display: block;
+} 
+
+.hidden-lg {
+    display: none;
+    }}
+@media (min-width: $lg) and (max-width: $xl) {
+
+.visible-xl {
+    display: block;
+} 
+
+.hidden-xl {
+    display: none;
+    }}
+
+    @media (min-width: $xl) {
+
+.visible-xxl {
+    display: block;
+} 
+
+.hidden-xxl {
+    display: none;
+    }}
+

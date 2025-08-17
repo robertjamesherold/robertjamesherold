@@ -1,6 +1,7 @@
 import webdesign from '/src/assets/images/elearning/game.png'
 import grafikdesign from '/src/assets/images/oliveto/g4.webp'
 import { type BigCardProps } from '../../components/BigCard';
+import { type CallToActionProps } from '../../components/CallToAction';
 export const ProjectData: BigCardProps[] = [
 {
     id: 'elearning',

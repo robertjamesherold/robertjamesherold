@@ -12,13 +12,13 @@ export function StoryPage() {
  return (
     <main>
       <Header title='Meine Story' />
-      <Container span={{ lg: 8 }}>
+      <Container span={{ xl: 8}}>
         <Flexbox flex='column' gap='medium'>
           <TimeLine data={story.timeLine}/>
           <CTASection data={story.cta} />
         </Flexbox>
       </Container>
-      <Container span={{ lg: 4 }}><CardGrid className='grid-sm2-lg1' data={story.services} title='Erfolge & Meilensteine'/></Container>
+      <Container span={{ xl: 4}}><CardGrid className='grid-xs2-lg4-xl1' title='Was macht mich aus?' data={story.services}/></Container>
       <Container><PersonalGrid data={story.personal} /></Container>
     </main>
   )

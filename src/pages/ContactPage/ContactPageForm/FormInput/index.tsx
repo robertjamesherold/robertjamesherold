@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './_TextInput.module.scss'
 import { useState } from 'react'
 
@@ -6,11 +5,13 @@ export type TextInputProps = {
   label?: string
   inputName?: string
   className?: string
+  required?: boolean
 }
 export function TextInput({ 
   label = '',
   inputName = '',
-  className = ''
+  className = '',
+  required = false
  }: TextInputProps) {
 
   const [value, setValue] = useState<string>('')
@@ -25,9 +26,9 @@ export function TextInput({
           name={inputName}
            type="text"
            value={value}
-          placeholder={place(inputName)}
+           placeholder={place(inputName)}
            className={styles.textInputField}
-           required = 'true'
+           required = {required}
            onChange={e => setValue(e.target.value)} // Placeholder for change handler
          />
          </label>

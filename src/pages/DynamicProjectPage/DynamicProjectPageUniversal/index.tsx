@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import  { useState, useEffect } from 'react'
 import { Container } from '../../../layout/Container'
 import { ProjectPageMeta } from '../DynamicProjectPageMeta'
 import { ProjectPageContent } from '../DynamicProjectPageContent'
 import { ProjectPageNav } from '../DynamicProjectPageNav'
+import { Header } from '../../../layout/Header'
+import { Button } from '../../../ui/Button'
 
 // Typen für die neue Struktur
 export type VideoItem = {
@@ -74,13 +76,10 @@ export function DynamicUniversalProjectPage({ DynamicProjectPageData }: DynamicU
   return (
     <main>
       {/* Header */}
-      <Container span={{ default: 12 }}>
-        <h1 className="colored textcenter">{title}</h1>
-        {subtitle && <p className="textcenter">{subtitle}</p>}
-      </Container>
+      <Header title={title} text={subtitle} />
 
-      <Container span={{ default: 12, sm: 6, lg: 4, xl: 3}} >
-<div className='twoRowGridFirst' >
+      <Container span={{ default: 12, sm: 6, lg: 4, xl: 3 }} >
+        <div className='twoRowGridFirst' >
 
    
 
@@ -111,7 +110,9 @@ export function DynamicUniversalProjectPage({ DynamicProjectPageData }: DynamicU
         imageMap={imageMap}
       />
               </Container>
-
+              <Container>
+  <button onClick={() => window.scrollTo(0, 0)} style={{width: '100%', minWidth: '100%'}}  className='hidden-md hidden-lg hidden-xl hi'><Button variant='button'  text='Zum Anfang' isPrimary={false} width='100%' /></button>
+</Container>
     </main>
   )
 }
