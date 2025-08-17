@@ -22,9 +22,7 @@
 
     width: $space100;
 
-    border: $border1;
-    border-radius: $radius1;
-    background-color: rgb($codeBgSec);
+ 
     
 
 
@@ -37,10 +35,7 @@
     position: relative;
 
     width: 100%;
-    padding: $space1;
 
-    border-bottom: 2px solid rgba($codeBlue, .2);
-    background: rgba($codeBlue, .1);
 }
 
 .sectionTitle
@@ -52,7 +47,6 @@
 
     width: 100%;
     margin: 0;
-    padding: $space0 $space1;
 
     color: rgb($codeBlue);
 }
@@ -62,12 +56,11 @@
 .sectionContent
 {
     // Slide-in Animation
-    padding: $space2;
 
     animation: slideDown .4s ease;
-
+@include paddingTop;
     border-top: 1px solid rgba($codeTextTer, .2);
-    background: rgb($codeBgSec);;
+
 }
 .section.active
 {
@@ -87,7 +80,7 @@
     // Automatische Silbentrennung
     hyphens: auto;
 
-    color: rgb($codeTextSec);
+    color: rgb($codeTextPri);
 
     -ms-hyphens: auto;
     overflow-wrap: break-word;
@@ -196,7 +189,7 @@
 
             margin-bottom: $space0n5;
 
-            color: rgb($codeTextSec);
+            color: rgb($codeTextPri);
         }
     }
 
@@ -284,7 +277,7 @@
 
         text-align: center;
 
-        color: rgb($codeTextTer);
+        color: rgb($codeTextPri);
 
         &::before
         {

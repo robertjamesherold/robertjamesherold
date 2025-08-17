@@ -44,7 +44,17 @@ main {
     @include paddingMain;
     @include gap;
 
+    @media (min-width: $lg){
+    max-width: 1200px;
+    }
+
+    @media (min-width: $xl){
+    max-width: 1440px;
+    }
 }
+
+header {
+    grid-column: span 12 }
 
 .spangrid {
     display: flex;
@@ -62,6 +72,20 @@ h1 {
 h2 {
     @include h2
 }
+
+.h2 {
+   
+    font-size: $fs4;
+    font-weight: $fw7;
+    line-height: $tightH;
+    position: relative;
+    color: rgb($codeTextPri);
+ @media (min-width: $sm) {
+        font-size: $fs5;
+   
+}
+}
+
 
 h3 {
     @include h3
@@ -126,6 +150,11 @@ section {
 
 .grid-md2-lg4 {
     @include grid((default: 1, md: 2, lg: 4));
+    @include gap;
+}
+
+.grid-xs2 {
+    @include grid((default: 1, xs: 2));
     @include gap;
 }
 
@@ -201,7 +230,10 @@ section {
     @include grid((default: 1, xl: 2));
     @include gap;
 }
-
+.grid-xs2-lg4-xl1 {
+    @include grid((default: 1,xs:2, lg:4, xl: 1));
+    @include gap;
+}
 // CARDS
 
 @include cardContainer;
@@ -392,11 +424,11 @@ section {
     grid-template-columns: 1fr;
     @include gap;
 
-    @media (min-width: $lg)
+    @media (min-width: $md)
     {
         align-items: center;
 
-        grid-template-columns: 2fr 2fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -432,13 +464,13 @@ section {
     grid-template-columns: repeat(1, 1fr);
     gap: $space1;
 
-    @media (min-width: $sm)
+    @media (min-width: $xs)
     {
         gap: $space1n5;
         grid-template-columns: repeat(3, 1fr);
     }
 
-    @media (min-width: $lg)
+    @media (min-width: $md)
     {
         grid-template-columns: repeat(2, 1fr);
         gap: $space2;
@@ -505,7 +537,7 @@ section {
     margin-top: -$space1n5;
     padding: $space1n5 0;;
 
-    @media (min-width: $md)
+    @media (min-width: $sm)
     {
         display: none;
     }
@@ -557,3 +589,71 @@ section {
         }
     }
 }
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+} 
+
+@media (max-width: $xs) {
+
+.visible-xs {
+    display: block;
+} 
+
+.hidden-xs {
+    display: none;
+    }}
+
+@media (min-width: $xs) and (max-width: $sm) {
+
+.visible-sm {
+    display: block;
+} 
+
+.hidden-sm {
+    display: none;
+    }}
+
+@media (min-width: $sm) and (max-width: $md) {
+
+.visible-md {
+    display: block;
+} 
+
+.hidden-md {
+    display: none;
+    }}
+
+@media (min-width: $md) and (max-width: $lg) {
+
+.visible-lg {
+    display: block;
+} 
+
+.hidden-lg {
+    display: none;
+    }}
+@media (min-width: $lg) and (max-width: $xl) {
+
+.visible-xl {
+    display: block;
+} 
+
+.hidden-xl {
+    display: none;
+    }}
+
+    @media (min-width: $xl) {
+
+.visible-xxl {
+    display: block;
+} 
+
+.hidden-xxl {
+    display: none;
+    }}
+

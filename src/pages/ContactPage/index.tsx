@@ -1,33 +1,17 @@
-import React from 'react';
+import { contact } from '../../data/Contact'
 import { Container } from '../../layout/Container'
-
-import { ServiceList}  from './ContactPageServiceList'
-import { FormCard } from './ContactPageForm'
-import { serviceData } from './ContactPageData'
+import { ContactForm } from './ContactPageForm'
+import { CardGrid } from '../../layout/CardGrid';
+import { Header } from '../../layout/Header';
+import { CTASection } from '../../components/CallToAction';
 
 export function ContactPage() {
   return (
     <main>
-      <Container span={{ default: 12 }}>
-    <h1 className='colored textcenter'>Kontakt</h1>
-  </Container>
-      
-      <Container span={{ default: 12, lg: 7}}>
-          
-          {/* Kontaktformular */}
-          <FormCard >
-        </FormCard>
-  </Container>
-      <Container span={{ default: 12, lg: 5 }}>
-
-        {/* Values Section */}
-        <ServiceList
-          data={serviceData}
-        />
-  </Container>
-      
-
-   
+      <Header title='Kontakt' />
+      <Container span={{ lg: 7}}><ContactForm /></Container>
+      <Container span={{ lg: 5 }}><CardGrid className='grid-sm2-lg1' data={contact.data}/></Container>
+      <Container><CTASection data={contact.cta} /></Container>
     </main>
   )
 }

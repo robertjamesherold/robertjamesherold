@@ -1,15 +1,21 @@
-import React from 'react';
-import { parseTextWithLists } from '/src/utils/TextParser';
+import { parseTextWithLists } from '../../utils/TextParser';
 import styles from './_RichText.module.scss';
 
-export function RichText({ text, className = '', imageMap = {} }) {
+export type RichTextProps = {
+  text?: string;
+  className?: string;
+  imageMap?: Record<string, string>;
+  item: string;
+};
+
+export function RichText({ text, className = '', imageMap = {}, }: RichTextProps) {
   if (!text) return null;
 
   const parsedContent = parseTextWithLists(text);
-
+  const imageSrc = imageMap[item.src] || item.src;
   return (
     <div className={`${styles.richText} ${className}`}>
-      {parsedContent.map((item: any, index: number) => {
+      {parsedContent.map((item, index) => {
         switch (item.type) {
           case 'text':
             return (
@@ -20,7 +26,7 @@ export function RichText({ text, className = '', imageMap = {} }) {
           case 'list':
             return (
               <ul key={index} className={styles.list}>
-                {item.items.map((listItem: any, listIndex: number) => (
+                {item.items.map((listItem, listIndex) => (
                   <li key={listIndex} className={styles.listItem}>
                     {listItem}
                   </li>
@@ -29,7 +35,7 @@ export function RichText({ text, className = '', imageMap = {} }) {
             );
           case 'image':
             // Schaue zuerst in imageMap, dann verwende direkte URL
-            const imageSrc = imageMap[item.src] || item.src;
+          
             return (
               <figure key={index} className={styles.imageContainer}>
                 <img 

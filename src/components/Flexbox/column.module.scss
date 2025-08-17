@@ -1,0 +1,44 @@
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.full-width {
+    width: 100%;
+}
+.full-height {
+    height: 100%;
+}
+.centered {
+    margin-inline: auto;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.large {
+    @include gap;
+}
+.small   {
+    @include gapMini;
+}
+.medium  {
+    @include gapSmall;
+}
+
+
+.fit-content {
+    margin-inline: auto;
+    width: fit-content;
+    height: fit-content;
+}
+
+.fit-width {
+    margin-inline: auto;
+    width: fit-content;
+    height: 100%;
+}
+
+.fit-height {
+    width: 100%;
+    height: fit-content;
+}

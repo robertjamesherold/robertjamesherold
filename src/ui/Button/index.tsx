@@ -5,7 +5,7 @@ type ButtonProps = {
     variant?: 'button' | 'link' | 'alink';
     isPrimary?: boolean;
     action?: string;
-    text: string;
+    text?: string;
     width?: string;
     isCentered?: boolean;
 };

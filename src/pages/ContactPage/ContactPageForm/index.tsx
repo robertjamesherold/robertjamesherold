@@ -1,13 +1,12 @@
 import { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container } from '../../../layout/Container';
 import styles from './_ContactForm.module.scss';
-
+import { Flexbox } from '../../../components/Flexbox';
 import { TextInput } from './FormInput';
 import { TextArea } from './FormArea';
 import { ErrorPopup } from './FormErrorPopup';
 
-function ContactForm() {
+export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showErrorPopup, setShowErrorPopup] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -60,87 +59,53 @@ function ContactForm() {
     <section>
       {/* Netlify Hidden Form */}
       <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="Vorname" />
-        <input type="text" name="Nachname" />
-        <input type="email" name="E-Mail" />
+        <div><div>
+          <input type="text" name="Vorname" />
+          <input type="text" name="Nachname" />
+        </div>
+        <div>
+          <input type="email" name="E-Mail" />
+          <input type="phone" name="Telefonnummer" />
+        </div>
         <input type="text" name="Betreff" />
         <textarea name="Nachricht" />
         <button type="submit">Submit</button>
+        </div>
       </form>
       {/* Sichtbares Formular */}
       <form
-        className="card grid-sm2"
+        className="card"
         name="contact"
         method="POST"
         onSubmit={handleSubmit}
       >
+      <Flexbox flex='column' gap='medium'>
         <input type="hidden" name="form-name" value="contact" />
         <div style={{ display: 'none' }}>
           <input name="bot-field" />
         </div>
-
-        <Container span={{ default: 12 }}>
-          <TextInput
-            label="Vorname"
-            inputName="Vorname"
-            required
-          />
-        </Container>
-
-        <Container span={{ default: 6 }}>
-          <TextInput
-            label="Nachname"
-            inputName="Nachname"
-            required
-          />
-        </Container>
-
-        <Container span={{ default: 2 }}>
-          <TextInput
-            inputName="E-Mail"
-            label="E-Mail"
-            className={styles.colFull}
-            required
-          />
-        </Container>
-
-        <Container span={{ default: 2 }}>
-          <TextInput
-            inputName="Betreff"
-            label="Betreff"
-            className={styles.colFull}
-            required
-          />
-        </Container>
-
-        <Container span={{ default: 2 }}>
-          <TextArea
-            inputName="Nachricht"
-            label="Nachricht"
-            className={styles.colFull}
-            required
-          />
-        </Container>
-
-        <button
-          type="submit"
-          className={`buttonprimary ${styles.colFull}`}
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? 'Wird gesendet...' : 'Senden'}
-        </button>
+        <div className='h2' >Kontaktformular</div>
+        <p>Bitte füllen Sie das Formular aus, um mich zu kontaktieren. Ich werde mich so schnell wie möglich bei Ihnen melden.</p>
+        <div className='grid-sm2'>
+          <TextInput label="Vorname" inputName="Vorname" required={true} />
+          <TextInput label="Nachname" inputName="Nachname" required={true} />
+        </div>
+        <div className='grid-sm2'>
+          <TextInput inputName="E-Mail" label="E-Mail" required={true} />
+          <TextInput inputName="Telefonnummer" label="Telefonnummer" required={false} />
+        </div>
+        <TextInput inputName="Betreff" label="Betreff" required={true} />
+        <TextArea  inputName="Nachricht" label="Nachricht" />
+        <button type="submit" className={`buttonprimary ${styles.colFull}`} disabled={isSubmitting}>{isSubmitting ? 'Wird gesendet...' : 'Senden'}</button>
+        </Flexbox>
       </form>
 
       <ErrorPopup
         isVisible={showErrorPopup}
         onClose={handleCloseErrorPopup}
         message={errorMessage}
-        />
+      />
     </section>
   );
 }
 
-// Optional: Falls FormCard so einfach bleibt
-export function FormCard() {
-  return <ContactForm />;
-}

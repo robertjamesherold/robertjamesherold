@@ -28,7 +28,7 @@ export function TextArea({
           value={value}
           placeholder={place(inputName)}
           className={styles.textAreaField}
-          required
+          required = {true}
           onChange={(e) => setValue(e.target.value)}
         />
       </label>

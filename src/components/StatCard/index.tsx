@@ -1,9 +1,6 @@
-import { type ReactNode } from 'react';
-import styles from './StatCard.module.scss';
-
 export type StatCardProps = {
   title: string,
-  text: ReactNode
+  text: string,
 }
 export function StatCard({ title, text }: StatCardProps) {
     return (

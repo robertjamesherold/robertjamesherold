@@ -1,17 +1,18 @@
 import styles from './_Header.module.scss';
 
-export default interface HeaderProps {
-  title: string;
-  text: string;
-  id: string
+export type HeaderProps = {
+  title?: string | string[];
+  text?: string | string[];
+  id?: string
+  children?: React.ReactNode
 }
-function Header({  title, text , id }: HeaderProps) {
+export function Header({ title, text , id , children}: HeaderProps) {
 
   return (
-      <div id={id} className={styles.header}>
-          <h1 className={styles.title}>{title}</h1>
-          <p className={styles.subtitle}>{text}</p>
-      </div>
+      <header id={id} className={styles.header}>
+          <h1 className='colored textcenter'>{title}</h1>
+          {text && <p className={`textcenter ${styles.subtitle}`}>{text}</p>}
+          {children}
+      </header>
   )};
 
-export { Header };
