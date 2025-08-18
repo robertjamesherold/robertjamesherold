@@ -1,8 +1,8 @@
 import styles from './_Header.module.scss';
 
 export type HeaderProps = {
-  title?: string | string[];
-  text?: string | string[];
+  title?: string | string[] | React.ReactNode;
+  text?: string | string[] | React.ReactNode;
   id?: string
   children?: React.ReactNode
 }

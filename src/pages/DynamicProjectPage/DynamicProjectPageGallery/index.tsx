@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
-import {Container} from '../../../layout/Container'
+import { useState } from 'react'
 import styles from './_ProjectPageGallery.module.scss'
 
 export type GalleryImage = {
-  id: string | number
-  url: string
-  caption?: string
-  category?: string
-  [key: string]: any
-}
+  id: string | number;
+  url: string;
+  caption?: string;
+  category?: string;
+};
 
 export type ProjectPageGalleryProps = {
   images: GalleryImage[]

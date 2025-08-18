@@ -7,6 +7,13 @@ import statistikDiagramm from '/src/assets/images/concreteGold/statista.jpg'
 import game from '/src/assets/images/elearning/game.png'
 import start from '/src/assets/images/elearning/start.png'
 import profil from '/src/assets/images/elearning/profil.png'
+import type { CaseStudy } from './DynamicCaseStudyPageUniversal'
+
+
+
+export type UniversalCaseStudyProps = {
+  CaseStudyData: CaseStudy
+}
 
 // Separate Image Maps
 const elearningImageMap = {
@@ -24,7 +31,7 @@ const goldImageMap = {
   'statistik': statistikDiagramm
 }
 // E-Learning Case Study
-export const elearningData = {
+export const elearningData: CaseStudy = {
   
   id: 'elearning',
   slug: 'elearning',
@@ -35,13 +42,12 @@ export const elearningData = {
   duration: "3 Monate",
   category: "E-Learning",
   tags: ["E-Learning", "Konzeption", "Kinder", "Bildung"],
-  coverImage: game, // Cover Image hinzufügen
   imageMap: elearningImageMap,
 
   // Sections mit Subsections
   sections: [{
 
-    id: 1,
+    id: '1',
     title: 'Einleitung',
     subsections: [
       {
@@ -58,7 +64,7 @@ export const elearningData = {
   },
   {
     id: '2',
-    title: 'Überblick über aktuelle E-Learning Anwendungen für Kinder',
+    title: 'Überblick über aktuelle E-Learning Anwendungen',
     subsections: [
       {
         subtitle: 'Die Vorgehensweise der Recherche',
@@ -193,7 +199,7 @@ können.`
 
   {
     id: '6',
-    title: 'Möglichkeiten für gemeinsames Lernen mit anderen Kindern',
+    title: 'Möglichkeiten für gemeinsames Lernen',
     subsections: [
       {
         subtitle: 'Chats, Foren & Diskussionsgruppen',
@@ -537,23 +543,17 @@ arch.ebscohost.com/login.aspx?direct=true&db=nlebk&AN=1607487&site=eds-live`,
 
 
 // Alle Case Studies sammeln
-export const allCaseStudies = [
+export const CaseStudyData: CaseStudy[] = [
   concreteGoldData,
   elearningData,
-  // Weitere Studies...
 ]
 
 // Helper-Funktionen
-export const getCaseStudyBySlug = (slug) => {
-  return allCaseStudies.find(study => study.slug === slug)
+export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
+  return CaseStudyData.find(study => study.slug === slug)
 }
 
-export const getCaseStudyById = (id) => {
-  return allCaseStudies.find(study => study.id === id)
+export const getCaseStudyById = ({id}:CaseStudy) => {
+  return CaseStudyData.find(study => study.id === id)
 }
 
-export const getRelatedStudies = (currentId, limit = 3) => {
-  return allCaseStudies
-    .filter(study => study.id !== currentId)
-    .slice(0, limit)
-}

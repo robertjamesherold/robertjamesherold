@@ -101,11 +101,22 @@ $spaceMax: max-content;
 $spaceFit: fit-content;
 
 // Typography
-$fontFamily: 'Fira Sans','system-ui', sans-serif;
-$FontMono: 'Fira Code', monospace;
+$fontFamily: 'Fira Sans',
+'system-ui',
+sans-serif;
+$FontMono: 'Fira Code',
+monospace;
 
 // Font Weights 
-$fw1: 100; $fw2: 200; $fw3: 300; $fw4: 400; $fw5: 500; $fw6: 600; $fw7: 700; $fw8: 800; $fw9: 900;
+$fw1: 100;
+$fw2: 200;
+$fw3: 300;
+$fw4: 400;
+$fw5: 500;
+$fw6: 600;
+$fw7: 700;
+$fw8: 800;
+$fw9: 900;
 
 // Font Sizes
 $fs12: .75rem; // 12px
@@ -121,6 +132,14 @@ $fs7: 3.75rem; // 60px
 $fs8: 4.5rem; // 72px
 $fs9: 6rem; // 96px
 
+
+// Line Heights
+$lineH: 1.5;
+$tightH: 1.3;
+$baseH: 1.6;
+$looseH: 2;
+
+
 // Border Radius
 $radius1: 1rem;
 $radius2: 2rem;
@@ -134,11 +153,7 @@ $md: 768px;
 $lg: 1024px;
 $xl: 1280px;
 
-// Line Heights
-$lineH: 1.5;
-$tightH: 1.3;
-$baseH: 1.6;
-$looseH: 2;
+
 
 
 // Code Colors

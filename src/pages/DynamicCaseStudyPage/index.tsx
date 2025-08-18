@@ -3,16 +3,20 @@ import { UniversalCaseStudy } from './DynamicCaseStudyPageUniversal'
 import { getCaseStudyBySlug } from './DynamicCaseStudyPageData'
 
 export function DynamicCaseStudyPage() {
-  const { slug } = useParams()
+  const { slug } = useParams<{ slug: string }>()
   
-  // Case Study anhand des Slugs finden
+  // Early return wenn slug undefined ist
+  if (!slug) {
+    return <Navigate to="/404" replace />
+  }
+
+  // Jetzt ist slug garantiert ein string
   const caseStudyData = getCaseStudyBySlug(slug)
 
-  // Redirect zu 404 wenn nicht gefunden
   if (!caseStudyData) {
     return <Navigate to="/404" replace />
   }
 
+  // Prop-Name muss kleingeschrieben sein: caseStudyData
   return <UniversalCaseStudy caseStudyData={caseStudyData} />
 }
-

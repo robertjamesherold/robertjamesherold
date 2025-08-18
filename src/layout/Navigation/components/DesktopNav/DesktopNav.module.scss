@@ -1,0 +1,63 @@
+// =============================================================================
+// Desktop Navigation
+// =============================================================================
+
+
+.navList
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    list-style: $no;
+
+    gap: $space2;
+
+    @media (max-width: $lg)
+    {
+        display: $no;
+    }
+}
+
+.navItem
+{
+    position: relative;
+}
+
+.navLink
+{
+    font-family: $fontFamily;
+    font-size: $fs16;
+    font-weight: $fw5;
+
+    width: 100%;
+    padding: $space0n75 $space1n5;
+
+    transition: $all0n3;
+    text-align: center;
+    text-decoration: $no;
+    -webkit-tap-highlight-color: transparent;
+
+    color: rgb($codeTextPri);
+    border-radius: $radius1;
+
+    &:hover
+    {
+        color: rgb($codeBlue, .7);
+        background-color: rgba($codeBlue .05);
+    }
+
+    &.active
+    {
+        font-weight: $fw6;
+
+        color: rgb($codeBlue);
+        background-color: rgba(59, 130, 246, .1);
+    }
+}
+
+

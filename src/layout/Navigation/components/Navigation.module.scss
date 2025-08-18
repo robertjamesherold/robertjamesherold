@@ -1,0 +1,40 @@
+nav
+{
+    position: fixed;
+    z-index:2000;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: $spaceFull;
+    height: $space5;
+    align-items: center;
+    justify-content: space-around;
+    transition: $all0n3;
+    backdrop-filter: blur(20px);
+    &.hidden
+    {
+        transform: translateY(-100%);
+    }
+    &.visible
+    {
+        transform: translateY(0);
+    }
+}
+
+.mainNav
+{
+    position: relative;
+    top:0;
+    right: 0;
+    left: 0;
+    flex: 1;
+    width: $spaceFull;
+    height: $space5;
+    z-index:2000;
+    padding: 0 $space1;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    border-bottom: $border1;
+    background-color: rgb($codeBgPri);
+}

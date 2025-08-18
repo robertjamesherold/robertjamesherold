@@ -1,16 +1,23 @@
-import React from 'react';
 import styles from './_ProjectPageRelated.module.scss'
 
-type ProjectPageRelatedProps = {
-  studies: Array<{ id: string | number; [key: string]: any }>
+type Study = {
+  id: string | number
+  image: string
+  title: string
+  client: string
 }
-export function ProjectPageRelated({  studies  }: ProjectPageRelatedProps) {
+
+type ProjectPageRelatedProps = {
+  studies: Study[]
+}
+
+export function ProjectPageRelated({ studies }: ProjectPageRelatedProps) {
   return (
     <section className={styles.related}>
       <div className={styles.container}>
         <h2 className={styles.title}>Weitere Fallstudien</h2>
         <div className={styles.grid}>
-          {studies.map((study: { id: string | number; name?: string; [key: string]: any }) => (
+          {studies.map((study) => (
             <a 
               key={study.id} 
               href={`#case-study-${study.id}`}
