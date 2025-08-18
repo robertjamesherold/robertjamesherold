@@ -1,5 +1,5 @@
 
-export type ContactCardProps =  {
+type ContactCardProps =  {
     icon?: string;
     title?: string;
     text?: string | string[];

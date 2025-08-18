@@ -2,7 +2,6 @@ import styles from './_Hero.module.scss'
 import { CodeAnimation } from './HeroCodeAnimation';
 import { GitHubIcon, LinkedInIcon, MailIcon } from '../../../assets/icons';
 import { Button } from '../../../ui/Button';
-import { Flexbox } from '../../../components/Flexbox';
 
 
 

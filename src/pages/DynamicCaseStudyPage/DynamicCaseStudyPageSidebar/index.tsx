@@ -1,7 +1,5 @@
-import React from 'react';
-
 type CaseStudySidebarProps = {
-  children: any
+  children: React.ReactNode
 }
 export function CaseStudySidebar({  children  }: CaseStudySidebarProps) {
   return (

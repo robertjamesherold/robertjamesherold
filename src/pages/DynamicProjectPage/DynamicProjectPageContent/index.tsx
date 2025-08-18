@@ -55,7 +55,7 @@ export function ProjectPageContent({
           {/* Section Content (Text) */}
           {section.content && (
             <Container span={{ default: 12, xl: 8 }}>
-              <RichText content={section.content} imageMap={imageMap} />
+              <RichText text={section.content} imageMap={imageMap} />
             </Container>
           )}
 

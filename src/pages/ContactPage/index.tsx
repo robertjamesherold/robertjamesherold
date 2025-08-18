@@ -10,7 +10,7 @@ export function ContactPage() {
     <main>
       <Header title='Kontakt' />
       <Container span={{ lg: 7}}><ContactForm /></Container>
-      <Container span={{ lg: 5 }}><CardGrid className='grid-sm2-lg1' data={contact.data}/></Container>
+      <Container span={{ lg: 5 }}><CardGrid className='grid-sm2-lg1' data={contact.form}/></Container>
       <Container><CTASection data={contact.cta} /></Container>
     </main>
   )
