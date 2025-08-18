@@ -27,7 +27,6 @@ export const VideoWrapper: React.FC<VideoWrapperProps> = ({ videos }) => {
         <div className={styles.videoEmbed}>
           <iframe
             src={`https://www.youtube.com/embed/${videoId}`}
-            frameBorder="0"
             allowFullScreen
             title={video.title || `Video ${video.id}`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -42,7 +41,6 @@ export const VideoWrapper: React.FC<VideoWrapperProps> = ({ videos }) => {
         <div className={styles.videoEmbed}>
           <iframe
             src={`https://player.vimeo.com/video/${videoId}`}
-            frameBorder="0"
             allowFullScreen
             title={video.title || `Video ${video.id}`}
             allow="autoplay; fullscreen; picture-in-picture"

@@ -6,7 +6,7 @@ type CaseStudyMetaProps = {
   date: React.ReactNode
   duration: React.ReactNode
   category: React.ReactNode
-  tags: string[]
+  tags?: string[]
 }
 export function CaseStudyMeta({  client, date, duration, category, tags  }: CaseStudyMetaProps) {
   return (

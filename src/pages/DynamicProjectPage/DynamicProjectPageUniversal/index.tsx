@@ -6,6 +6,7 @@ import { ProjectPageNav } from '../DynamicProjectPageNav'
 import { Header } from '../../../layout/Header'
 import { Button } from '../../../ui/Button'
 
+
 // Typen für die neue Struktur
 export type VideoItem = {
   id: number | string
@@ -32,8 +33,8 @@ export type ProjectSection = {
 }
 
 export type ProjectPageData = {
-  title: string
-  subtitle?: string
+  title: string | string[] | React.ReactNode
+  subtitle: string | string[] | React.ReactNode
   client?: string
   date?: string
   duration?: string
@@ -44,22 +45,19 @@ export type ProjectPageData = {
 }
 
 export type DynamicUniversalProjectPageProps = {
-  DynamicProjectPageData: ProjectPageData
+  projectPageData: ProjectPageData
 }
 
-export function DynamicUniversalProjectPage({ DynamicProjectPageData }: DynamicUniversalProjectPageProps) {
+export function DynamicUniversalProjectPage({ projectPageData }: DynamicUniversalProjectPageProps) {
   const [activeSection, setActiveSection] = useState<string>('')
 
-  // Erste Section als Standard setzen
   useEffect(() => {
-    if (DynamicProjectPageData?.sections?.length > 0 && !activeSection) {
-      setActiveSection(DynamicProjectPageData.sections[0].id)
+    if (projectPageData?.sections?.length > 0 && !activeSection) {
+      setActiveSection(projectPageData.sections[0].id)
     }
-  }, [DynamicProjectPageData, activeSection])
+  }, [projectPageData, activeSection])
 
-  if (!DynamicProjectPageData) {
-    return null
-  }
+  if (!projectPageData) return null
 
   const {
     title,
@@ -71,62 +69,53 @@ export function DynamicUniversalProjectPage({ DynamicProjectPageData }: DynamicU
     tags,
     sections,
     imageMap = {}
-  } = DynamicProjectPageData
+  } = projectPageData
 
   return (
     <main>
-      {/* Header */}
       <Header title={title} text={subtitle} />
 
-      <Container span={{ default: 12, sm: 6, lg: 4, xl: 3 }} >
-        <div className='twoRowGridFirst' >
+      <Container span={{ default: 12, sm: 6, lg: 4, xl: 3 }}>
+        <div className="twoRowGridFirst">
+          {sections.length > 1 && (
+            <ProjectPageNav
+              sections={sections}
+              activeSection={activeSection}
+              onSectionClick={setActiveSection}
+            />
+          )}
+          <ProjectPageMeta
+            client={client}
+            date={date}
+            duration={duration}
+            category={category}
+            tags={tags}
+          />
+        </div>
+      </Container>
 
-   
+      <Container span={{ default: 12, sm: 6, lg: 8, xl: 9 }}>
+        <ProjectPageContent
+          sections={sections}
+          activeSection={activeSection}
+          imageMap={imageMap}
+        />
+      </Container>
 
-      {/* Section Navigation (Optional - falls vorhanden) */}
-      {sections.length > 1 && (
-       
-           <ProjectPageNav
-            sections={sections}
-            activeSection={activeSection}
-            onSectionClick={setActiveSection}
-          />)}  
-   <ProjectPageMeta
-        client={client}
-        date={date}
-        duration={duration}
-        category={category}
-        tags={tags}
-      />
-          </div>     
-</Container>
-     
-        <Container span={{ default: 12, sm: 6,lg:8, xl: 9 }}>
-
-      {/* Section Content */}
-      <ProjectPageContent
-        sections={sections}
-        activeSection={activeSection}
-        imageMap={imageMap}
-      />
-              </Container>
-              <Container>
-  <button onClick={() => window.scrollTo(0, 0)} style={{width: '100%', minWidth: '100%'}}  className='hidden-md hidden-lg hidden-xl hi'><Button variant='button'  text='Zum Anfang' isPrimary={false} width='100%' /></button>
-</Container>
+      <Container>
+        <button
+          onClick={() => window.scrollTo(0, 0)}
+          style={{ width: '100%', minWidth: '100%' }}
+          className="hidden-md hidden-lg hidden-xl hi"
+        >
+          <Button
+            variant="button"
+            text="Zum Anfang"
+            isPrimary={false}
+            width="100%"
+          />
+        </button>
+      </Container>
     </main>
   )
 }
-
-// Beispiel für die Verwendung:
-/*
-import { DynamicUniversalProjectPage } from './DynamicUniversalProjectPage'
-import { portfolioProjectData } from './projectData'
-
-function ProjectPage() {
-  return (
-    <DynamicUniversalProjectPage 
-      DynamicProjectPageData={portfolioProjectData}
-    />
-  )
-}
-*/

@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './_ContactForm.module.scss';
 import { Flexbox } from '../../../components/Flexbox';
@@ -58,7 +58,7 @@ export function ContactForm() {
   return (
     <section>
       {/* Netlify Hidden Form */}
-      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <form name="contact" netlify-honeypot="bot-field" hidden>
         <div><div>
           <input type="text" name="Vorname" />
           <input type="text" name="Nachname" />

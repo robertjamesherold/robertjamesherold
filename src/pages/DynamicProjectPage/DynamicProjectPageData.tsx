@@ -16,8 +16,11 @@ import webdesignP3 from '/src/assets/images/webdesign/p3.webp'
 
 import motionV1 from '../../assets/videos/avmedia/motion.mp4'
 import motionV2 from '../../assets/videos/film/final.mp4'
-import motionP2 from '../../assets/images/film/poster.jpg'
 import type React from 'react'
+
+export type TagProps = {
+  tag?: string[]
+}
 
 export type GalleryItem = {
   id: number
@@ -42,6 +45,7 @@ export type ProjectSection = {
   gallery?: GalleryItem[]
   images?: string[]
 }
+
 
 export type ProjectStudy = {
   id: string
@@ -94,7 +98,6 @@ export const portfolioProjectData: ProjectStudy = {
     {
       id: 'overview',
       title: 'Projektübersicht',
-      content: 'Gestaltung einer hochwertigen Olivenölflasche für das fiktive Unternehmen Villa Oliveto, inklusive Branding und Social-Media-Content.',
       gallery: [
         {
           id: 1,
@@ -110,13 +113,52 @@ export const portfolioProjectData: ProjectStudy = {
           id: 3,
           url: olivetoG3,
           category: 'umsetzung'
+        },
+            {
+          id: 4,
+          url: olivetoG4,
+          category: 'konzeption'
+        },
+        {
+          id: 6,
+          url: olivetoG6,
+          category: 'konzeption'
+        },
+        {
+          id: 9,
+          url: olivetoG9,
+          category: 'konzeption'
+        },
+         {
+          id: 5,
+          url: olivetoG5,
+          category: 'design'
+        },
+        {
+          id: 7,
+          url: olivetoG7,
+          category: 'design'
+        },
+        {
+          id: 10,
+          url: olivetoG10,
+          category: 'design'
+        },
+          {
+          id: 8,
+          url: olivetoG8,
+          category: 'umsetzung'
+        },
+        {
+          id: 11,
+          url: olivetoG11,
+          category: 'umsetzung'
         }
       ]
     },
     {
       id: 'concept',
       title: 'Konzeption',
-      content: 'Die Entwicklung des Markenkonzepts und der visuellen Identität für Villa Oliveto.',
       gallery: [
         {
           id: 4,
@@ -138,7 +180,6 @@ export const portfolioProjectData: ProjectStudy = {
     {
       id: 'design',
       title: 'Design',
-      content: 'Die Gestaltung der Olivenölflasche und des Etiketten-Designs.',
       gallery: [
         {
           id: 5,
@@ -160,7 +201,6 @@ export const portfolioProjectData: ProjectStudy = {
     {
       id: 'implementation',
       title: 'Umsetzung',
-      content: 'Die finale Umsetzung und Visualisierung des Produkts.',
       gallery: [
         {
           id: 8,
@@ -204,7 +244,6 @@ export const webdesignProjectData: ProjectStudy = {
     {
       id: 'pages',
       title: 'Seitengestaltung',
-      content: 'Gestaltung der verschiedenen Unterseiten mit konsistentem Design und optimaler Benutzerführung.',
       gallery: [
         {
           id: 2,
@@ -234,9 +273,21 @@ export const motionProjectData: ProjectStudy = {
   imageMap: {},
   sections: [
     {
+      id: 'animatic',
+      title: 'Animatic',
+      videos: [
+        {
+          id: 1,
+          url: motionV1,
+          type: 'mp4',
+          title: 'Schülerhilfe Animatic',
+          caption: 'Das Animatic zeigt die Grundstruktur und das Timing des Werbespots.'
+        }
+      ]
+    },
+    {
       id: 'animation',
       title: 'Animation',
-      content: 'Entwicklung eines Werbespots für die Schülerhilfe mit Fokus auf emotionale Ansprache und klare Botschaftsvermittlung.',
       videos: [
         {
           id: 1,
@@ -265,10 +316,9 @@ export const bildvideoProjectData: ProjectStudy = {
     {
       id: 'animation',
       title: 'Animation',
-      content: 'Entwicklung einer 10-Sekunden-Loop-Animation für das ikonische Metallica-Albumcover "Master of Puppets".',
       videos: [
         {
-          id: 2,
+          id: 1,
           url: motionV2,
           type: 'mp4',
           title: 'Animiertes Albumcover',
@@ -279,7 +329,6 @@ export const bildvideoProjectData: ProjectStudy = {
      {
       id: 'video',
       title: 'Video',
-      content: 'Entwicklung einer 10-Sekunden-Loop-Animation für das ikonische Metallica-Albumcover "Master of Puppets".',
       videos: [
         {
           id: 2,
@@ -294,7 +343,7 @@ export const bildvideoProjectData: ProjectStudy = {
 }
 
 // Alle Project Studies sammeln
-export const allProjectStudies: ProjectStudy[] = [
+export const ProjectStudyData: ProjectStudy[] = [
   portfolioProjectData,
   webdesignProjectData,
   motionProjectData,
@@ -303,15 +352,10 @@ export const allProjectStudies: ProjectStudy[] = [
 
 // Helper-Funktionen
 export const getProjectStudyBySlug = (slug: string): ProjectStudy | undefined => {
-  return allProjectStudies.find(study => study.slug === slug)
+  return ProjectStudyData.find(study => study.slug === slug)
 }
 
 export const getProjectStudyById = (id: string): ProjectStudy | undefined => {
-  return allProjectStudies.find(study => study.id === id)
+  return ProjectStudyData.find(study => study.id === id)
 }
 
-export const getRelatedProjectStudies = (currentId: string, limit = 3): ProjectStudy[] => {
-  return allProjectStudies
-    .filter(study => study.id !== currentId)
-    .slice(0, limit)
-}

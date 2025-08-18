@@ -1,14 +1,38 @@
 import { useState, useEffect } from 'react'
+import { Header } from '../../../layout/Header'
 import { Container } from '../../../layout/Container'
-import { CaseStudyNav, Pagination } from '../DynamicCaseStudyPageNav'
+import { CaseStudyPageNav, Pagination } from '../DynamicCaseStudyPageNav'
 import { CaseStudyContent } from '../DynamicCaseStudyPageContent'
 import { CaseStudyMeta } from '../DynamicCaseStudyPageMeta'
 import { CaseStudySidebar } from '../DynamicCaseStudyPageSidebar'
 import { Button } from '../../../ui/Button'
+export type SubSubSection = {
+  sub?: string
+  text?: string
+}
+
+export type SubSection = {
+  id?: string | number
+  name?: string
+  subtitle?: string
+  sub?: string
+  text?: string
+  image?: string
+  subsubsections?: SubSubSection[]
+}
+// Section Type definieren
+export type CaseStudySection = {
+  id: string 
+  title?: string
+  name?: string
+  content?: string
+  subsections?: SubSection[]
+}
+
 
 export type CaseStudy = {
-  id: string
-  slug: string
+  id: string | number
+  slug?: string  
   title?: string
   subtitle?: string
   client?: string
@@ -16,7 +40,7 @@ export type CaseStudy = {
   duration?: string
   category?: string
   tags?: string[]
-  sections: { key: string ; id: string | number; }
+  sections: CaseStudySection[] // Array von Sections
   imageMap?: Record<string, string>
   thumbnail?: string
   excerpt?: string
@@ -26,11 +50,16 @@ export type UniversalCaseStudyProps = {
   caseStudyData: CaseStudy
 }
 
+export type CaseStudyNavProps = {
+  sections: CaseStudySection[];
+  activeSection: string | number ;
+  onSectionClick: (sectionId: string) => void;
+}
+
 export function UniversalCaseStudy({ 
-  caseStudyData,
-  
+  caseStudyData
 }: UniversalCaseStudyProps) {
-  const [activeSection, setActiveSection] = useState<string>('')
+  const [activeSection, setActiveSection] = useState<string | number>('')
   
   // Erste Section als Standard setzen
   useEffect(() => {
@@ -59,22 +88,18 @@ export function UniversalCaseStudy({
   return (
     <main>
       {/* Header mit Cover Image */}
-      <Container title={title} subtitle={subtitle}/>
-        
+      <Header title={title} text={subtitle}/>
       
-      
-      <Container span={{ default: 12, xl: 5 }}>
+      <Container span={{ default: 12, xl: 4 }}>
         {/* Sidebar mit Meta-Infos und Navigation */}
         <CaseStudySidebar>
-         
-          
-          <CaseStudyNav 
+          <CaseStudyPageNav 
             sections={sections}
             activeSection={activeSection}
             onSectionClick={setActiveSection}
           />
 
-           <CaseStudyMeta 
+          <CaseStudyMeta 
             client={client}
             date={date}
             duration={duration}
@@ -82,10 +107,9 @@ export function UniversalCaseStudy({
             tags={tags}
           />
         </CaseStudySidebar>
-        
       </Container>
       
-      <Container span={{ default: 12, xl: 7 }}>
+      <Container span={{ default: 12, xl: 8 }}>
         {/* Main Content */}
         <CaseStudyContent 
           sections={sections}
@@ -96,10 +120,18 @@ export function UniversalCaseStudy({
       </Container>
 
       <Container>
-      <Pagination sections={sections}
-            activeSection={activeSection}
-            onSectionClick={setActiveSection}/>
-        <button onClick={() => window.scrollTo(0, 0)} style={{width: '100%', minWidth: '100%'}}  className='hidden-md hidden-lg hidden-xl hi'><Button   text='Zum Anfang' isPrimary={false} width='100%' /></button>
+        <Pagination 
+          sections={sections}
+          activeSection={activeSection}
+          onSectionClick={setActiveSection}
+        />
+        <button 
+          onClick={() => window.scrollTo(0, 0)} 
+          style={{ width: '100%', minWidth: '100%' }}  
+          className='hidden-md hidden-lg hidden-xl hi'
+        >
+          <Button text='Zum Anfang' isPrimary={false} width='100%' />
+        </button>
       </Container>
     </main>
   )

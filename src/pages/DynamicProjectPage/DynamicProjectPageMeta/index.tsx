@@ -1,15 +1,16 @@
 import React from 'react';
 import styles from './_ProjectPageMeta.module.scss'
-import {Container} from '../../../layout/Container'
+
+
 
 type ProjectPageMetaProps = {
   client: React.ReactNode
   date: React.ReactNode
   duration: React.ReactNode
   category: React.ReactNode
-  tags: Array<{ id: string | number; [key: string]: any }>
+  tags?: string[] 
 }
-export function ProjectPageMeta({  client, date, duration, category, tags  }: ProjectPageMetaProps) {
+export function ProjectPageMeta({  client, date, duration, category, tags }: ProjectPageMetaProps) {
   return ( <div className='card'>
       <div className='cardtitle' style={{ paddingBottom: '1rem' }}>Projektdetails</div>
       
@@ -37,7 +38,7 @@ export function ProjectPageMeta({  client, date, duration, category, tags  }: Pr
         <div className={styles.metaItem}>
           <h4 style={{marginBottom: '0.5rem'}}>Tags</h4>
           <div className='bigcardtags' style={{paddingTop: '0'}}>
-            {tags.map((tag: any, index: number) => (
+            {tags.map((tag, index) => (
               <span key={index} className='cardtag'>{tag}</span>
             ))}
           </div>

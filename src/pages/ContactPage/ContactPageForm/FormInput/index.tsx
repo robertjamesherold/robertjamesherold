@@ -7,31 +7,34 @@ export type TextInputProps = {
   className?: string
   required?: boolean
 }
+
 export function TextInput({ 
   label = '',
   inputName = '',
   className = '',
   required = false
- }: TextInputProps) {
+}: TextInputProps) {
 
   const [value, setValue] = useState<string>('')
-  const place = (inputName) => {
-    return `${inputName} eingeben`;
+  
+  const place = (name: string) => {
+    return `${name} eingeben`;
   } 
 
   return (
-     <div className={`${styles.textInputContainer} ${className}`}>
-       <label className={styles.textInputLabel}>{label}
-         <input
+    <div className={`${styles.textInputContainer} ${className}`}>
+      <label className={styles.textInputLabel}>
+        {label}
+        <input
           name={inputName}
-           type="text"
-           value={value}
-           placeholder={place(inputName)}
-           className={styles.textInputField}
-           required = {required}
-           onChange={e => setValue(e.target.value)} // Placeholder for change handler
-         />
-         </label>
-       </div>
+          type="text"
+          value={value}
+          placeholder={place(inputName)}
+          className={styles.textInputField}
+          required={required}
+          onChange={e => setValue(e.target.value)}
+        />
+      </label>
+    </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import styles from './_TextArea.module.scss'
 
 export type TextAreaProps = {
