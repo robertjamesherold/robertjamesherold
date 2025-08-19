@@ -15,7 +15,7 @@ export const AchievementsData: CardProps[] = [
   {
     icon: '💼',
     title: 'Freelance\nDesigner',
-    text: 'Seit 2024',
+    text: 'Seit 2017',
     tag: '10+ Projekte'
   },
   {

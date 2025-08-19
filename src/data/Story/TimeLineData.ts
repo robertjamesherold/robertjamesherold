@@ -42,7 +42,7 @@ export const TimeLineData: TimeLineItemProps[] = [
     subtitle: "Freelance Webdesigner",
     period: "Heute",
     list: [
-      "Seit 2024 arbeite ich als freiberuflicher Webdesigner und UI/UX-Designer.",
+      "Seit 2017 arbeite ich als freiberuflicher Webdesigner und UI/UX-Designer.",
       "Ich verbinde mein akademisches Wissen mit praktischer Erfahrung",
       "Ich erstelle gelegentlicg, benutzerfreundliche Designs für verschiedene Kunden."
     ]
