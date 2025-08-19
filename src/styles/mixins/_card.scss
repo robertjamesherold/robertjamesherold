@@ -121,7 +121,7 @@
         box-shadow: $shadLg;
     }
 
-    @media (max-width: $sm - 1px) {
+    @media (max-width: 639px) {
         &:hover {
             transform: translateY(-4px);
         }
@@ -154,7 +154,7 @@
     }
 
 
-    @media (max-width: $sm - 1px) {
+    @media (max-width: 639px) {
         height: 200px;
     }
 }

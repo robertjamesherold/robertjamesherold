@@ -20,7 +20,7 @@ export function Navigation(): React.ReactElement {
   const location = useLocation();
 
   // Routen, bei denen der Button sichtbar sein soll
-  const showButtonRoutes = ['/fallstudien/concretegold', '/fallstudien/elearning', '/projekte'];
+  const showButtonRoutes = ['/fallstudien/concretegold', '/fallstudien/elearning', '/projekte/piradise', '/projekte/animatedalbumcover', '/projekte/schuelerhilfe', '/projekte/oliveto'];
   const shouldShowButton = showButtonRoutes.includes(location.pathname);
 
   return (

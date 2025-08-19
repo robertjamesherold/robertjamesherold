@@ -3,7 +3,7 @@ import { DynamicUniversalProjectPage } from './DynamicProjectPageUniversal'
 import { getProjectStudyBySlug } from './DynamicProjectPageData'
 
 export function DynamicProjectPage() {
-  const { slug } = useParams<{ slug: string }>()  // <--- Typisieren!
+  const { slug } = useParams<{ slug: string }>() 
 
   if (!slug) {
     return <Navigate to="/404" replace />

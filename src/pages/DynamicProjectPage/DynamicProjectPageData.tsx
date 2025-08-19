@@ -49,7 +49,7 @@ export type ProjectSection = {
 
 export type ProjectStudy = {
   id: string
-  slug: string
+  slug?: string
   title: string | string[] | React.ReactNode
   subtitle: string | string[] | React.ReactNode
   client: string
