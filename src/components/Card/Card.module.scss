@@ -1,0 +1,15 @@
+.card {
+    display:block;
+    background-color: rgb($codeBgSec);
+    position: relative;
+    border: $border1;
+    border-radius: $radius1;
+    transition: $all0n3;
+    box-shadow: $shadXs;
+    flex: 1 0 ;
+    @include paddingSmall;
+
+    &:hover {
+        box-shadow: $shadMd;
+    }
+}

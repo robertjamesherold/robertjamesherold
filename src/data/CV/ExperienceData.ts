@@ -8,7 +8,8 @@ export const ExperienceData= [
         "Konzeption und Gestaltung von Websites",
         "User Interface und User Experience Design",
         "Responsive Design für alle Endgeräte",
-        "Zusammenarbeit mit Entwicklern und Kunden"
+        "Zusammenarbeit mit Entwicklern und Kunden",
+        "React, Scss, TypeScript"
       ]
     },
     {

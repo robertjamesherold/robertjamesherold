@@ -1,25 +1,29 @@
 import { story } from '../../data/Story'
-import { Container } from '../../layout/Container'
+import {  Grid, Section, Main } from '../../layout/GridLayout'
 import { TimeLine } from '../../layout/TimeLine'
 import { CardGrid } from '../../layout/CardGrid'
 import { PersonalGrid }from '../../layout/PersonalGrid'
 import { CTASection } from '../../components/CallToAction'
-import { Flexbox } from '../../components/Flexbox'
 import { Header } from '../../layout/Header'
 
 
 export function StoryPage() {
  return (
-    <main>
+    <Main>
       <Header title='Meine Story' />
-      <Container span={{ xl: 8}}>
-        <Flexbox flex='column' gap='medium'>
-          <TimeLine data={story.timeLine}/>
-          <CTASection data={story.cta} />
-        </Flexbox>
-      </Container>
-      <Container span={{ xl: 4}}><CardGrid className='grid-xs2-lg4-xl1' title='Was macht mich aus?' data={story.services}/></Container>
-      <Container><PersonalGrid data={story.personal} /></Container>
-    </main>
+      <Section isPaddingTop={false} id='meine-story' min='fit-content'>
+      <Grid grid={{default: 1, xl: 3}} gapCol='small' gapRow='small'>
+      
+      <TimeLine row={{default: 4}} span={{default: 1, xl:2}} data={story.timeLine}/>
+      
+      
+      <CardGrid isPadding={false} isSection={false} id='Was mich ausmacht' grid={{default:1, md:2, xl:1}} span={{default:1, xl: 1}} row={{default:4}}  data={story.services} />
+      </Grid>
+      </Section>
+
+      <PersonalGrid isPadding={false} id='mehr-über-mich' title='Sonstiges' data={story.personal} />
+                      <CTASection isPadding={false} id='cta' isSection={true} data={story.cta} />
+
+    </Main>
   )
 }

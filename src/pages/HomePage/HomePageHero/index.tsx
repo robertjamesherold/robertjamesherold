@@ -2,14 +2,26 @@ import styles from './_Hero.module.scss'
 import { CodeAnimation } from './HeroCodeAnimation';
 import { GitHubIcon, LinkedInIcon, MailIcon } from '../../../assets/icons';
 import { Button } from '../../../ui/Button';
+import {  Grid } from '../../../layout/GridLayout';
+import { Flexbox } from '../../../components/Flexbox';
+
+export type HeroProps = {
+    id: string,
+    isPadding: boolean
+    children: React.ReactNode
+    }
 
 
 
-
-export function Hero() {
+export function Hero({id, isPadding, children}: HeroProps) {
     return (
-        <div className='grid-lg2'>
-            <div className={ styles.heroContent }>
+     <section id={id} className={`${'section'} ${isPadding ? 'marginTop' : ''}`}>
+     
+     
+              <Flexbox gap='large' width='full-width'>
+            
+              <Grid grid={{lg: 2}}>
+                          <div className={ styles.heroContent }>
                 <h1>Hallo, ich bin <span><h1 className='colored'>Robert James</h1></span></h1>
                 <h3> Mediendesigner</h3>
                 <div className='grid-sm2 paddingTopSmall paddingBottomSmall'>
@@ -23,8 +35,13 @@ export function Hero() {
                 </div>
             </div>
             <CodeAnimation />
-        </div>
+        </Grid>
+        {children}
+          
+             </Flexbox>
+</section>
 
+   
 
     )
 }

@@ -1,17 +1,22 @@
 import { ProgressCard, type ProgressCardProps } from '../../components/ProgressCard';
-
+import { Container, Section, Grid, type ColumnProps } from '../GridLayout';
 
 export type ProgressCardGridProps = {
   title: string,
   data: ProgressCardProps[],
-  className: string
+  id: string
+  grid: number | ColumnProps
+  row?: number | ColumnProps
+  span?: number | ColumnProps
+  isPadding: boolean
 }
 
-export function ProgressCardGrid({ title, data, className }: ProgressCardGridProps) {
+export function ProgressCardGrid({ title, data, grid, row, span, id, isPadding }: ProgressCardGridProps) {
   return (
-    <section>
+    <Section id={id} isPaddingTop={isPadding}>
+    <Container>
       <h2 className='underlined-mid textcenter marginBottomSmall'>{title}</h2>
-      <div className={className}>
+      <Grid grid={grid} span={span} row={row}> 
         {data.map((item) => (
           <ProgressCard
             key={item.id}
@@ -22,7 +27,8 @@ export function ProgressCardGrid({ title, data, className }: ProgressCardGridPro
             id={String(item.id)}
           />
         ))}
-      </div>
-    </section>
+      </Grid>
+      </Container>
+    </Section>
   );
 }

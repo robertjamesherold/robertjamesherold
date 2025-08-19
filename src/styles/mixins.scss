@@ -35,6 +35,13 @@
         justify-content: center;
     }
 
+      .cardCTAcontent {
+        @include gapSmall;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .carddescription {
         @include carddescription;
                 padding:0;
@@ -280,6 +287,30 @@
   }
 }
 
+@mixin gapRow {
+   @each $breakpoint, $value in $gapNormal {
+    @if $breakpoint == null {
+      row-gap: $value;
+    } @else {
+      @media (min-width: $breakpoint) {
+        row-gap: $value;
+      }
+    }
+  }
+}
+@mixin gapCol {
+   @each $breakpoint, $value in $gapNormal {
+    @if $breakpoint == null {
+      column-gap: $value;
+    } @else {
+      @media (min-width: $breakpoint) {
+        column-gap: $value;
+      }
+    }
+  }
+}
+
+
 @mixin gapSmall {
    @each $breakpoint, $value in $gapSmall {
     @if $breakpoint == null {
@@ -292,6 +323,31 @@
   }
 }
 
+@mixin gapRowSmall {
+   @each $breakpoint, $value in $gapSmall {
+    @if $breakpoint == null {
+      row-gap: $value;
+    } @else {
+      @media (min-width: $breakpoint) {
+        row-gap: $value;
+      }
+    }
+  }
+}
+
+
+@mixin gapColSmall {
+   @each $breakpoint, $value in $gapSmall {
+    @if $breakpoint == null {
+      column-gap: $value;
+    } @else {
+      @media (min-width: $breakpoint) {
+        column-gap: $value;
+      }
+    }
+  }
+}
+
 @mixin gapMini {
    @each $breakpoint, $value in $gapMini {
     @if $breakpoint == null {
@@ -299,6 +355,43 @@
     } @else {
       @media (min-width: $breakpoint) {
         gap: $value;
+      }
+    }
+  }
+}
+
+
+@mixin gapXL {
+   @each $breakpoint, $value in $spacingBig {
+    @if $breakpoint == null {
+      gap: $value;
+    } @else {
+      @media (min-width: $breakpoint) {
+        gap: $value;
+      }
+    }
+  }
+}
+
+@mixin gapRowXL {
+   @each $breakpoint, $value in $spacingBig {
+    @if $breakpoint == null {
+      row-gap: $value;
+    } @else {
+      @media (min-width: $breakpoint) {
+        row-gap: $value;
+      }
+    }
+  }
+}
+
+@mixin gapColXL {
+   @each $breakpoint, $value in $spacingBig {
+    @if $breakpoint == null {
+      column-gap: $value;
+    } @else {
+      @media (min-width: $breakpoint) {
+        column-gap: $value;
       }
     }
   }

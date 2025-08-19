@@ -325,6 +325,12 @@ background-color: rgba($codeBlue, .1);
 
 .card { position: relative;
     height: $spaceFit;
+   @include gapSmall;  
+} 
+
+.cardFull { position: relative;
+    height: $space100;
+   @include gapSmall;  
 } 
 .open { transform: scale(1.0); };
 .closed { transform: scale(0.8); };
@@ -361,7 +367,6 @@ position: absolute;
     padding: $space0n5 $space1;
     width: fit-content;
     border-radius: $radius1;
-    margin-top: $space1n5
   }
 
   .dot {

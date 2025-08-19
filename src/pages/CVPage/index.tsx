@@ -1,9 +1,11 @@
 import { cv, sidesection } from '../../data/CV'
-import { TimeLine } from '../../layout/TimeLine'
+import { TimeLineContainer } from '../../layout/TimeLine'
 import { CTASection } from '../../components/CallToAction'
 import { Container } from '../../layout/Container'
 import { CVSideSection } from '../../layout/CVSideSection'
 import { Header } from '../../layout/Header'
+import { Grid, Section } from '../../layout/GridLayout'
+import { Flexbox } from '../../components/Flexbox'
 
 
 
@@ -12,8 +14,16 @@ export function CVPage() {
   return (
     <main>
       <Header title='Lebenslauf'/>
-      <Container span={{ md: 7 }}><div className="grid"><TimeLine title="Bildung" data={cv.education} /><TimeLine title="Berufserfahrung" data={cv.experience} /><TimeLine title="Zusätzliche Aktivitäten" data={cv.additional} /></div></Container>
-      <Container span={{ md: 5 }}><CVSideSection data={sidesection} /></Container>
+      <Section id='cv' isPaddingTop={false}>
+      <Grid grid={{default: 1, xl:3}}>
+      <Container span={{default: 1, xl: 2}}>
+      <Flexbox gap='large'>
+      <TimeLineContainer span={{default: 1, xl: 2}} title="Bildung" data={cv.education} />
+      <TimeLineContainer span={{default: 1, xl: 2}}   title="Berufserfahrung" data={cv.experience} />
+      <TimeLineContainer span={{default: 1, xl: 2}}  title="Zusätzliche Aktivitäten" data={cv.additional} />
+      </Flexbox></Container>
+      <CVSideSection span={{default:1}} row={{default: 12}} data={sidesection} />
+      </Grid></Section>
       <Container ><CTASection data={cv.cta} /></Container>
     </main>
 

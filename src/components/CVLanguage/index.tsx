@@ -1,5 +1,5 @@
 import styles from './CVLanguage.module.scss'
-
+import { Grid, Container } from '../../layout/GridLayout';
 export type CVLanguageProps = {
   data: Array<{
     name: string;
@@ -7,9 +7,10 @@ export type CVLanguageProps = {
   }>;
 }
 export function CVLanguage({  data  }: CVLanguageProps) {
-  return (<section>
+  return (   <Grid span={{default: 1}} row={{default:1}}>
+     <Container>
   <h2 className='underlined-left'>Sprachen</h2>
-      <div className='card' style={{height: 'fit-content'}}>
+      <div className='card' style={{height: '100%'}}>
           <div className='cardcontent'>
 
         {data.map((language, index) => (
@@ -21,7 +22,7 @@ export function CVLanguage({  data  }: CVLanguageProps) {
       </div>
           </div>
 
-    </section>
+    </Container></Grid>
   )
 }
 

@@ -1,6 +1,7 @@
 import { CVSkills } from '../../components/CVSkills';
 import { CVAchievements } from '../../components/CVAchievement';
 import { CVLanguage } from '../../components/CVLanguage';
+import { Flexbox } from '../../components/Flexbox';
 
 // Typ für die sidesectionData Struktur
 export type CVSideSectionData = Array<{
@@ -29,6 +30,7 @@ export type CVSideSectionData = Array<{
 
 export type CVSideSectionProps = {
   data: CVSideSectionData;
+
 };
 
 export function CVSideSection({ data }: CVSideSectionProps) {
@@ -38,7 +40,7 @@ export function CVSideSection({ data }: CVSideSectionProps) {
   const languagesItem = data.find(item => item.languages);
 
   return (
-    <div className="grid">
+    <Flexbox gap='large' justify='space-between' align='stretch'>
       {/* Skills Section */}
       {skillsItem?.skills && (
         <CVSkills 
@@ -67,6 +69,6 @@ export function CVSideSection({ data }: CVSideSectionProps) {
       {languagesItem?.languages && (
         <CVLanguage data={languagesItem.languages} />
       )}
-    </div>
+    </Flexbox>
   );
 }
