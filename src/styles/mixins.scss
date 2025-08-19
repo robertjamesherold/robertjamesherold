@@ -335,7 +335,17 @@
   }
 }
 
-
+@mixin Left {
+   @each $breakpoint, $value in $gapMini {
+    @if $breakpoint == null {
+      left: calc($value * 0.33);
+    } @else {
+      @media (min-width: $breakpoint) {
+        left: calc($value * 0.33);
+      }
+    }
+  }
+}
 @mixin gapColSmall {
    @each $breakpoint, $value in $gapSmall {
     @if $breakpoint == null {
@@ -423,6 +433,8 @@
     }
   }}
 }
+
+
 
 // ALIGNITEMS
 

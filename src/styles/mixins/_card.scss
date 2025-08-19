@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @use '@scss/variables.scss' as *;
 // Card Mixin
 
@@ -96,7 +98,7 @@
     padding: $space0n25 $space0n75;
 
     color: rgb($codeBlueDark);
-    border-radius: $radius1 / 2;
+    border-radius: math.div($radius1, 2);
     background-color: rgba($codeBlueBright, .3);
 }
 

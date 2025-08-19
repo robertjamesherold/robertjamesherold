@@ -1,11 +1,10 @@
 import  { useState, useEffect } from 'react'
-import { Container } from '../../../layout/Container'
 import { ProjectPageMeta } from '../DynamicProjectPageMeta'
 import { ProjectPageContent } from '../DynamicProjectPageContent'
 import { ProjectPageNav } from '../DynamicProjectPageNav'
 import { Header } from '../../../layout/Header'
-import { Button } from '../../../ui/Button'
 import { Grid, Section } from '../../../layout/GridLayout'
+import { CaseStudySidebar } from '../../DynamicCaseStudyPage/DynamicCaseStudyPageSidebar'
 
 
 // Typen für die neue Struktur
@@ -34,6 +33,7 @@ export type ProjectSection = {
 }
 
 export type ProjectPageData = {
+  id?: string
   title: string | string[] | React.ReactNode
   subtitle: string | string[] | React.ReactNode
   client?: string
@@ -47,9 +47,10 @@ export type ProjectPageData = {
 
 export type DynamicUniversalProjectPageProps = {
   projectPageData: ProjectPageData
+  id?: string
 }
 
-export function DynamicUniversalProjectPage({ projectPageData }: DynamicUniversalProjectPageProps) {
+export function DynamicUniversalProjectPage({ projectPageData, id }: DynamicUniversalProjectPageProps) {
   const [activeSection, setActiveSection] = useState<string>('')
 
   useEffect(() => {
@@ -76,11 +77,10 @@ export function DynamicUniversalProjectPage({ projectPageData }: DynamicUniversa
   return (
     <main>
       <Header title={title} text={subtitle} />
-      <Section id={title}>
-      <Grid>
-      <Grid grid={{default:12}}>
-      <Container span={{ default: 12, sm: 6, lg: 4, xl: 3 }}>
-             <Grid grid={{default:12}} fullH={false}>
+      <Section isPaddingTop={true} id={id}>
+
+     <Grid grid={{default:12}} gapRow='medium' gapCol='medium' fullH={false}>
+          <CaseStudySidebar grid={{default:1, md: 2, xl: 1}} span={{default: 12,md:6, xl: 4}}>
 
           {sections.length > 1 && (
             <ProjectPageNav
@@ -96,32 +96,14 @@ export function DynamicUniversalProjectPage({ projectPageData }: DynamicUniversa
             category={category}
             tags={tags}
           />
-       </Grid>
-      </Container>
+       </CaseStudySidebar>
 
-      <Container span={{ default: 12, sm: 6, lg: 8, xl: 9 }}>
         <ProjectPageContent
           sections={sections}
           activeSection={activeSection}
           imageMap={imageMap}
-        />
-      </Container>
-</Grid>
-      <Container>
-        <button
-          onClick={() => window.scrollTo(0, 0)}
-          style={{ width: '100%', minWidth: '100%' }}
-          className="hidden-md hidden-lg hidden-xl hi"
-        >
-          <Button
-            variant="button"
-            text="Zum Anfang"
-            isPrimary={false}
-            width="100%"
-          />
-        </button>
-      </Container>
-      </Grid>
+        />   
+        </Grid>
 </Section>
     </main>
   )

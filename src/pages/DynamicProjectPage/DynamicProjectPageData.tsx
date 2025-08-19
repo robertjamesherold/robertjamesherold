@@ -232,7 +232,6 @@ export const webdesignProjectData: ProjectStudy = {
     {
       id: 'overview',
       title: 'Projektübersicht',
-      content: 'Entwicklung eines modernen Webdesigns für ein fiktives Piraten-Resort mit Fokus auf User Experience und thematische Gestaltung.',
       gallery: [
         {
           id: 1,

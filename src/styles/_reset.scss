@@ -1,4 +1,5 @@
 @use '@scss/variables.scss' as *;
+@use '@scss/mixins.scss' as *;
 // =============================================================================
 // SCSS RESET - Modern CSS Reset with SCSS enhancements
 // =============================================================================
@@ -33,7 +34,23 @@ html
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+article .text{
+    background-color: rgb($codeBgTer);
+    @include paddingSmall;
+    border: $border1;
+    grid-column: span12;
+    border-radius: $radius1;}
+    
+article.gallery{
+    grid-column: span12; grid-row: auto;
+    height: $space100;
+    margin-top: 0;
+    margin-left: 0;
+    left:0;
+    width: 100%;
+    border-radius: $radius1;}
 
+    
 body
 {
     // Default font stack (can be overridden with variables)

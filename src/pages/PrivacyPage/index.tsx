@@ -1,4 +1,4 @@
-import { Container } from '../../layout/Container'
+import { Section, Container } from '../../layout/GridLayout'
 import styles from './PrivacyPage.module.scss'
 
 const head = 'Datenschutz\u00ADerklärung'
@@ -6,6 +6,7 @@ const head = 'Datenschutz\u00ADerklärung'
 export function PrivacyPage() {
   return (
     <main>
+    <Section isPaddingTop={false} id='privacy'>
       <Container span={{ default: 12 }}>
         <article className={styles.content}>
           <h1>{head}</h1>
@@ -124,11 +125,12 @@ export function PrivacyPage() {
             <h2>9. Fragen</h2>
             <p>
               Wenn Sie Fragen zum Datenschutz haben, schreiben Sie mir bitte eine E-Mail 
-              an: [deine-email@domain.de]
+              an: [me@robertjamesherold.com]
             </p>
           </section>
         </article>
       </Container>
+      </Section>
     </main>
   )
 }

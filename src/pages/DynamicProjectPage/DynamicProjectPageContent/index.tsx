@@ -44,7 +44,8 @@ export function ProjectPageContent({
 }: ProjectPageContentProps) {
 
   return (
-    <article>
+  <Container span={{default:12, md:6, xl: 8}}>
+    <article className='gallery marginTop'>
       {sections.map((section) => (
         <section
           key={section.id}
@@ -90,6 +91,6 @@ export function ProjectPageContent({
           {children}
         </section>
       ))}
-    </article>
+    </article></Container>
   )
 }

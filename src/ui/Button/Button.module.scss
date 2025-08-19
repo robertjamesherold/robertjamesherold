@@ -1,8 +1,11 @@
 
 .primary {
-@include ctaButtonPrimary
+@include ctaButtonPrimary;
+max-height:$space4;
 }
 
 .secondary {
-@include ctaButtonSecondary
+@include ctaButtonSecondary;
+max-height:$space4;
+
 }

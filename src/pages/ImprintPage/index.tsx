@@ -1,10 +1,11 @@
-import { Container } from '../../layout/Container'
+import { Section, Container } from '../../layout/GridLayout'
 import styles from './ImprintPage.module.scss'
 
 export function ImprintPage() {
   return (
     <main style={{justifyContent: 'center', alignItems:'center'}}>
-      <Container span={{ default: 12}}>
+       <Section isPaddingTop={false} id='privacy'>
+            <Container span={{ default: 12 }}>
         <article className={styles.content}>
           <h1>Impressum</h1>
           
@@ -148,6 +149,7 @@ export function ImprintPage() {
           </div>
         </article>
       </Container>
+      </Section>
     </main>
   )
 }

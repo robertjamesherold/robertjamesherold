@@ -1,4 +1,6 @@
+@use '../mixins.scss' as *;
 // PADDINGS
+
 
 .paddingTop {
     @include paddingTop;

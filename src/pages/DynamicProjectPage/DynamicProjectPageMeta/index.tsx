@@ -12,7 +12,7 @@ type ProjectPageMetaProps = {
   tags?: string[] 
 }
 export function ProjectPageMeta({  client, date, duration, category, tags }: ProjectPageMetaProps) {
-  return ( <Container>
+  return (<Container>
   <div className='card'>
       <div className='cardtitle' style={{ paddingBottom: '1rem' }}>Projektdetails</div>
       

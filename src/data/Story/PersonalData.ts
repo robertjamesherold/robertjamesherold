@@ -6,26 +6,26 @@ export const PersonalData: PersonalProps  = {
   
     {
       title: "3+",
-      text: "Jahre Studium"
+      text: ["Jahre Studium"]
     }, {
       title: "100%",
-      text: "Lernbereitschaft"
+      text: ["Lernbereitschaft"]
     },
    
     {
       title: "10+",
-      text: "Jahre Erfahrung"
+      text: ["Jahre Erfahrung"]
     }, 
      {
       title: "100%",
-      text: "Motiviert"
+      text: ["Motiviert"]
     }, {
       title: "1,7",
-      text: "Notendurchschnitt"
+      text: ["Notendurchschnitt"]
     },
     {
       title: "100%",
-      text: "Engagiert"
+      text: ["Engagiert"]
     },
     
   

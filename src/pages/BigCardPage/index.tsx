@@ -43,15 +43,17 @@ export function CaseCardPage({
             onFilterChange={setActiveCaseFilter}
           />
           <BigCardGrid 
-            showButton={false} 
-            className='grid-md2 paddingTopSmall paddingBottomSmall' 
+            isPadding={true}
+            showButton={false}
+            grid={{lg:2}} 
+            id='casestudys'
             data={filteredCases} 
           />
         </Container>
       {showCTA && (
-        <Container>
-          <CTASection data={cases.cta} />
-        </Container>
+        
+          <CTASection id='cta' isPadding={false} isSection={true} data={cases.cta} />
+        
       )}
     </main>
   );
@@ -75,15 +77,16 @@ export function ProjectCardPage({showCTA = true}: PageProps) {
             onFilterChange={setActiveProjectFilter}
           />
           <BigCardGrid 
-          showButton={false} 
-          className='grid-md2 paddingTopSmall paddingBottomSmall' 
-          data={filteredProjects} 
-        />
+            isPadding={true}
+            showButton={false}
+            grid={{lg:2}} 
+            id='casestudys'
+ data={filteredProjects}          />
+         
+       
       </Container>
       {showCTA && (
-        <Container>
-          <CTASection data={projects.cta} />
-        </Container>
+          <CTASection id='cta' isPadding={false} isSection={true} data={cases.cta} />
       )}
     </main>
   );
