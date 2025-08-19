@@ -1,0 +1,347 @@
+.projectContent {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+
+  p {
+    margin-bottom: 1.5em;
+    opacity: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    em {
+      font-style: italic;
+      color: var(--project-color);
+    }
+
+    a {
+      color: var(--project-color);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--project-color);
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: #ffffff;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // Headings
+  h3, h4, h5, h6 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #ffffff;
+    opacity: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .heading1 {
+    font-size: 32px;
+    background: linear-gradient(90deg, #ffffff, var(--project-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .heading2 {
+    font-size: 28px;
+  }
+
+  .heading3 {
+    font-size: 24px;
+  }
+
+  // Lists
+  .contentList, ul, ol {
+    margin: 1.5em 0;
+    padding-left: 0;
+    list-style: none;
+    opacity: 0;
+
+    li {
+      position: relative;
+      margin-bottom: 0.8em;
+      padding-left: 2em;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.6em;
+        width: 6px;
+        height: 6px;
+        background: var(--project-color);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--project-color);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  ol {
+    counter-reset: item;
+
+    li {
+      counter-increment: item;
+
+      &::before {
+        content: counter(item, decimal-leading-zero);
+        width: auto;
+        height: auto;
+        background: none;
+        color: var(--project-color);
+        font-weight: 600;
+        font-size: 14px;
+        top: 0.2em;
+      }
+    }
+  }
+
+  // Blockquotes
+  .quote, blockquote {
+    position: relative;
+    margin: 2em 0;
+    padding: 2em;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid var(--project-color);
+    border-radius: 8px;
+    font-size: 20px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+
+    &::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 60px;
+      color: var(--project-color);
+      opacity: 0.3;
+      font-family: Georgia, serif;
+    }
+
+    cite {
+      display: block;
+      margin-top: 1em;
+      font-size: 16px;
+      font-style: normal;
+      color: rgba(255, 255, 255, 0.6);
+
+      &::before {
+        content: '— ';
+      }
+    }
+  }
+
+  // Images
+  .contentImage, figure {
+    margin: 3em -40px;
+    opacity: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    figcaption {
+      margin-top: 1em;
+      font-size: 14px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 900px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  // Tables
+  table {
+    width: 100%;
+    margin: 2em 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    overflow: hidden;
+
+    thead {
+      background: rgba(255, 255, 255, 0.05);
+
+      th {
+        padding: 1em;
+        text-align: left;
+        font-weight: 600;
+        color: #ffffff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    tbody {
+      tr {
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.02);
+        }
+
+        td {
+          padding: 1em;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        &:last-child td {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  // Code blocks
+  code {
+    padding: 0.2em 0.4em;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+    color: var(--project-color);
+  }
+
+  pre {
+    margin: 2em 0;
+    padding: 1.5em;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    overflow-x: auto;
+
+    code {
+      padding: 0;
+      background: none;
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  // Horizontal rules
+  hr {
+    margin: 3em 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+  }
+
+  // Animation helper
+  .animated {
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .projectContent {
+    font-size: 16px;
+    line-height: 1.7;
+
+    .heading1 {
+      font-size: 28px;
+    }
+
+    .heading2 {
+      font-size: 24px;
+    }
+
+    .heading3 {
+      font-size: 20px;
+    }
+
+    .quote, blockquote {
+      padding: 1.5em;
+      font-size: 18px;
+    }
+  }
+}
+
+// Light mode adjustments
+@media (prefers-color-scheme: light) {
+  .projectContent {
+    color: rgba(0, 0, 0, 0.85);
+
+    p {
+      strong {
+        color: #000000;
+      }
+    }
+
+    h3, h4, h5, h6 {
+      color: #000000;
+    }
+
+    .quote, blockquote {
+      background: rgba(0, 0, 0, 0.03);
+      color: rgba(0, 0, 0, 0.9);
+    }
+
+    code {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    pre {
+      background: rgba(0, 0, 0, 0.05);
+
+      code {
+        color: rgba(0, 0, 0, 0.9);
+      }
+    }
+  }
+}

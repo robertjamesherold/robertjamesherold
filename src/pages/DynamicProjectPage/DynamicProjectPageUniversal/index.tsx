@@ -1,14 +1,15 @@
-import  { useState, useEffect } from 'react'
+// DynamicProjectPageUniversal/index.tsx - Aktualisierte Version mit Collapsible Sidebar
+import { useState, useEffect } from 'react'
 import { Container } from '../../../layout/Container'
 import { ProjectPageMeta } from '../DynamicProjectPageMeta'
 import { ProjectPageContent } from '../DynamicProjectPageContent'
 import { ProjectPageNav } from '../DynamicProjectPageNav'
 import { Header } from '../../../layout/Header'
 import { Button } from '../../../ui/Button'
-import { Grid, Section } from '../../../layout/GridLayout'
+import {  Section } from '../../../layout/GridLayout'
+import styles from './DynamicProjectPageUniversal.module.scss'
 
-
-// Typen für die neue Struktur
+// Typen bleiben gleich
 export type VideoItem = {
   id: number | string
   url: string
@@ -51,6 +52,24 @@ export type DynamicUniversalProjectPageProps = {
 
 export function DynamicUniversalProjectPage({ projectPageData }: DynamicUniversalProjectPageProps) {
   const [activeSection, setActiveSection] = useState<string>('')
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true) // Sidebar State
+  const [isMobile, setIsMobile] = useState<boolean>(false)
+
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768
+      setIsMobile(mobile)
+      // Auf Mobile automatisch schließen
+      if (mobile) {
+        setIsSidebarOpen(false)
+      }
+    }
+
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     if (projectPageData?.sections?.length > 0 && !activeSection) {
@@ -61,7 +80,6 @@ export function DynamicUniversalProjectPage({ projectPageData }: DynamicUniversa
   if (!projectPageData) return null
 
   const {
-
     title,
     subtitle,
     client,
@@ -73,56 +91,79 @@ export function DynamicUniversalProjectPage({ projectPageData }: DynamicUniversa
     imageMap = {}
   } = projectPageData
 
-  return (
-    <main>
-      <Header title={title} text={subtitle} />
-      <Section id={title}>
-      <Grid>
-      <Grid grid={{default:12}}>
-      <Container span={{ default: 12, sm: 6, lg: 4, xl: 3 }}>
-             <Grid grid={{default:12}} fullH={false}>
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
+  }
 
-          {sections.length > 1 && (
-            <ProjectPageNav
+  return (
+    <main className={styles.mainWrapper}>
+      <Header title={title} text={subtitle} />
+      <Section>
+        <div className={styles.layoutContainer}>
+          {/* Toggle Button */}
+          <button 
+            className={`${styles.sidebarToggle} ${!isSidebarOpen ? styles.closed : ''}`}
+            onClick={toggleSidebar}
+            aria-label={isSidebarOpen ? 'Sidebar schließen' : 'Sidebar öffnen'}
+            title={isSidebarOpen ? 'Sidebar schließen' : 'Sidebar öffnen'}
+          >
+            <span className={styles.toggleIcon}>
+              {isSidebarOpen ? '◀' : '▶'}
+            </span>
+          </button>
+
+          {/* Sidebar Container */}
+          <aside className={`${styles.sidebar} ${!isSidebarOpen ? styles.collapsed : ''}`}>
+            <div className={styles.sidebarContent}>
+              {sections.length > 1 && (
+                <ProjectPageNav
+                  sections={sections}
+                  activeSection={activeSection}
+                  onSectionClick={(sectionId) => {
+                    setActiveSection(sectionId)
+                    // Auf Mobile nach Klick automatisch schließen
+                    if (isMobile) {
+                      setIsSidebarOpen(false)
+                    }
+                  }}
+                />
+              )}
+              <ProjectPageMeta
+                client={client}
+                date={date}
+                duration={duration}
+                category={category}
+                tags={tags}
+              />
+            </div>
+          </aside>
+
+          {/* Main Content */}
+          <div className={`${styles.mainContent} ${!isSidebarOpen ? styles.expanded : ''}`}>
+            <ProjectPageContent
               sections={sections}
               activeSection={activeSection}
-              onSectionClick={setActiveSection}
+              imageMap={imageMap}
             />
-          )}
-          <ProjectPageMeta
-            client={client}
-            date={date}
-            duration={duration}
-            category={category}
-            tags={tags}
-          />
-       </Grid>
-      </Container>
+          </div>
+        </div>
 
-      <Container span={{ default: 12, sm: 6, lg: 8, xl: 9 }}>
-        <ProjectPageContent
-          sections={sections}
-          activeSection={activeSection}
-          imageMap={imageMap}
-        />
-      </Container>
-</Grid>
-      <Container>
-        <button
-          onClick={() => window.scrollTo(0, 0)}
-          style={{ width: '100%', minWidth: '100%' }}
-          className="hidden-md hidden-lg hidden-xl hi"
-        >
-          <Button
-            variant="button"
-            text="Zum Anfang"
-            isPrimary={false}
-            width="100%"
-          />
-        </button>
-      </Container>
-      </Grid>
-</Section>
+        {/* Mobile Scroll to Top Button */}
+        <Container>
+          <button
+            onClick={() => window.scrollTo(0, 0)}
+            style={{ width: '100%', minWidth: '100%' }}
+            className="hidden-md hidden-lg hidden-xl hi"
+          >
+            <Button
+              variant="button"
+              text="Zum Anfang"
+              isPrimary={false}
+              width="100%"
+            />
+          </button>
+        </Container>
+        </Section>
     </main>
   )
 }

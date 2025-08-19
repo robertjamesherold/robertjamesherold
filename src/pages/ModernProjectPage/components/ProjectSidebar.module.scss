@@ -1,0 +1,70 @@
+.sidebar {
+  position: sticky;
+  top: 100px;
+  width: 320px;
+  height: fit-content;
+  max-height: calc(100vh - 120px);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Smooth "slide" effect for desktop
+  transform: translateX(0);
+
+  &.collapsed {
+    width: 60px;
+    transform: translateX(-10px); // kleines Zurückgleiten für besseren Effekt
+
+    .sidebarContent {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .toggleBtn {
+      left: 20px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-height: none;
+    transform: translateY(0);
+
+    &.collapsed {
+      width: 100%;
+      height: 60px;
+      transform: translateY(-10px); // von oben reinsliden
+
+      .sidebarContent {
+        display: none;
+      }
+    }
+  }
+}
+
+.toggleBtn {
+  position: absolute;
+  top: 20px;
+  left: 280px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1) rotate(5deg);
+  }
+}

@@ -1,0 +1,261 @@
+// DynamicProjectPageUniversal.module.scss
+
+.mainWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.layoutContainer {
+  position: relative;
+  display: flex;
+  gap: $space2;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  
+  @media (max-width: $md) {
+    padding: $space1;
+    gap: $space1;
+  }
+}
+
+// Sidebar Toggle Button
+.sidebarToggle {
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 0px; // Sidebar width + spacing
+  transform: translateY(-50%);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 32px;
+  height: 64px;
+  padding: 0;
+  
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  color: rgb($codeWhite);
+  border: 1px solid rgba($codeBlue, 0.3);
+  border-left: none;
+  border-radius: 0 $radius1 $radius1 0;
+  background: rgb($codeBlue);
+  box-shadow: $shadMd;
+  
+  &:hover {
+    background: rgb($codeBlueBright);
+    box-shadow: $shadLg;
+    width: 36px;
+    
+    .toggleIcon {
+      transform: scale(1.2);
+    }
+  }
+  
+  &:focus {
+    outline: 2px solid rgb($codeBlue);
+    outline-offset: 2px;
+  }
+  
+  &.closed {
+    left: 0;
+
+  }
+  
+  // Mobile positioning
+  @media (max-width: $md) {
+    top: 50%;
+    bottom: $space2;
+    left: $space0;
+    
+    &.closed {
+      left: $space0;
+    }
+  }
+}
+
+.toggleIcon {
+  font-size: $fs1;
+  font-weight: $fw6;
+  transition: transform 0.3s ease;
+}
+
+// Sidebar
+.sidebar {
+  position: sticky;
+  top: $space2;
+  
+  flex-shrink: 0;
+  
+  width: 300px;
+  
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(0);
+  
+  opacity: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: rgba($codeTextTer, 0.1);
+    border-radius: 3px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: rgba($codeBlue, 0.5);
+    border-radius: 3px;
+    
+    &:hover {
+      background: rgba($codeBlue, 0.7);
+    }
+  }
+  
+  &.collapsed {
+    margin-left: calc(-300px - 2rem);
+    transform: translateX(-60vw);
+    opacity: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  @media (max-width: $md) {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    
+    width: 280px;
+    height: 100vh;
+    max-height: 100vh;
+    padding: $space2;
+    
+    background: rgb($codeBgSec);
+    box-shadow: $shadMd;
+    
+    &.collapsed {
+      transform: translateX(-100%);
+      margin-right: 0;
+    }
+  }
+}
+
+.sidebarContent {
+  display: flex;
+  flex-direction: column;
+  gap: $space2;
+  
+  // Smooth content animation
+  animation: fadeIn 0.4s ease;
+  
+  @media (max-width: $md) {
+    padding-top: $space4; // Space for close button on mobile
+  }
+}
+
+// Main Content Area
+.mainContent {
+  flex: 1;
+  min-width: 0; // Wichtig für flex items
+  
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.expanded {
+    margin-left: 0;
+    max-width: 100%;
+    
+    @media (min-width: $lg) {
+        max-width: 1440px;
+
+      margin: 0 auto;
+    }
+  }
+}
+
+// Overlay für Mobile
+.mobileOverlay {
+  display: none;
+  
+  @media (max-width: $md) {
+    display: block;
+    position: fixed;
+    z-index: 4000;
+    top: 0;
+    left: 0;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+// Accessibility - Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .sidebarToggle,
+  .mainContent,
+  .toggleIcon {
+    transition: none;
+    animation: none;
+  }
+}
+
+// Print styles
+@media print {
+  .sidebarToggle {
+    display: none;
+  }
+  
+  .sidebar {
+    display: none;
+  }
+  
+  .mainContent {
+    max-width: 100%;
+    margin: 0;
+    
+    &.expanded {
+      max-width: 100%;
+    }
+  }
+}
