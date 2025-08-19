@@ -1,9 +1,9 @@
 
 import { notfound } from '../../data/404'
-import { Container } from '../../layout/Container'
 import styles from './NotFoundPage.module.scss'
 import { Button } from '../../ui/Button'
 import { Flexbox } from '../../components/Flexbox'
+import { Section, Container } from '../../layout/GridLayout'
 
 export type NotFoundPageData = {
   title: string
@@ -16,6 +16,7 @@ export type NotFoundPageData = {
 export function NotFoundPage() {
   return (
     <main style={{minHeight: '65vh', justifyContent: 'center', display:'flex', alignItems:'center'}}>
+      <Section id='404' isPaddingTop={false}>
       <Container>
         <Flexbox justify='center' align='center'>
           <h1 className={styles.errorCode}>{notfound.title}</h1>
@@ -29,6 +30,7 @@ export function NotFoundPage() {
           </div>
         </Flexbox>
       </Container>
+      </Section>
     </main>
   )
 }

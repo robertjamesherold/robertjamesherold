@@ -5,8 +5,15 @@ import { Flexbox } from '../../../components/Flexbox';
 import { TextInput } from './FormInput';
 import { TextArea } from './FormArea';
 import { ErrorPopup } from './FormErrorPopup';
+import { Grid, type ColumnProps } from '../../../layout/GridLayout';
 
-export function ContactForm() {
+export type FormProps = {
+  grid?: number | ColumnProps
+  row?: number | ColumnProps
+  span?: number | ColumnProps
+  }
+
+export function ContactForm({grid, row, span }: FormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showErrorPopup, setShowErrorPopup] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -56,7 +63,7 @@ export function ContactForm() {
   };
 
   return (
-    <section>
+    <Grid row={row} grid={grid} span={span}>
       {/* Netlify Hidden Form */}
       <form name="contact" netlify-honeypot="bot-field" hidden>
         <div><div>
@@ -105,7 +112,7 @@ export function ContactForm() {
         onClose={handleCloseErrorPopup}
         message={errorMessage}
       />
-    </section>
+    </Grid>
   );
 }
 

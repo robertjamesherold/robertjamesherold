@@ -6,7 +6,7 @@ title: '3+',
 text: ['Jahre','Studium']
 },
 {
-title: '140',
+title: '155',
 text: ['ECTS','Credits']
 },
 {
@@ -14,7 +14,7 @@ title: '1,7',
 text: ['Noten-','durchschnitt']
 },
 {
-title: '2024',
+title: '2017',
 text: ['Freelancer','seit']
 }
 ];

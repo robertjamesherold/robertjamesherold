@@ -22,9 +22,9 @@ export function CVPage() {
       <TimeLineContainer span={{default: 1, xl: 2}}   title="Berufserfahrung" data={cv.experience} />
       <TimeLineContainer span={{default: 1, xl: 2}}  title="Zusätzliche Aktivitäten" data={cv.additional} />
       </Flexbox></Container>
-      <CVSideSection span={{default:1}} row={{default: 12}} data={sidesection} />
+      <CVSideSection data={sidesection} />
       </Grid></Section>
-      <Container ><CTASection data={cv.cta} /></Container>
+      <CTASection id='cta' isSection={true} isPadding={true} data={cv.cta} />
     </main>
 
   )

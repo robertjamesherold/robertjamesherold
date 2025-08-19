@@ -49,7 +49,7 @@ export type ProjectSection = {
 
 export type ProjectStudy = {
   id: string
-  slug: string
+  slug?: string
   title: string | string[] | React.ReactNode
   subtitle: string | string[] | React.ReactNode
   client: string
@@ -232,7 +232,6 @@ export const webdesignProjectData: ProjectStudy = {
     {
       id: 'overview',
       title: 'Projektübersicht',
-      content: 'Entwicklung eines modernen Webdesigns für ein fiktives Piraten-Resort mit Fokus auf User Experience und thematische Gestaltung.',
       gallery: [
         {
           id: 1,

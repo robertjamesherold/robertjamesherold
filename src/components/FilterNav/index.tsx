@@ -1,10 +1,10 @@
 import React from 'react'
+import { Section } from '../../layout/GridLayout';
 
 export type Category = {
   id: string | number
   label: string
-  [key: string]: any;
-}
+ }
 
 export type FilterNavProps = {
   categories: Category[]
@@ -20,7 +20,7 @@ export function FilterNav({
   
 }: FilterNavProps) {
   return (
-    <section>
+    <Section id='navigation' isPaddingTop={false}>
       <div className="filterNav">
         {categories.map((category) => (
           <button
@@ -32,6 +32,6 @@ export function FilterNav({
           </button>
         ))}
       </div>
-    </section>
+    </Section>
   )
 }

@@ -5,7 +5,7 @@ import { CaseStudyPageNav, Pagination } from '../DynamicCaseStudyPageNav'
 import { CaseStudyContent } from '../DynamicCaseStudyPageContent'
 import { CaseStudyMeta } from '../DynamicCaseStudyPageMeta'
 import { CaseStudySidebar } from '../DynamicCaseStudyPageSidebar'
-import { Button } from '../../../ui/Button'
+import { Grid, Section, type ColumnProps } from '../../../layout/GridLayout'
 export type SubSubSection = {
   sub?: string
   text?: string
@@ -54,6 +54,7 @@ export type CaseStudyNavProps = {
   sections: CaseStudySection[];
   activeSection: string | number ;
   onSectionClick: (sectionId: string) => void;
+  span?: number | ColumnProps
 }
 
 export function UniversalCaseStudy({ 
@@ -87,19 +88,24 @@ export function UniversalCaseStudy({
 
   return (
     <main>
+
       {/* Header mit Cover Image */}
       <Header title={title} text={subtitle}/>
-      
-      <Container span={{ default: 12, xl: 4 }}>
+      <Section id='content' isPaddingTop={false}> 
+   
         {/* Sidebar mit Meta-Infos und Navigation */}
-        <CaseStudySidebar>
+         <Grid grid={{default:12}} gapRow='large' fullH={false}>
+          <CaseStudySidebar grid={{default:1, md: 2, xl: 1}} span={{default: 12, xl: 4}}>
+
           <CaseStudyPageNav 
+            span={{default: 1}}
             sections={sections}
             activeSection={activeSection}
             onSectionClick={setActiveSection}
           />
 
           <CaseStudyMeta 
+          span={{default: 1}}
             client={client}
             date={date}
             duration={duration}
@@ -107,8 +113,7 @@ export function UniversalCaseStudy({
             tags={tags}
           />
         </CaseStudySidebar>
-      </Container>
-      
+    
       <Container span={{ default: 12, xl: 8 }}>
         {/* Main Content */}
         <CaseStudyContent 
@@ -125,14 +130,11 @@ export function UniversalCaseStudy({
           activeSection={activeSection}
           onSectionClick={setActiveSection}
         />
-        <button 
-          onClick={() => window.scrollTo(0, 0)} 
-          style={{ width: '100%', minWidth: '100%' }}  
-          className='hidden-md hidden-lg hidden-xl hi'
-        >
-          <Button text='Zum Anfang' isPrimary={false} width='100%' />
-        </button>
+      
       </Container>
+        </Grid>       
+
+       </Section>
     </main>
   )
 }

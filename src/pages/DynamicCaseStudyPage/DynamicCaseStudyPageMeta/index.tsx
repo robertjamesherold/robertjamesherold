@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './_CaseStudyMeta.module.scss'
+import { Grid, type ColumnProps } from '../../../layout/GridLayout';
 
 type CaseStudyMetaProps = {
   client: React.ReactNode
@@ -7,9 +8,10 @@ type CaseStudyMetaProps = {
   duration: React.ReactNode
   category: React.ReactNode
   tags?: string[]
+  span?: number | ColumnProps
 }
-export function CaseStudyMeta({  client, date, duration, category, tags  }: CaseStudyMetaProps) {
-  return (
+export function CaseStudyMeta({  client, date, duration, category, tags, span  }: CaseStudyMetaProps) {
+  return (<Grid span={span}>
     <div className='card'>
       <div className='cardtitle' style={{ paddingBottom: '1rem' }}>Projektdetails</div>
       
@@ -43,6 +45,6 @@ export function CaseStudyMeta({  client, date, duration, category, tags  }: Case
           </div>
         </div>
       )}
-    </div>
+    </div></Grid>
   )
 }

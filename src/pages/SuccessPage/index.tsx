@@ -1,10 +1,11 @@
-import { Container } from '../../layout/Container';
+import { Section, Container } from '../../layout/GridLayout'
 import { Link } from 'react-router-dom';
 import styles from './_SuccessPage.module.scss';
 
 export function SuccessPage() {
   return (
     <main>
+    <Section id='danke' isPaddingTop={false}>
       <Container span={{ default: 12 }}>
         <div className={styles.successContainer}>
           <div className="card textcenter aligncenter" style={{ maxWidth: '600px' }}>
@@ -39,6 +40,7 @@ export function SuccessPage() {
           </div>
         </div>
       </Container>
+      </Section>
     </main>
   );
 }

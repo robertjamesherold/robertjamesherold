@@ -32,8 +32,8 @@ function AnimatedRoutes() {
           <Route path='/story' element={<StoryPage />} />
           <Route path='/skills' element={<SkillPage />} />
           <Route path='/lebenslauf' element={<CVPage />} />
-          <Route path='/projekte/:slug' element={<DynamicProjectPage />} />
           <Route path='/projekte' element={<ProjectCardPage />} />
+          <Route path='/projekte/:slug' element={<DynamicProjectPage />} />
           <Route path='/fallstudien' element={<CaseCardPage/>} />
           <Route path="/fallstudien/:slug" element={<DynamicCaseStudyPage />} />         
           <Route path='/kontakt' element={<ContactPage />} />

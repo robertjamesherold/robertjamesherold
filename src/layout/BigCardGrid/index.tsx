@@ -15,7 +15,7 @@ type BigCardGridProps ={
 export function BigCardGrid({  data, showButton, title, grid, id, isPadding}: BigCardGridProps) {
   return (
    <Section id={id} isPaddingTop={isPadding}>
-  <Grid>
+    <Grid>
         {title &&   <Container>
 <h2 className='underlined-mid textcenter marginBottomSmall'>{title}</h2></Container>}
           <Grid grid={grid}>

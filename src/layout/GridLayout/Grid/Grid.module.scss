@@ -3,6 +3,7 @@
     grid-column: span 12;
     grid-auto-rows: $spaceAuto;
     display: grid;
+    position: relative;
     @include gapSmall;
 }
 

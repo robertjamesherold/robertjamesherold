@@ -3,7 +3,7 @@ export const TimeLineData: TimeLineItemProps[] = [
   {
     title: "Der Anfang",
     subtitle: "Erste Schritte im Design",
-    period: "2015 - 2017",
+    period: "2015",
     list: [
       "Meine Reise begann an der Gutenbergschule in Frankfurt mit der Fachoberschule Gestaltung.",
       "Hier entdeckte ich meine Leidenschaft für visuelles Design und lernte die Grundlagen der kreativen Gestaltung kennen."]
@@ -11,20 +11,30 @@ export const TimeLineData: TimeLineItemProps[] = [
   {
     title: "Erste Praxis",
     subtitle: "Praktikum bei sixeyesmedia",
-    period: "2015 - 2016",
+    period: "2016",
     list: [
       "Während meines Praktikums bei sixeyesmedia GmbH sammelte ich erste praktische Erfahrungen als Mediengestalter.",
       "Hier lernte ich den Arbeitsalltag einer Medienagentur kennen und vertiefte mein Verständnis für professionelles Design."
     ]
   },
+  
+   {
+  title: "Training",
+  subtitle: "Praktische und theoretische Vertiefung",
+  period: '2017',
+  list: [
+    "Ich absolvierte weitere Praktika und kleinere Projekte, um meine Fähigkeiten im Web- und Grafikdesign zu stärken.",
+    "Parallel dazu belegte ich Kurse zu Typografie, Farbtheorie und UI/UX-Grundlagen, um mein theoretisches Wissen zu festigen."
+  ]
+},
   {
     title: "Vertiefung",
     subtitle: "Mediendesign Studium",
-    period: "2022 - 2025",
+    period: "2022",
     list: [
       "An der IU Internationalen Hochschule studiere ich Mediendesign", 
       "Zudem erweitere ich kontinuierlich mein Wissen in UI/UX Design, Webdesign und digitalen Medienformaten.",
-      "Mit 150 ECTS Credits und einem Durchschnitt von 1,7 bin ich auf dem besten Weg zum Abschluss."
+      "Mit 155 ECTS Credits und einem Durchschnitt von 1,7 bin ich auf dem besten Weg zum Abschluss."
     ]
   },
   
@@ -42,7 +52,7 @@ export const TimeLineData: TimeLineItemProps[] = [
     subtitle: "Freelance Webdesigner",
     period: "Heute",
     list: [
-      "Seit 2024 arbeite ich als freiberuflicher Webdesigner und UI/UX-Designer.",
+      "Seit 2017 arbeite ich als freiberuflicher Webdesigner und UI/UX-Designer.",
       "Ich verbinde mein akademisches Wissen mit praktischer Erfahrung",
       "Ich erstelle gelegentlicg, benutzerfreundliche Designs für verschiedene Kunden."
     ]

@@ -1,13 +1,12 @@
 import styles from './_CaseStudyNav.module.scss'
 import { Flexbox } from '../../../components/Flexbox';
-import { Button } from '../../../ui/Button'; 
+import {  Grid  } from '../../../layout/GridLayout';
 import type { CaseStudyNavProps } from '../DynamicCaseStudyPageUniversal/index';
 
 // Section Type konsistent mit UniversalCaseStudy
 
 
-
-export function CaseStudyPageNav({ sections, activeSection, onSectionClick }: CaseStudyNavProps) {
+export function CaseStudyPageNav({ sections, activeSection, onSectionClick, span }: CaseStudyNavProps) {
   const handleClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -18,9 +17,10 @@ export function CaseStudyPageNav({ sections, activeSection, onSectionClick }: Ca
 
 
   return (
-    <>
-      <Button variant='link' action='/projekte' text='Zurück' isPrimary={false} />
+    <Grid span={span}>
       <div className='card'>
+  
+
         <div className='cardtitle' style={{ paddingBottom: '1rem' }}>Inhaltsverzeichnis</div>
         <ul className={styles.navList}>
           {sections.map((section) => (
@@ -34,8 +34,7 @@ export function CaseStudyPageNav({ sections, activeSection, onSectionClick }: Ca
             </li>
           ))}
         </ul>
-      </div>
-    </>
+    </div>  </Grid> 
   );
 }
 

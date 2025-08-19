@@ -1,17 +1,21 @@
 import { contact } from '../../data/Contact'
-import { Container } from '../../layout/Container'
 import { ContactForm } from './ContactPageForm'
 import { CardGrid } from '../../layout/CardGrid';
 import { Header } from '../../layout/Header';
 import { CTASection } from '../../components/CallToAction';
+import { Section, Grid } from '../../layout/GridLayout';
 
 export function ContactPage() {
   return (
     <main>
       <Header title='Kontakt' />
-      <Container span={{ lg: 7}}><ContactForm /></Container>
-      <Container span={{ lg: 5 }}><CardGrid className='grid-sm2-lg1' data={contact.form}/></Container>
-      <Container><CTASection data={contact.cta} /></Container>
+        <Section id='contact' isPaddingTop={false}>
+          <Grid grid={{default: 12}}>
+            <ContactForm row={{default: 4}} span={{ lg: 7 }} />
+            <CardGrid isSection={false} isPadding={false} id='' grid={{sm:2, lg: 1}} row={{default: 4}} span={{lg:5}} data={contact.form}/>
+          </Grid>
+        </Section>
+      <CTASection isPadding={false} isSection={true} id='cta' data={contact.cta} />
     </main>
   )
 }

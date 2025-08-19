@@ -1,10 +1,12 @@
+import { Grid, type ColumnProps } from "../../../layout/GridLayout"
 type CaseStudySidebarProps = {
   children: React.ReactNode
+  span?: number | ColumnProps
+  grid?: number | ColumnProps
 }
-export function CaseStudySidebar({  children  }: CaseStudySidebarProps) {
+export function CaseStudySidebar({  children, grid, span  }: CaseStudySidebarProps) {
   return (
-    <aside className='grid-md2-xl1'>
-      {children}
-    </aside>
+    <Grid span={span} grid={grid} fullH={false}> {children}
+    </Grid>
   )
 }

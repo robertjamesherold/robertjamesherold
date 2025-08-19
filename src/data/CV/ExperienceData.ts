@@ -1,6 +1,6 @@
 export const ExperienceData= [
     {
-      period: "2024 - heute",
+      period: "2017 - heute",
       title: "Webdesigner & UI/UX Designer",
       subtitle: 'Freelancer',
       institution: "Remote/Homeoffice",
