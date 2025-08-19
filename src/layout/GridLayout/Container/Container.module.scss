@@ -1,0 +1,50 @@
+.container {
+    width: $space100;
+    height: $spaceFit;
+    grid-column: span 12;
+    position: relative;
+}
+
+.containerFull {
+    width: $space100;
+    height: $spaceFull;
+    grid-column: span 12;
+}
+
+
+// Default (für default: span)
+@for $i from 1 through 12 {
+  .span-xs-#{$i} {
+    grid-column: span #{$i};
+  }
+}
+
+// Klassen pro Breakpoint und Spaltenanzahl
+@each $breakpoint, $min-width in $breakpoints {
+  @for $i from 1 through 12 {
+    .span-#{$breakpoint}-#{$i} {
+      @media (min-width: $min-width) {
+        grid-column: span #{$i};
+      }
+    }
+  }
+}
+
+// Default (für default: span)
+@for $i from 1 through 12 {
+  .row-xs-#{$i} {
+    grid-row: span #{$i};
+  }
+}
+
+// Klassen pro Breakpoint und Spaltenanzahl
+@each $breakpoint, $min-width in $breakpoints {
+  @for $i from 1 through 12 {
+    .row-#{$breakpoint}-#{$i} {
+      @media (min-width: $min-width) {
+        row-column: span #{$i};
+      }
+    }
+  }
+}
+

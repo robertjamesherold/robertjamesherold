@@ -1,13 +1,13 @@
 export type StatCardProps = {
   title: string,
-  text: string,
+  text: string[] ,
 }
 export function StatCard({ title, text }: StatCardProps) {
     return (
         <div className='card bgTer' style={{ width: '100%' }}>
       <div className='cardcontent textcenter' style={{gap: 0}}>
         <div style={{fontSize: '1.875rem', fontWeight: '700'}} className='textBlue'>{title}</div>
-        <p style={{fontSize: '16px', fontWeight: '500'}} className='textPri'>{text}</p>
+        {text.map((text, index)=>(<span key={index} style={{fontSize: '16px', fontWeight: '500'}} className='textPri'>{text}</span>))}
       </div></div>
   );
 }

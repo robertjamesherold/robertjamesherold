@@ -1,4 +1,5 @@
 import { useRef, useEffect} from 'react';
+import { Section,  Container } from '../GridLayout';
 import { Stat, type StatCardProps } from '../../components/StatCard';
 
 export type PersonalProps = {
@@ -9,11 +10,14 @@ export type PersonalProps = {
 
 export type PersonalData = {
     data: PersonalProps;
+    id: string;
+    title?: string;
+    isPadding: boolean
 }
 
 
 
-export function PersonalGrid( {data} : PersonalData) {
+export function PersonalGrid( {data, id, title, isPadding} : PersonalData) {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -38,6 +42,9 @@ export function PersonalGrid( {data} : PersonalData) {
   }, []);
 
   return (
+  <Section id={id} isPaddingTop={isPadding}>
+    <Container>
+    {title &&     <h2 className='underlined-mid textcenter marginBottomSmall'>{title}</h2>}
     <div className='card'>
       <div className='personalContent'>
       <div className='personalGrid'>
@@ -68,6 +75,8 @@ export function PersonalGrid( {data} : PersonalData) {
         
       </div>
     </div>
+    </Container>
+    </Section>
   );
 }
 

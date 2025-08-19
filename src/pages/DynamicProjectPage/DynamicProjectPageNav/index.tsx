@@ -1,6 +1,7 @@
 import styles from './_ProjectPageNav.module.scss'
 import type { ProjectSection } from "../DynamicProjectPageUniversal" 
 import { Button } from '../../../ui/Button';
+import { Container, Grid } from '../../../layout/GridLayout';
 
 type ProjectPageNavProps = {
   sections: ProjectSection[];
@@ -17,7 +18,8 @@ export function ProjectPageNav({ sections, activeSection, onSectionClick }: Proj
   };
 
   return (
-    <>
+    <Container>
+    <Grid>
       <Button variant='link' action='/projekte' text='Zurück' isPrimary={false} />
       <div className='card'>
         <div className='cardtitle' style={{ paddingBottom: '1rem' }}>Inhaltsverzeichnis</div>
@@ -34,6 +36,7 @@ export function ProjectPageNav({ sections, activeSection, onSectionClick }: Proj
           ))}
         </ul>
       </div>
-    </>
+      </Grid>
+    </Container>
   );
 }

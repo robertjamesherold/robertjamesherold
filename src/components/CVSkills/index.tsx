@@ -1,3 +1,4 @@
+import { Container, Grid } from '../../layout/GridLayout';
 import styles from './CVSkills.module.scss';
 
 export type CVSkillItemProps = {
@@ -36,8 +37,8 @@ export type CVSkillsProps = {
   data: CVSkillCategoryProps[]};
 
 export function CVSkills({ data  }: CVSkillsProps) {
-  return (
-   <section>
+  return (   <Grid span={{default: 1}} row={{default:1}}>
+   <Container>
   <h2 className='underlined-left'>Kompetenzen</h2>
       <div className='card' style={{height: 'fit-content'}}>
     <div className='cardcontent'>
@@ -46,7 +47,8 @@ export function CVSkills({ data  }: CVSkillsProps) {
       ))}
     </div>
     </div>
-    </section>
+    </Container>
+    </Grid>
   )
 }
 

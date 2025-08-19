@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './_ProjectPageMeta.module.scss'
+import { Container } from '../../../layout/GridLayout';
 
 
 
@@ -11,7 +12,8 @@ type ProjectPageMetaProps = {
   tags?: string[] 
 }
 export function ProjectPageMeta({  client, date, duration, category, tags }: ProjectPageMetaProps) {
-  return ( <div className='card'>
+  return ( <Container>
+  <div className='card'>
       <div className='cardtitle' style={{ paddingBottom: '1rem' }}>Projektdetails</div>
       
       <div className={styles.metaItem}>
@@ -45,5 +47,6 @@ export function ProjectPageMeta({  client, date, duration, category, tags }: Pro
         </div>
       )}
     </div>
+    </Container>
   )
 }

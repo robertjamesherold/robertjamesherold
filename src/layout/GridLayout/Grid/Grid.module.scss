@@ -1,0 +1,89 @@
+.grid {
+    width: $space100;
+    grid-column: span 12;
+    grid-auto-rows: $spaceAuto;
+    display: grid;
+    @include gapSmall;
+}
+
+.fit {
+    height: $spaceFit;
+  }
+
+.full {
+      height: $space100;
+}
+
+// Default (für default: span)
+@for $i from 1 through 12 {
+  .grid-xs-#{$i} {
+    grid-template-columns: repeat(#{$i}, 1fr);
+  }
+}
+
+// Klassen pro Breakpoint und Spaltenanzahl
+@each $breakpoint, $min-width in $breakpoints {
+  @for $i from 1 through 12 {
+    .grid-#{$breakpoint}-#{$i} {
+      @media (min-width: $min-width) {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      }
+    }
+  }
+}
+
+// Default (für default: span)
+@for $i from 1 through 12 {
+  .span-xs-#{$i} {
+    grid-column: span #{$i};
+  }
+}
+
+// Klassen pro Breakpoint und Spaltenanzahl
+@each $breakpoint, $min-width in $breakpoints {
+  @for $i from 1 through 12 {
+    .span-#{$breakpoint}-#{$i} {
+      @media (min-width: $min-width) {
+        grid-column: span #{$i};
+      }
+    }
+  }
+}
+
+// Default (für default: span)
+@for $i from 1 through 12 {
+  .row-xs-#{$i} {
+    grid-row: span #{$i};
+  }
+}
+
+// Klassen pro Breakpoint und Spaltenanzahl
+@each $breakpoint, $min-width in $breakpoints {
+  @for $i from 1 through 12 {
+    .row-#{$breakpoint}-#{$i} {
+      @media (min-width: $min-width) {
+        row-column: span #{$i};
+      }
+    }
+  }
+}
+
+
+
+.row-small {
+@include gapRowSmall}
+
+.row-medium {
+  @include gapRow}
+
+  .row-large {
+@include gapRowXL}
+
+.col-small {
+@include gapColSmall}
+
+.col-medium {
+  @include gapCol}
+
+  .col-large {
+@include gapColXL}

@@ -22,39 +22,29 @@ body.menu-open {
 
 // MAIN
 
-main {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
 
-    grid-template-rows: auto;
-    grid-auto-flow: dense;
-    grid-auto-rows: auto;
-    overflow: hidden;
+header {
 
-
+    grid-column: span 12 }
+    
+.section{
+    align-items: center;
     width: $space100;
-    height: $space100;
+    height: fit-content;
+    display: grid;
+    flex-direction: column;
     max-width: 1440px;
+    grid-auto-rows: auto;
     margin-left: auto;
     margin-right: auto;
-
-
     @include paddingInline;
-    @include paddingMain;
     @include gap;
-
     @media (min-width: $lg){
     max-width: 1200px;
     }
-
     @media (min-width: $xl){
     max-width: 1440px;
-    }
-}
-
-header {
-    grid-column: span 12 }
+    }}
 
 .spangrid {
     display: flex;
@@ -102,9 +92,7 @@ h4 {
 
 // SECTION
 
-section {
-    @include section;
-}
+
 
 // GRIDS
 .grid {
@@ -424,7 +412,7 @@ section {
     grid-template-columns: 1fr;
     @include gap;
 
-    @media (min-width: $md)
+    @media (min-width: $lg)
     {
         align-items: center;
 
@@ -537,7 +525,7 @@ section {
     margin-top: -$space1n5;
     padding: $space1n5 0;;
 
-    @media (min-width: $sm)
+    @media (min-width: calc($md + 1px))
     {
         display: none;
     }
@@ -579,7 +567,7 @@ section {
 // Grid für Tablets und Desktop
 .personalStats
 {
-    @media (max-width: $sm)
+    @media (max-width: $md)
     {
         display: block;            opacity: 0;
 

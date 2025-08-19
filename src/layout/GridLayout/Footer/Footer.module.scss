@@ -1,0 +1,32 @@
+.footer
+{
+    justify-content: space-around;
+    align-items: center;
+    width: $space100;
+    display: flex;
+    flex-direction: column;
+    color: rgb($codeTextSec);
+    border-top: 1px solid rgb($codeTextTer);
+    background-color: rgb($codeBgSec);
+    @include gap;
+    @include paddingMain;
+}
+
+.container {
+    width: $space100;
+    height: $spaceFit;
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: repeat (12, 1fr);
+    grid-auto-rows: auto;
+    @include paddingInline;
+    @include gap;
+    @media (min-width: $lg){
+    max-width: 1200px;
+    }
+    @media (min-width: $xl){
+    max-width: 1440px;
+    }
+    }
+
+

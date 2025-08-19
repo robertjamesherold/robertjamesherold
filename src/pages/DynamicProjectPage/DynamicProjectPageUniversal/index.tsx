@@ -5,6 +5,7 @@ import { ProjectPageContent } from '../DynamicProjectPageContent'
 import { ProjectPageNav } from '../DynamicProjectPageNav'
 import { Header } from '../../../layout/Header'
 import { Button } from '../../../ui/Button'
+import { Grid, Section } from '../../../layout/GridLayout'
 
 
 // Typen für die neue Struktur
@@ -60,6 +61,7 @@ export function DynamicUniversalProjectPage({ projectPageData }: DynamicUniversa
   if (!projectPageData) return null
 
   const {
+
     title,
     subtitle,
     client,
@@ -74,9 +76,12 @@ export function DynamicUniversalProjectPage({ projectPageData }: DynamicUniversa
   return (
     <main>
       <Header title={title} text={subtitle} />
-
+      <Section id={title}>
+      <Grid>
+      <Grid grid={{default:12}}>
       <Container span={{ default: 12, sm: 6, lg: 4, xl: 3 }}>
-        <div className="twoRowGridFirst">
+             <Grid grid={{default:12}} fullH={false}>
+
           {sections.length > 1 && (
             <ProjectPageNav
               sections={sections}
@@ -91,7 +96,7 @@ export function DynamicUniversalProjectPage({ projectPageData }: DynamicUniversa
             category={category}
             tags={tags}
           />
-        </div>
+       </Grid>
       </Container>
 
       <Container span={{ default: 12, sm: 6, lg: 8, xl: 9 }}>
@@ -101,7 +106,7 @@ export function DynamicUniversalProjectPage({ projectPageData }: DynamicUniversa
           imageMap={imageMap}
         />
       </Container>
-
+</Grid>
       <Container>
         <button
           onClick={() => window.scrollTo(0, 0)}
@@ -116,6 +121,8 @@ export function DynamicUniversalProjectPage({ projectPageData }: DynamicUniversa
           />
         </button>
       </Container>
+      </Grid>
+</Section>
     </main>
   )
 }

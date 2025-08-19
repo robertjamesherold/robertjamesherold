@@ -1,38 +1,4 @@
-.span1n2 { display: flex; width: 100%; 
-flex-flow: wrap;
- 
-@include gap;
 
-@media (min-width: $xs) {
-
-}
-
-
-// Alles über 640px
-@media (min-width: $sm) {
-
-
-}
-
-
-
-// Alles über 768px
-@media (min-width: $md) {
-
-}
-
-
-// Alles über 1024px
-@media (min-width: $lg) {
-
-}
-
-
-
-// Alles über 1280px
-@media (min-width: $xl) {
-
-}}
 .gallery
 {
     width: $space100;

@@ -41,7 +41,7 @@ function AnimatedRoutes() {
           <Route path="/datenschutz" element={<PrivacyPage />} />
           <Route path="/impressum" element={<ImprintPage />} />
           <Route path="/404" element={<NotFoundPage />} />
-          <Route path="*" element={<Navigate to="/404" replace />} />
+          <Route path="/*" element={<Navigate to="/404" replace />} />
         </Routes>
         <Footer />
       </PageTransition>
