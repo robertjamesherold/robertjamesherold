@@ -1,5 +1,5 @@
-import concretegold from '/src/assets/images/concretegold/moodboard.jpg'
-import start from '/src/assets/images/elearning/start.png'
+import concretegold from '/src/assets/images/concretegold/moodboard.webp'
+import start from '/src/assets/images/elearning/start.webp'
 import type { BigCardProps } from '../../components/BigCard'
 export const CasesData: BigCardProps[] = [
   {
