@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './_ContactForm.module.scss';
 import { Flexbox } from '../../../components/Flexbox';
-import { TextInput } from './FormInput';
+import { Checkbox, TextInput } from './FormInput';
 import { TextArea } from './FormArea';
 import { ErrorPopup } from './FormErrorPopup';
 import { Grid, type ColumnProps } from '../../../layout/GridLayout';
@@ -94,16 +94,18 @@ export function ContactForm({grid, row, span }: FormProps) {
         <div className='h2' >Kontaktformular</div>
         <p>Bitte füllen Sie das Formular aus, um mich zu kontaktieren. Ich werde mich so schnell wie möglich bei Ihnen melden.</p>
         <div className='grid-sm2'>
-          <TextInput label="Vorname" inputName="Vorname" required={true} />
-          <TextInput label="Nachname" inputName="Nachname" required={true} />
+          <TextInput label="Vorname*" inputName="Vorname" required={true} />
+          <TextInput label="Nachname*" inputName="Nachname" required={true} />
         </div>
         <div className='grid-sm2'>
-          <TextInput inputName="E-Mail" label="E-Mail" required={true} />
+          <TextInput inputName="E-Mail" label="E-Mail*" required={true} />
           <TextInput inputName="Telefonnummer" label="Telefonnummer" required={false} />
         </div>
-        <TextInput inputName="Betreff" label="Betreff" required={true} />
-        <TextArea  inputName="Nachricht" label="Nachricht" />
+        <TextInput inputName="Betreff" label="Betreff*" required={true} />
+        <TextArea  inputName="Nachricht" label="Nachricht*" />
+        <span style={{width:'100%', textAlign:'right'}}>* ist erforderlich.</span>
         <button type="submit" className={`buttonprimary ${styles.colFull}`} disabled={isSubmitting}>{isSubmitting ? 'Wird gesendet...' : 'Senden'}</button>
+        
         </Flexbox>
       </form>
 

@@ -1,20 +1,22 @@
-import olivetoG3 from '/src/assets/images/oliveto/g3.webp'
-import olivetoG4 from '/src/assets/images/oliveto/g4.webp'
-import olivetoG5 from '/src/assets/images/oliveto/g5.webp'
-import olivetoG6 from '/src/assets/images/oliveto/g6.webp'
-import olivetoG7 from '/src/assets/images/oliveto/g7.webp'
-import olivetoG8 from '/src/assets/images/oliveto/g8.webp'
-import olivetoG9 from '/src/assets/images/oliveto/g9.webp'
-import olivetoG10 from '/src/assets/images/oliveto/g10.webp'
-import olivetoG11 from '/src/assets/images/oliveto/g11.webp'
-import olivetoG2 from '/src/assets/images/oliveto/g12.webp'
-import olivetoG1 from '/src/assets/images/oliveto/p4.webp'
+import quality1 from '/src/assets/images/oliveto/g3.webp'
+import quality2 from '/src/assets/images/oliveto/g4.webp'
+import rezepte2 from '/src/assets/images/oliveto/g5.webp'
+import rezepte3 from '/src/assets/images/oliveto/g6.webp'
+import summer1 from '/src/assets/images/oliveto/g7.webp'
+import summer2 from '/src/assets/images/oliveto/g8.webp'
+import summer3 from '/src/assets/images/oliveto/g9.webp'
+import product from '/src/assets/images/oliveto/g10.webp'
+import quality3 from '/src/assets/images/oliveto/g11.webp'
+import rezepte1 from '/src/assets/images/oliveto/g12.webp'
+import website from '/src/assets/images/oliveto/p4.webp'
 
 import webdesignP1 from '/src/assets/images/webdesign/p1.webp'
 import webdesignP2 from '/src/assets/images/webdesign/p2.webp'
 import webdesignP3 from '/src/assets/images/webdesign/p3.webp'
 
 import motionV1 from '../../assets/videos/avmedia/motion.mp4'
+import outro from '../../assets/images/avmedia/outro.webp'
+import film from '../../assets/images/film/131.jpg'
 import motionV2 from '../../assets/videos/film/final.mp4'
 import type React from 'react'
 
@@ -63,17 +65,17 @@ export type ProjectStudy = {
 
 // Image Maps für Project Studies
 const olivetoImageMap: Record<string, string> = {
-  'g3': olivetoG3,
-  'g4': olivetoG4,
-  'g5': olivetoG5,
-  'g6': olivetoG6,
-  'g7': olivetoG7,
-  'g8': olivetoG8,
-  'g9': olivetoG9,
-  'g10': olivetoG10,
-  'g11': olivetoG11,
-  'g12': olivetoG2,
-  'p4': olivetoG1
+  'g3': quality1,
+  'g4': quality2,
+  'g5': rezepte1,
+  'g6': rezepte1,
+  'g7': summer1,
+  'g8': summer2,
+  'g9': summer3,
+  'g10': product,
+  'g11': quality3,
+  'g12': rezepte3,
+  'p4': website
 }
 
 const webdesignImageMap: Record<string, string> = {
@@ -101,116 +103,142 @@ export const portfolioProjectData: ProjectStudy = {
       gallery: [
         {
           id: 1,
-          url: olivetoG1,
-          category: 'konzeption'
+          url: website,
+          category: 'website'
         },
         {
           id: 2,
-          url: olivetoG2,
-          category: 'design'
+          url: product,
+          category: 'product'
         },
         {
           id: 3,
-          url: olivetoG3,
-          category: 'umsetzung'
+          url: rezepte1,
+          category: 'rezepte'
         },
             {
           id: 4,
-          url: olivetoG4,
-          category: 'konzeption'
+          url: rezepte2,
+          category: 'rezepte'
+        },
+        {
+          id: 5,
+          url: rezepte3,
+          category: 'rezepte'
         },
         {
           id: 6,
-          url: olivetoG6,
-          category: 'konzeption'
-        },
-        {
-          id: 9,
-          url: olivetoG9,
-          category: 'konzeption'
+          url: quality1,
+          category: 'quality'
         },
          {
-          id: 5,
-          url: olivetoG5,
-          category: 'design'
-        },
-        {
           id: 7,
-          url: olivetoG7,
-          category: 'design'
+          url: quality2,
+          category: 'quality'
         },
         {
-          id: 10,
-          url: olivetoG10,
-          category: 'design'
-        },
-          {
           id: 8,
-          url: olivetoG8,
-          category: 'umsetzung'
-        },
-        {
-          id: 11,
-          url: olivetoG11,
-          category: 'umsetzung'
-        }
-      ]
-    },
-    {
-      id: 'concept',
-      title: 'Konzeption',
-      gallery: [
-        {
-          id: 4,
-          url: olivetoG4,
-          category: 'konzeption'
-        },
-        {
-          id: 6,
-          url: olivetoG6,
-          category: 'konzeption'
+          url: quality3,
+          category: 'quality'
         },
         {
           id: 9,
-          url: olivetoG9,
-          category: 'konzeption'
-        }
-      ]
-    },
-    {
-      id: 'design',
-      title: 'Design',
-      gallery: [
-        {
-          id: 5,
-          url: olivetoG5,
-          category: 'design'
+          url: summer1,
+          category: 'summer'
         },
-        {
-          id: 7,
-          url: olivetoG7,
-          category: 'design'
-        },
-        {
+          {
           id: 10,
-          url: olivetoG10,
-          category: 'design'
-        }
-      ]
-    },
-    {
-      id: 'implementation',
-      title: 'Umsetzung',
-      gallery: [
-        {
-          id: 8,
-          url: olivetoG8,
-          category: 'umsetzung'
+          url: summer2,
+          category: 'summer'
         },
         {
           id: 11,
-          url: olivetoG11,
-          category: 'umsetzung'
+          url: summer3,
+          category: 'summer'
+        }
+      ]
+    },
+     {
+      id: 'website',
+      title: 'Webdesign',
+      gallery: [
+        {
+          id: 1,
+          url: website,
+          category: 'website'
+        }]},
+    {
+      id: 'product',
+      title: 'Produktdesign',
+      gallery: [
+        {
+          id: 2,
+          url: product,
+          category: 'product'
+        }   
+      ]
+    },
+    {
+      id: 'rezepte',
+      title: 'Rezepte',
+      gallery: [
+        {
+          id: 3,
+          url: rezepte1,
+          category: 'rezepte'
+        },
+        {
+          id: 4,
+          url: rezepte2,
+          category: 'rezepte'
+        },
+        {
+          id: 5,
+          url: rezepte3,
+          category: 'rezepte'
+        }
+      ]
+    },
+    {
+      id: 'quality',
+      title: 'Qualität',
+      gallery: [
+        {
+          id: 6,
+          url: quality1,
+          category: 'quality'
+        },
+        {
+          id: 7,
+          url: quality2,
+          category: 'quality'
+        },
+        {
+          id: 8,
+          url: quality3,
+          category: 'quality'
+        }
+      ]
+    }
+    ,
+    {
+      id: 'summer',
+      title: 'Neuerscheinungen',
+      gallery: [
+        {
+          id: 9,
+          url: summer1,
+          category: 'summer'
+        },
+        {
+          id: 10,
+          url: summer2,
+          category: 'summer'
+        },
+        {
+          id: 11,
+          url: summer3,
+          category: 'summer'
         }
       ]
     }
@@ -236,26 +264,22 @@ export const webdesignProjectData: ProjectStudy = {
         {
           id: 1,
           url: webdesignP1,
-          category: 'homepage'
+          category: 'overview'
+        },
+          {
+          id: 2,
+          url: webdesignP2,
+          category: 'overview'
+        },
+          {
+          id: 3,
+          url: webdesignP3,
+          category: 'overview'
         }
       ]
     },
-    {
-      id: 'pages',
-      title: 'Seitengestaltung',
-      gallery: [
-        {
-          id: 2,
-          url: webdesignP2,
-          category: 'allrestaurants'
-        },
-        {
-          id: 3,
-          url: webdesignP3,
-          category: 'restaurant'
-        }
-      ]
-    }
+
+   
   ]
 }
 
@@ -277,19 +301,7 @@ export const motionProjectData: ProjectStudy = {
       videos: [
         {
           id: 1,
-          url: motionV1,
-          type: 'mp4',
-          title: 'Schülerhilfe Animatic',
-          caption: 'Das Animatic zeigt die Grundstruktur und das Timing des Werbespots.'
-        }
-      ]
-    },
-    {
-      id: 'animation',
-      title: 'Animation',
-      videos: [
-        {
-          id: 1,
+          poster: outro, 
           url: motionV1,
           type: 'mp4',
           title: 'Schülerhilfe Animatic',
@@ -318,6 +330,7 @@ export const bildvideoProjectData: ProjectStudy = {
       videos: [
         {
           id: 1,
+          poster: film,
           url: motionV2,
           type: 'mp4',
           title: 'Animiertes Albumcover',
@@ -325,19 +338,7 @@ export const bildvideoProjectData: ProjectStudy = {
         }
       ]
     },
-     {
-      id: 'video',
-      title: 'Video',
-      videos: [
-        {
-          id: 2,
-          url: motionV2,
-          type: 'mp4',
-          title: 'Animiertes Albumcover',
-          caption: 'Die finale Animation erweckt das klassische Albumcover zum Leben.'
-        }
-      ]
-    }
+
   ]
 }
 

@@ -1,5 +1,8 @@
 import g6 from '/src/assets/images/oliveto/g9.webp'
-import p1 from '/src/assets/images/webdesign/p1.webp'
+import p1 from '/src/assets/images/webdesign/projectimg.webp'
+import outro from '/src/assets/images/avmedia/outro.webp';
+import film from '/src/assets/images/film/13.webp';
+
 import type { BigCardProps } from '../../components/BigCard'
 export const ProjectsData: BigCardProps[] = [
 
@@ -29,7 +32,7 @@ export const ProjectsData: BigCardProps[] = [
     alt: 'Animatic Schülerhilfewerbespot',  
     category: 'motion design',
     text: 'Animatic von einem Schülerhilfewerbespot.',
-    image: p1,
+    image: outro,
     tags: ['AfterEffects', 'PremeriePro', 'Illustrator'],
     link: 'schuelerhilfe',
   },
@@ -39,7 +42,7 @@ export const ProjectsData: BigCardProps[] = [
     alt: 'Animiertes Albumcover',
     category: 'video & film',
     text: '10-Sekunden Loop für ein Albumcover von Metallica Master of Puppets.',
-    image: p1,
+    image: film,
     tags: ['AfterEffects', 'PremeriePro'],
     link: 'animatedalbumcover'
   }]
