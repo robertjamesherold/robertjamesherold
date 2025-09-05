@@ -8,7 +8,7 @@ export const caseCTA: CallToActionProps[]=  [{
   primaryVar: 'link',
   isTwo: true,
   secondaryVar: 'link',
-  secondaryButtonText: 'Meine Projekte',
+  secondaryButtonText: 'Fallstudien',
   secondaryButtonLink: '/projekte'
 }];
 
