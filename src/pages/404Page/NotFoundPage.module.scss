@@ -14,7 +14,7 @@
 }
 
 .errorCode {
-  font-size: clamp($fs8, 15vw, 12rem);
+  font-size: fn.css-clamp($fs8, 15vw, 12rem);
   font-weight: $fw9;
   line-height: 1;
   margin: 0 0 $space1 0;
@@ -43,7 +43,7 @@
 }
 
 .title {
-  font-size: clamp($fs3, 3vw, $fs5);
+  font-size: fn.css-clamp($fs3, 3vw, $fs5);
   font-weight: $fw7;
   color: rgba($codeTextPri);
   margin: 0 0 $space1 0;

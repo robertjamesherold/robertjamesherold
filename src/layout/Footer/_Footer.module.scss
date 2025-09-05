@@ -212,7 +212,7 @@ touch-action: none;
     width: 72px;
     height: 72px;
     border: $border1;
-    border-radius: $radius1 / 2;
+    border-radius: calc($radius1 / 2);
     transition: all .2s ease-in-out;
     text-decoration: none;
 

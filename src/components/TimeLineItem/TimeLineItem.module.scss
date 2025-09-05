@@ -48,7 +48,7 @@
     white-space: nowrap;
     z-index:2;
     color: rgb($codeBgPri);
-    border-radius: $radius1 / 2;
+    border-radius: calc($radius1 / 2);
     background-color: rgb($codeBlue);
 
     @media (max-width: $sm)
@@ -119,7 +119,7 @@ padding-bottom: $space0n5;
     padding: $space0n25 $space0n75;
 
     color: rgb($codeBlue);
-    border-radius: $radius1 /2 ;
+    border-radius: calc($radius1 / 2);
     background-color: rgba($codeBlue, .1);
 }
 
