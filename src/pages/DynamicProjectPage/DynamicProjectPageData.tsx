@@ -16,7 +16,7 @@ import webdesignP3 from '/src/assets/images/webdesign/p3.webp'
 
 import motionV1 from '../../assets/videos/avmedia/motion.mp4'
 import outro from '../../assets/images/avmedia/outro.webp'
-import film from '../../assets/images/film/131.jpg'
+import film from '../../assets/images/film/131.webp'
 import motionV2 from '../../assets/videos/film/final.mp4'
 import type React from 'react'
 
