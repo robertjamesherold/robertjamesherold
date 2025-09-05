@@ -14,18 +14,7 @@
 
 @mixin cardContainer {
     .card {
-
-    transition: all .3s ease-in-out;
-    border: $border1;
-    border-radius: $radius1;
-    display:flex;flex-direction: column;
-    background-color: rgb($codeBgSec);
-    overflow: hidden;
-    height: $space100;
-    justify-content: flex-start;
-    &:hover {
-        border-color: rgb($codeBlue);
-    }
+     @include card;
         @include paddingSmall;
 
     }

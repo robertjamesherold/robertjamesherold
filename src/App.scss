@@ -8,7 +8,7 @@
 
 html,
 body {
-    background-color: rgb($codeBgPri);
+    background-color: rgb($codeBgSec);
     color: rgb($codeTextPri);
     overflow-x: hidden;
     overflow-y: scroll;
@@ -21,6 +21,10 @@ body.menu-open {
 }
 
 // MAIN
+
+main {
+    background-color: rgb($codeBgPri);
+}
 
 
 header {
@@ -484,13 +488,15 @@ h4 {
     border-radius: $radius1;
     background-color: rgb($codeBgTer);
 
-    &:hover
-    {
-        transform: translateY(-2px);
+      &:hover {
+      
+   @media (min-width: $xl){   
 
+        transform: translateY(-2px);
         border-color: rgb($codeBlue);
         box-shadow: $shadMd;
-    }
+   }
+   }
 }
 
 .statNumber
@@ -553,14 +559,16 @@ h4 {
 
         box-shadow: $shadSm;
 
-        &:hover
-        {
-            transform: translateY(-2px);
+      &:hover {
+      
+   @media (min-width: $xl){   
 
-            border-color: rgb($codeBlue);
-            box-shadow: $shadMd;;;
-        }
-    }
+        transform: translateY(-2px);
+        border-color: rgb($codeBlue);
+        box-shadow: $shadMd;
+
+   }
+      }}
 }
 
 
