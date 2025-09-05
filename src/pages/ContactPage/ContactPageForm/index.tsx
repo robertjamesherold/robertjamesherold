@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './_ContactForm.module.scss';
 import { Flexbox } from '../../../components/Flexbox';
-import { Checkbox, TextInput } from './FormInput';
+import { TextInput } from './FormInput';
 import { TextArea } from './FormArea';
 import { ErrorPopup } from './FormErrorPopup';
 import { Grid, type ColumnProps } from '../../../layout/GridLayout';
