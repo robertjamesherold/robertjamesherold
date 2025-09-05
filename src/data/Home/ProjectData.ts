@@ -1,18 +1,18 @@
-import webdesign from '/src/assets/images/elearning/game.png'
+import outro from '../../assets/images/avmedia/outro.webp'
 import grafikdesign from '/src/assets/images/oliveto/g4.webp'
 import { type BigCardProps } from '../../components/BigCard';
 import { type CallToActionProps } from '../../components/CallToAction';
 export const ProjectData: BigCardProps[] = [
 {
-    id: 'elearning',
-    label: 'E-Learning Konzept',
-    image: webdesign ,
-    alt: 'Fallstudie',
-    title: 'E-Learning Konzept für Kinder',
-    text: 'Eine Fallstudie über ein E-Learning-Konzept, das Kinder auf spielerische Weise mit Mathematik in Kontakt bringt.',
-    link: 'fallstudien/elearning',
-    tags: ['Fallstudie'],
-    category: 'E-Learning'
+    id: 'schuelerhilfe',
+    label: 'Schülerhilfewerbespot',
+    image: outro ,
+    alt: 'Schülerhilfewerbespot',
+    title: 'Schülerhilfewerbespot',
+    text: 'Animatic von einem Schülerhilfewerbespot.',
+    link: 'projekte/schuelerhilfe',
+    tags: ["Motion Graphics", "Animation", "After Effects"],
+    category: 'Motion Design'
 },
 {
     id: 'olivenoel',
