@@ -8,12 +8,12 @@ import { ErrorPopup } from './FormErrorPopup';
 import { Grid, type ColumnProps } from '../../../layout/GridLayout';
 
 export type FormProps = {
-  grid?: number | ColumnProps
-  row?: number | ColumnProps
-  span?: number | ColumnProps
-  }
+  grid?: number | ColumnProps;
+  row?: number | ColumnProps;
+  span?: number | ColumnProps;
+};
 
-export function ContactForm({grid, row, span }: FormProps) {
+export function ContactForm({ grid, row, span }: FormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showErrorPopup, setShowErrorPopup] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -30,12 +30,12 @@ export function ContactForm({grid, row, span }: FormProps) {
       const response = await fetch('/', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: new URLSearchParams({
           'form-name': 'contact',
-          ...Object.fromEntries(formData),
-        }).toString(),
+          ...Object.fromEntries(formData)
+        }).toString()
       });
 
       if (response.ok) {
@@ -52,9 +52,9 @@ export function ContactForm({grid, row, span }: FormProps) {
         setErrorMessage('Unbekannter Fehler bei der Übertragung.');
       }
       setShowErrorPopup(true);
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setIsSubmitting(false);
   };
 
   const handleCloseErrorPopup = (): void => {
@@ -64,49 +64,81 @@ export function ContactForm({grid, row, span }: FormProps) {
 
   return (
     <Grid row={row} grid={grid} span={span}>
-      {/* Netlify Hidden Form */}
-      <form name="contact" netlify-honeypot="bot-field" netlify hidden>
-        <div><div>
-          <input type="text" name="Vorname" />
-          <input type="text" name="Nachname" />
-        </div>
+      {/* Netlify Hidden Form (nur zur Build-Erkennung) */}
+      <form
+        name="contact"
+        hidden
+        // ✅ data-* statt netlify
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
         <div>
-          <input type="email" name="E-Mail" />
-          <input type="phone" name="Telefonnummer" />
-        </div>
-        <input type="text" name="Betreff" />
-        <textarea name="Nachricht" />
-        <button type="submit">Submit</button>
+          <div>
+            <input type="text" name="Vorname" />
+            <input type="text" name="Nachname" />
+          </div>
+          <div>
+            <input type="email" name="E-Mail" />
+            <input type="tel" name="Telefonnummer" />
+          </div>
+          <input type="text" name="Betreff" />
+          <textarea name="Nachricht" />
+          <p hidden>
+            <label>
+              Don’t fill this out: <input name="bot-field" />
+            </label>
+          </p>
+          <button type="submit">Submit</button>
         </div>
       </form>
+
       {/* Sichtbares Formular */}
       <form
         className="card"
         name="contact"
         method="POST"
         onSubmit={handleSubmit}
-        netlify
+        // ✅ optional: data-netlify auf dem sichtbaren Formular (schadet nicht)
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
       >
-      <Flexbox flex='column' gap='medium'>
-        <input type="hidden" name="form-name" value="contact" />
-        <div style={{ display: 'none' }}>
-          <input name="bot-field" />
-        </div>
-        <div className='h2' >Kontaktformular</div>
-        <p>Bitte füllen Sie das Formular aus, um mich zu kontaktieren. Ich werde mich so schnell wie möglich bei Ihnen melden.</p>
-        <div className='grid-sm2'>
-          <TextInput label="Vorname*" inputName="Vorname" required={true} />
-          <TextInput label="Nachname*" inputName="Nachname" required={true} />
-        </div>
-        <div className='grid-sm2'>
-          <TextInput inputName="E-Mail" label="E-Mail*" required={true} />
-          <TextInput inputName="Telefonnummer" label="Telefonnummer" required={false} />
-        </div>
-        <TextInput inputName="Betreff" label="Betreff*" required={true} />
-        <TextArea  inputName="Nachricht" label="Nachricht*" />
-        <span style={{width:'100%', textAlign:'right'}}>* ist erforderlich.</span>
-        <button type="submit" className={`buttonprimary ${styles.colFull}`} disabled={isSubmitting}>{isSubmitting ? 'Wird gesendet...' : 'Senden'}</button>
-        
+        <Flexbox flex="column" gap="medium">
+          {/* Muss drin sein, damit Netlify den Form-Namen beim POST erkennt */}
+          <input type="hidden" name="form-name" value="contact" />
+
+          {/* Honeypot */}
+          <div style={{ display: 'none' }}>
+            <input name="bot-field" />
+          </div>
+
+          <div className="h2">Kontaktformular</div>
+          <p>
+            Bitte füllen Sie das Formular aus, um mich zu kontaktieren. Ich werde mich so schnell
+            wie möglich bei Ihnen melden.
+          </p>
+
+          <div className="grid-sm2">
+            <TextInput label="Vorname*" inputName="Vorname" required />
+            <TextInput label="Nachname*" inputName="Nachname" required />
+          </div>
+
+          <div className="grid-sm2">
+            <TextInput inputName="E-Mail" label="E-Mail*" required />
+            <TextInput inputName="Telefonnummer" label="Telefonnummer" required={false} />
+          </div>
+
+          <TextInput inputName="Betreff" label="Betreff*" required />
+          <TextArea inputName="Nachricht" label="Nachricht*" />
+
+          <span style={{ width: '100%', textAlign: 'right' }}>* ist erforderlich.</span>
+          <button
+            type="submit"
+            className={`buttonprimary ${styles.colFull}`}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Wird gesendet...' : 'Senden'}
+          </button>
         </Flexbox>
       </form>
 
@@ -118,4 +150,3 @@ export function ContactForm({grid, row, span }: FormProps) {
     </Grid>
   );
 }
-
