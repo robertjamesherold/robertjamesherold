@@ -65,7 +65,7 @@ export function ContactForm({grid, row, span }: FormProps) {
   return (
     <Grid row={row} grid={grid} span={span}>
       {/* Netlify Hidden Form */}
-      <form name="contact" netlify-honeypot="bot-field" hidden>
+      <form name="contact" netlify-honeypot="bot-field" netlify hidden>
         <div><div>
           <input type="text" name="Vorname" />
           <input type="text" name="Nachname" />
@@ -85,6 +85,7 @@ export function ContactForm({grid, row, span }: FormProps) {
         name="contact"
         method="POST"
         onSubmit={handleSubmit}
+        netlify
       >
       <Flexbox flex='column' gap='medium'>
         <input type="hidden" name="form-name" value="contact" />
