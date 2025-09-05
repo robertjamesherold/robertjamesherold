@@ -18,7 +18,7 @@ export function BigCard({  image, alt, title, text, link, tags  }: BigCardProps)
         <img src={image} alt={alt} />
         <div className='bigcardoverlay'>
           <Link to={link} className='bigcardviewproject'>
-           <span><ViewIcon /></span>&nbsp; Projekte ansehen
+           <span><ViewIcon /></span>&nbsp; Projekt ansehen
           </Link>
         </div>
       </div>
