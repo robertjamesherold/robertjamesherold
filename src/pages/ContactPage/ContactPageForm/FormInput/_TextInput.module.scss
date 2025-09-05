@@ -13,6 +13,21 @@
     }
 }
 
+
+
+.textcheckContainer
+{
+    display: flex;
+    flex-direction: row;
+
+    width: $space100;
+
+    gap: $space0n5;
+    &:hover
+    {
+        animation: inputFocus 31s infinite;
+    }
+}
 // Label Styles
 .textInputLabel
 {

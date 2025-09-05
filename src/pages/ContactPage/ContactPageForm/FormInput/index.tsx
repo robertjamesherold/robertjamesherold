@@ -18,7 +18,7 @@ export function TextInput({
   const [value, setValue] = useState<string>('')
   
   const place = (name: string) => {
-    return `${name} eingeben`;
+    return `${name}`;
   } 
 
   return (
@@ -35,6 +35,31 @@ export function TextInput({
           onChange={e => setValue(e.target.value)}
         />
       </label>
+    </div>
+  )
+}
+
+
+export function Checkbox({ 
+  inputName = '',
+  required = false
+}: TextInputProps) {
+
+  const [value, setValue] = useState<string>('')
+  
+
+
+  return (
+    <div className={`${styles.textcheckContainer}`} style={{alignItems: 'center'}}>
+      <input
+          name={inputName}
+          type="checkbox"
+          value={value}
+          required={required}
+          onChange={e => setValue(e.target.value)}
+          style={{width: '1.2rem', height: '1.2rem'}}
+        />
+        <span>Ich akzeptiere <a style={{textDecoration: 'underline', cursor: 'pointer'}}>AGB</a>'s.</span>
     </div>
   )
 }
