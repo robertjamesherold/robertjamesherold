@@ -265,7 +265,7 @@ color: rgba($codeTextPri, 0.55);
     transition: $all0n3;
 
 color: rgba($codeTextPri);
-    border-radius: $radius1 / 2;
+    border-radius: calc($radius1 / 2);
 
     &:hover
     {

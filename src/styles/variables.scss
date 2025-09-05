@@ -1,7 +1,5 @@
 @use "sass:math";
 
-
-
 :root
 {
     --code-bg: 30, 30, 30; // rgb(30,30,30)
@@ -249,12 +247,12 @@ $gapSmall: (
 
 $gapMini: (
     null: math.div($space1, 2),
-    $xs: ($space1 + math.div($space0n25, 2)) / 2,
+    $xs: math.div(($space1 + math.div($space0n25, 2)), 2),
     $sm: math.div($space1n25, 2),
-    $md: ($space1n25 + math.div($space0n25, 2)) / 2,
-    $lg: ($space1n5) / 2,
-    $xl: ($space1n5 + math.div($space0n25, 2)) / 2
-  );
+    $md: math.div(($space1n25 + math.div($space0n25, 2)), 2),
+    $lg: math.div($space1n5, 2),
+    $xl: math.div($space1n5 + math.div($space0n25, 2), 2)
+);
 
   $spacingBig: (
     null: $space1,

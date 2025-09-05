@@ -9,7 +9,7 @@
 }
 
 .mainTitle {
-  font-size: clamp($fs4, 4vw, $fs6);
+  font-size:  fn.css-clamp(#{$fs4}, 4vw, #{$fs6});
   font-weight: $fw7;
   color: rgba($codeTextPri);
   margin-bottom: $space2;
@@ -20,7 +20,7 @@
   margin-bottom: $space2n5;
   
   h2 {
-    font-size: clamp($fs2, 2.5vw, $fs3);
+    font-size: fn.css-clamp($fs2, calc(2.5vw), $fs3);
     font-weight: $fw6;
     color: rgba($codeTextPri);
     margin: $space3 0 $space1 0;
