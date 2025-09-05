@@ -13,10 +13,17 @@
     background-color: rgb($codeBgSec);
     overflow: hidden;
     height: $space100;
+    box-shadow: $shadSm;
     justify-content: flex-start;
     &:hover {
+   @media (min-width: $xl){   
 
+        transform: translateY(-8px);
         border-color: rgb($codeBlue);
+        box-shadow: $shadMd;
+
+   }
+
     }
 
 }
@@ -113,19 +120,18 @@
     border: $border1;
     border-radius: $radius1;
     background-color: rgb($codeBgSec);
-    box-shadow: $shadMd;
+    box-shadow: $shadSm;
 
-    &:hover {
+     &:hover {
+   @media (min-width: $xl){   
+
         transform: translateY(-8px);
         border-color: rgb($codeBlue);
-        box-shadow: $shadLg;
-    }
+        box-shadow: $shadMd;
 
-    @media (max-width: 639px) {
-        &:hover {
-            transform: translateY(-4px);
-        }
-    }
+   }
+     }
+
 }
 
 @mixin bigcardcontent {
