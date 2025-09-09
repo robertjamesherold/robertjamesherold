@@ -4,21 +4,21 @@ export const ServiceData: CardProps[]  = [
   {
     icon: '🎨',
     title: 'UI/UX Design',
-    text: 'Benutzerfreundliche Interfaces & durchdachte User Experience mit modernen Design-Prinzipien.'
+    text: 'Benutzerfreundliche UIs mit \n durchdachter UX nach \n modernen Design-Prinzipien.'
   },
   {
     icon: '💻',
     title: 'Webentwicklung',
-    text: 'Moderne Webanwendungen mit React, Node.js & TypeScript für optimale Performance.'
+    text: 'Moderne Webanwendungen \n mit Node.js & React \n für optimale Performance.'
   },
   {
     icon: '📱',
     title: 'Prototyping',
-    text: 'Entwicklung von Wireframes & Prototypen in Figma.'
+    text: 'Entwicklung von Wireframes \n über Lo-fi-Prototypen hin \n zu Hi-fidelity-Prototypen.'
   },
   {
     icon: '🎬',
     title: 'Video-Produktion',
-    text: 'Professionelle Videoproduktion & -bearbeitung für Marketing & Social Media.'
+    text: 'Professionelle Produktion \n und Videobearbeitung für \n Social Media Marketing.'
   }
 ];

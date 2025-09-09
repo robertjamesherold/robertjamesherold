@@ -3,22 +3,22 @@ export const DesignProcessData: CardProps[] = [
   {
     title: 'Research',
     icon: '🔍',
-    text: 'Verstehen der Nutzer und des Marktes durch umfassende Recherche.'
+    text: 'Verstehen der Nutzer \n und des Marktes durch \n  umfassende Recherche.'
   },
   {
     title: 'Konzept',
     icon: '💡',
-    text: 'Entwicklung kreativer Lösungsansätze und Konzepte.'
+    text: 'Entwicklung kreativer \n Lösungsansätze und \n innovativen Konzepten.'
   },
   {
     title: 'Prototyping',
     icon: '🎨',
-    text: 'Umsetzung der Konzepte in visuelle und interaktive Designs.'
+    text: 'Umsetzung der Konzepte \n  in visuell ansprechende \n  und interaktive Designs.'
   },
   {
     title: 'Evaluation',
     icon: '🔄',
-    text: 'Kontinuierliche Verbesserung durch Tests und Nutzerfeedback.'
+    text: 'Stetige Verbesserung \n  durch Usability-Tests \n und Nutzerfeedback.'
   }
 ];
 
