@@ -25,7 +25,7 @@ export const mobileNavigationItems: NavigationItem[] = [
 
 // Contact Information
 export const contactInfo = {
-  email: 'robertjamesherold@icloud.com',
+  email: 'hello@robertjamesherold.me',
   phone: '+49 151 616 60444',
   phoneDisplay: '+49 151 616 60444'
 };

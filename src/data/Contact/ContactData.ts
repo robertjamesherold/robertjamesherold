@@ -15,7 +15,7 @@ export const ContactData: ContactCardProps[] = [
   {
     icon: '📬',
     title: 'E-Mail',
-    text: 'me@robertjamesherold.com'
+    text: 'hello@robertjamesherold.me'
   },
   {
     icon: '🏡',

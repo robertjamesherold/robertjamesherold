@@ -50,7 +50,7 @@
     overflow: visible;
 
     color: rgb($codeTextPri);
-
+    white-space: pre-wrap;
     @media (min-width: $md) {
         font-size: $fs2;
 
@@ -67,7 +67,7 @@
     max-width: 100%;
     margin: 0;
     // Lange Wörter umbrechen
-
+    white-space: pre-line;
     word-wrap: break-word;
 
     color: rgb($codeTextPri);
