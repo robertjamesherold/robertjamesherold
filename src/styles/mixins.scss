@@ -13,6 +13,59 @@
 // CARDS
 
 @mixin cardContainer {
+    .ctaCard {
+
+    transition: all .3s ease-in-out;
+    border: $border1;
+    border-radius: $radius1;
+    display:flex;flex-direction: column;
+    background: linear-gradient(120deg, rgb($codePink), rgb($codeBlue));
+    overflow: hidden;
+    height: $space100;
+    box-shadow: $shadSm;
+        user-select: none;
+
+    justify-content: flex-start;
+            @include paddingSmall;
+
+    &:hover {
+   @media (min-width: $xl){   
+
+        border-color: rgb($codeBlue);
+        box-shadow: $shadMd;
+
+   }
+   
+    }
+
+}
+  .contactCard {
+
+    transition: all .3s ease-in-out;
+    border: $border1;
+    border-radius: $radius1;
+    display:flex;flex-direction: column;
+    background: rgb($codeBgSec);
+    overflow: hidden;
+    height: $space100;
+    box-shadow: $shadSm;
+    user-select: none;
+
+    justify-content: flex-start;
+            @include paddingSmall;
+
+    &:hover {
+   @media (min-width: $xl){   
+
+        border-color: rgb($codeBlue);
+        box-shadow: $shadMd;
+
+   }
+
+    }
+
+}
+
     .card {
      @include card;
         @include paddingSmall;

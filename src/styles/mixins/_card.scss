@@ -15,10 +15,11 @@
     height: $space100;
     box-shadow: $shadSm;
     justify-content: flex-start;
+    user-select: none;
     &:hover {
    @media (min-width: $xl){   
 
-        transform: translateY(-8px);
+ 
         border-color: rgb($codeBlue);
         box-shadow: $shadMd;
 
@@ -45,7 +46,6 @@
     line-height: $tightH;
     margin-bottom: 0;
     padding-bottom: 0;
-    
     position: relative;
     overflow: visible;
 
@@ -62,16 +62,12 @@
 @mixin carddescription {
     font-size: $fs16;
     line-height: $baseH;
-    // Optional: Maximale Breite setzen
     flex-shrink:1;
     max-width: 100%;
     margin: 0;
-    // Lange Wörter umbrechen
     white-space: pre-line;
     word-wrap: break-word;
-
     color: rgb($codeTextPri);
-
     -ms-hyphens: auto;
     overflow-wrap: break-word;
 }
@@ -81,11 +77,10 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-
     height: space100;
-
     gap: $space0n5;
 }
+
 @mixin timelinecardtags {
     display: flex;
     align-items: flex-start;
