@@ -1,0 +1,278 @@
+
+// =============================================================================
+// FULLSCREEN OVERLAY
+// =============================================================================
+
+.fullscreenOverlay
+{
+    position: absolute;;
+    z-index: 1300;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: $spaceFull;
+    height: $spaceScreen;
+    max-height: 0;
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-bottom: $space3;
+    padding-top: 0;
+
+
+    transition:$all0n3;
+
+    
+
+    &.open
+    {
+        visibility: visible;
+            max-height: $spaceScreen;
+    padding-top: $space5;
+
+
+    transform: translateX(0);
+
+      
+    }
+}
+
+.overlayContent
+{
+    position: relative;
+
+    width: $spaceFull;
+    height: $space100;
+    padding-bottom: $space5;
+    min-height: 100vh;
+    overflow-y: scroll;
+    transition:$all0n3;
+    background-color: rgb($codeBgPri);
+    pointer-events: none;
+    transform: translateY(-100vh);
+    border-radius: $space1;
+
+    .fullscreenOverlay.open &
+    {
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+
+
+}
+
+
+// =============================================================================
+// OVERLAY NAVIGATION
+// =============================================================================
+
+.overlayNav
+{
+    padding: $space5 $space3 $space3;
+}
+
+.overlayNavList
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: $no;
+}
+
+.overlayNavItem
+{
+    margin-bottom: $space1n5;
+
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+.overlayNavLink
+{
+    font-family: $fontFamily;
+    font-size: $fs2;
+    font-weight: $fw6;
+    line-height: $tightH;
+
+    display: block;
+
+    padding: $space1 0;
+
+    text-decoration: $no;
+    -webkit-tap-highlight-color: transparent;
+
+
+color: rgb($codeTextPri);
+    &:hover
+    {
+         -webkit-text-fill-color: rgb($codeBlue);
+
+        color:rgb($codeBlue);
+    }
+
+    &:focus
+    {
+        outline: $no;
+        box-shadow: $no;
+        -webkit-text-fill-color: rgb($codeBlue);
+
+        color: rgb($codeBlue);}
+    
+    &.active
+    {
+                -webkit-text-fill-color: rgb($codeBlue);
+
+        color: rgb($codeBlue);
+    } 
+    &:target 
+    {
+        -webkit-text-fill-color: rgb($codeBlue);
+
+        color: rgb($codeBlue);
+    }
+}
+
+// =============================================================================
+// OVERLAY SUB NAVIGATION
+// =============================================================================
+
+.overlaySubNav
+{
+    margin: $space1 0 0 $space2;
+    padding: 0;
+
+    list-style: $no;
+}
+
+.overlaySubNavItem
+{
+    margin-bottom: $space0n5;
+}
+
+.overlaySubNavLink
+{
+    font-family: $fontFamily;
+    font-size: $fs1;
+    font-weight: $fw4;
+
+    display: block;
+
+    padding: $space0n5 0;
+
+    transition: $all0n3;
+    text-decoration: $no;
+
+color: rgb($codeTextPri);
+    &:hover
+    {
+        transform: translateX(4px);
+
+        color:rgb($codeBlue);
+    }
+}
+
+// =============================================================================
+// OVERLAY FOOTER
+// =============================================================================
+
+.overlayFooter
+{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-top: $space4;
+    padding-top: $space3;
+
+    border-top: $border1;
+
+    @media (max-width: $sm)
+    {
+        flex-direction: column;
+
+        gap: $space2;
+    }
+}
+
+.overlayContact
+{
+    flex: 1;
+}
+
+.overlayContactTitle
+{
+    font-family: $fontFamily;
+    font-size: $fs1;
+    font-weight: $fw6;
+
+    margin: 0 0 $space0n75 0;
+
+color: rgb($codeTextPri);}
+
+.overlayContactInfo
+{
+    margin: 0 0 $space0n5 0;
+
+    a
+    {
+        font-size: $fs14;
+        font-weight: $fw4;
+
+        transition: $all0n3;
+        text-decoration: $no;
+
+color: rgba($codeTextPri, 0.55);
+        &:hover
+        {
+ color: rgb($codeBlue);
+        }
+    }
+}
+
+// =============================================================================
+// OVERLAY SOCIAL LINKS
+// =============================================================================
+
+.overlaySocial
+{
+    display: flex;
+
+    gap: $space1;
+}
+
+.socialLink
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+    border: $border1;
+    
+    transition: $all0n3;
+
+color: rgba($codeTextPri);
+    border-radius: calc($radius1 / 2);
+
+    &:hover
+    {
+        transform: translateY(-2px);
+
+        color: rgb($codeBlue);
+        background-color: rgba($codeBlue, 0.1);
+    }
+
+    svg
+    {
+        width: 20px;
+        height: 20px;
+    }
+}
+
