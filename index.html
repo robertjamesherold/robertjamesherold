@@ -1,28 +1,53 @@
 <!doctype html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8" />
-
-  <!-- Viewport richtig setzen -->
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-  <!-- Theme-Farbe für helle & dunkle Systeme -->
+  <meta name="keywords" content="Robert James Herold, Webdesign, Frontend Development, React, TypeScript, SCSS, Mediendesign, Grafikdesign, Portfolio, UI Design, UX Design, Responsive Design, Storytelling, Animation, Branding, Corporate Design, Creative Developer, Designer, Developer, robertjamesherold.com">
+  <meta name="description" content="Robert James Herold – Portfolio für Webdesign, Frontend Development & Mediendesign. Kreative Lösungen mit React, TypeScript & SCSS, kombiniert mit Storytelling, Branding und modernen UI/UX-Konzepten.">
+  <meta property="og:description" content="Die Portfolio-Design-Website von Robert James Herold">
+  <meta property="og:url" content="https://robertjamesherold.com/">
+  <meta property="og:site_name" content="Robert James Herold">
+  <title>Robert James Herold</title>
+  <link rel="icon" href="favicon_32x32.ico" sizes="32x32">
+  <link rel="icon" href="favicon_light.svg" type="images/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="favicon_dark.svg" type="images/svg+xml" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_180x180.webp">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content='#12130cff' media="(prefers-color-scheme: dark)">
-
-  <!-- iOS-Support -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-status-bar-style" content="black-translucent">
-
-
-  <title>Robert James Herold</title>
 </head>
-
 <body>
-    
+  <form
+        name="contact"
+        hidden
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <div>
+          <div>
+            <input type="text" name="Vorname" />
+            <input type="text" name="Nachname" />
+          </div>
+          <div>
+            <input type="email" name="E-Mail" />
+            <input type="tel" name="Telefonnummer" />
+          </div>
+          <input type="text" name="Betreff" />
+          <textarea name="Nachricht"></textarea>
+          <p hidden>
+            <label>
+              Don’t fill this out: 
+              <input name="bot-field" />
+            </label>
+          </p>
+          <span>* ist erforderlich.</span>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
   <div id="root"></div>
-  
   <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>

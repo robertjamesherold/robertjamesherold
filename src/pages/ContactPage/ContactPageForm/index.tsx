@@ -5,15 +5,11 @@ import { Flexbox } from '../../../components/Flexbox';
 import { TextInput } from './FormInput';
 import { TextArea } from './FormArea';
 import { ErrorPopup } from './FormErrorPopup';
-import { Grid, type ColumnProps } from '../../../layout/GridLayout';
+import { Grid } from '../../../layout/GridLayout';
 
-export type FormProps = {
-  grid?: number | ColumnProps;
-  row?: number | ColumnProps;
-  span?: number | ColumnProps;
-};
 
-export function ContactForm({ grid, row, span }: FormProps) {
+
+export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showErrorPopup, setShowErrorPopup] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -63,57 +59,19 @@ export function ContactForm({ grid, row, span }: FormProps) {
   };
 
   return (
-    <Grid row={row} grid={grid} span={span}>
-      {/* Netlify Hidden Form (nur zur Build-Erkennung) */}
+    <Grid row={{default: 4}} span={{ lg: 7 }}>
       <form
-        name="contact"
-        hidden
-        // ✅ data-* statt netlify
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <div>
-          <div>
-            <input type="text" name="Vorname" />
-            <input type="text" name="Nachname" />
-          </div>
-          <div>
-            <input type="email" name="E-Mail" />
-            <input type="tel" name="Telefonnummer" />
-          </div>
-          <input type="text" name="Betreff" />
-          <textarea name="Nachricht" />
-          <p hidden>
-            <label>
-              Don’t fill this out: <input name="bot-field" />
-            </label>
-          </p>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-
-      {/* Sichtbares Formular */}
-      <form
-        className="card"
+        className="contactCard"
         name="contact"
         method="POST"
         onSubmit={handleSubmit}
-        // ✅ optional: data-netlify auf dem sichtbaren Formular (schadet nicht)
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
-        <Flexbox flex="column" gap="medium">
-          {/* Muss drin sein, damit Netlify den Form-Namen beim POST erkennt */}
-          <input type="hidden" name="form-name" value="contact" />
-
-          {/* Honeypot */}
-          <div style={{ display: 'none' }}>
-            <input name="bot-field" />
-          </div>
-
-          <div className="h2">Kontaktformular</div>
-          <p>
+      <input type="hidden" name="form-name" value="contact" />
+      <Flexbox flex="column" gap="medium">
+      <div className="h2">Kontaktformular</div>
+         <p>
             Bitte füllen Sie das Formular aus, um mich zu kontaktieren. Ich werde mich so schnell
             wie möglich bei Ihnen melden.
           </p>
@@ -130,7 +88,11 @@ export function ContactForm({ grid, row, span }: FormProps) {
 
           <TextInput inputName="Betreff" label="Betreff*" required />
           <TextArea inputName="Nachricht" label="Nachricht*" />
-
+          <p hidden>
+            <label>
+              Don’t fill this out: <input name="bot-field" />
+            </label>
+          </p>
           <span style={{ width: '100%', textAlign: 'right' }}>* ist erforderlich.</span>
           <button
             type="submit"

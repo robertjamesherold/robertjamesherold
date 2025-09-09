@@ -11,7 +11,7 @@ export function ContactPage() {
       <Header title='Kontakt' />
         <Section id='contact' isPaddingTop={false}>
           <Grid grid={{default: 12}}>
-            <ContactForm row={{default: 4}} span={{ lg: 7 }} />
+            <ContactForm/>
             <CardGrid isSection={false} isPadding={false} id='' grid={{sm:2, lg: 1}} row={{default: 4}} span={{lg:5}} data={contact.form}/>
           </Grid>
         </Section>

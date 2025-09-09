@@ -34,7 +34,7 @@ export function CallToAction({
   secondaryButtonLink,
 }: CallToActionProps) {
   return (
-      <div className='card backgroundGradient' >
+      <div className='ctaCard' >
         <div className='cardCTAcontent aligncenter'>
           <h3 className='textcenter' style={{ color: 'white' }}>{title}</h3>
           <p className='carddescription textcenter' style={{ maxWidth: '60vw', color: 'white' }} >{text}</p>
