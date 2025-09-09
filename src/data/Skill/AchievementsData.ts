@@ -14,7 +14,7 @@ export const AchievementsData: CardProps[] = [
   },
   {
     icon: '💼',
-    title: 'Design Allrounder \n  Print - Web - Motion',
+    title: 'Design Allrounder\nPrint - Web - Motion',
     text: 'Seit 2017',
     tag: '10+ Projekte'
   },
