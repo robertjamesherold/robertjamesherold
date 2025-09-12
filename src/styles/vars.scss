@@ -1,0 +1,133 @@
+:root {
+/* TYPO */
+--base-font-size: 1rem;
+--basefont: 'Yrsa', serif;
+--headfont: 'Mystery Quest', system-ui;
+
+/* DISPLAY HEADLINES  */ 
+--headline-display-large: clamp(2.5rem, 8vw, 4.5rem);
+--headline-display-medium: clamp(2rem, 6vw, 3.5rem);
+--headline-display-small: clamp(1.5rem, 4vw, 2.5rem);   
+--display-line-height-large: clamp(1.1, 1.15, 1.2);
+--display-line-height-medium: clamp(1.2, 1.25, 1.3);
+--display-line-height-small: clamp(1.25, 1.3, 1.35);
+
+/* HEADLINES */ 
+--headline-large: clamp(1.25rem, 3vw, 2rem);
+--headline-medium: clamp(1.125rem, 2.5vw, 1.5rem);
+--headline-small: clamp(1rem, 2vw, 1.25rem);   
+--headline-height-large: clamp(1.3, 1.35, 1.4);
+--headline-height-medium: clamp(1.4, 1.45, 1.5);
+--headline-height-small: clamp(1.5, 1.55, 1.6);
+
+/* BASELINE */
+--baseline-large: clamp(1.125rem, 2vw, 1.25rem); 
+--baseline-medium: clamp(0.875rem, 1.5vw, 1rem);
+--baseline-small: clamp(0.75rem, 1.2vw, 0.875rem);
+--baseline-height-large: clamp(1.5, 1.6, 1.65);
+--baseline-height-medium: clamp(1.4, 1.5, 1.55);
+--baseline-height-small: clamp(1.4, 1.5, 1.55);
+
+/* LABEL */
+--label-large: clamp(0.875rem, 1.5vw, 1rem); 
+--label-medium: clamp(0.75rem, 1.2vw, 0.875rem);
+--label-small: clamp(0.625rem, 1vw, 0.75rem);
+--label-line-height-large: clamp(1.3, 1.35, 1.4);
+--label-line-height-medium: clamp(1.3, 1.4, 1.45);
+--label-line-height-small: clamp(1.4, 1.45, 1.5);
+
+/* BREAKPOINTS */
+--tablet: 768px;
+--laptop: 1024px;
+--desktop: 1440px;
+
+/* SPACING */
+--space-0: 0px; 
+--space-1: 4px;
+--space-2: 8px; 
+--space-3: 12px;
+--space-4: 16px;
+--space-5: 24px;
+--space-6: 32px;
+--space-7: 48px;
+--space-8: 64px;
+
+/* SIZE */
+--size-full: 100%;
+--size-half: 50%;
+--size-third: 33%;
+--size-quarter: 25%;
+--size-fit: fit-content;
+--size-auto: auto;
+--size-max: max-content;
+--size-min: min-content;
+--size-viewport-width: 100vw;
+--size-viewport-height: 100vh;
+}
+
+/* BREAKPOINTS */
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1440px;
+
+/* SPACING */
+$space-0: 0px; 
+$space-1: 4px;
+$space-2: 8px; 
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 24px;
+$space-6: 32px;
+$space-7: 48px;
+$space-8: 64px;
+
+/* SIZE */
+$size-full: 100%;
+$size-half: 50%;
+$size-third: 33%;
+$size-quarter: 25%;
+$size-fit: fit-content;
+$size-auto: auto;
+$size-max: max-content;
+$size-min: min-content;
+$size-viewport-width: 100vw;
+$size-viewport-height: 100vh;
+
+
+/* FONT FAMILY */
+$basefont: var(--basefont);
+$headfont: var(--headfont);
+
+
+/* DISPLAY HEADLINES  */ 
+$headline-display-large: var(--headline-display-large);
+$headline-display-medium: var(--headline-display-medium);
+$headline-display-small: var(--headline-display-small);   
+$display-line-height-large: var(--display-line-height-large);
+$display-line-height-medium: var(--display-line-height-medium);
+$display-line-height-small: var(--display-line-height-small);
+
+/* HEADLINES */ 
+$headline-large: var(--headline-large);
+$headline-medium: var(--headline-medium);
+$headline-small: var(--headline-small);   
+$headline-height-large: var(--headline-height-large);
+$headline-height-medium: var(--headline-height-medium);
+$headline-height-small: var(--headline-height-small);
+
+/* BASELINE */
+$baseline-large: var(--baseline-large); 
+$baseline-medium: var(--baseline-medium);
+$baseline-small: var(--baseline-small);
+$baseline-height-large: var(--baseline-height-large);
+$baseline-height-medium: var(--baseline-height-medium);
+$baseline-height-small: var(--baseline-height-small);
+
+/* LABEL */
+$label-large: var(--label-large); 
+$label-medium: var(--label-medium);
+$label-small: var(--label-small);
+$label-line-height-large: var(--label-line-height-large);
+$label-line-height-medium: var(--label-line-height-medium);
+$label-line-height-small: var(--label-line-height-small);
+

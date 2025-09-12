@@ -1,0 +1,22 @@
+/* Suchen */            
+(\$)(.*):
+/* Ersetzen */          
+$1$2: var(--$2);
+/* $variable-name: -> $variable-name: var(--variable-name); */
+
+
+
+// Suchen: 
+(--)(.*):
+// Ersetzen: 
+$$$2: var(--$2);
+// --variable-name: -> $variable-name: var(--variable-name);
+
+
+
+// Suchen: 
+(--)(.*): .*;
+// Ersetzen: 
+$$$2: var(--$2);
+// --variable-name: variablen wert; --> $variable-name: var(--variable-name);
+

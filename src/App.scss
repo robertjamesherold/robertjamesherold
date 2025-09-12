@@ -61,7 +61,21 @@ header {
 // HEADERS
 
 h1 {
-    @include h1
+    font-size: $fs5;
+    font-weight: $fw7;
+    line-height: $tightH;
+    margin: $space0;
+    padding: 0;
+    color: rgb($codeBg);
+    @media (min-width: $sm) {
+        font-size: $fs6;
+    }
+    &.colored {
+    color: $primary-color-1;
+
+
+
+    }
 }
 
 h2 {

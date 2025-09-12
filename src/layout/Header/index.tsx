@@ -9,10 +9,10 @@ export type HeaderProps = {
 export function Header({ title, text , id , children}: HeaderProps) {
 
   return (
-      <header id={id} className={styles.header}>
+      <section id={id} className={styles.header}>
           <h1 className='colored textcenter'>{title}</h1>
           {text && <p className={`textcenter ${styles.subtitle}`}>{text}</p>}
           {children}
-      </header>
+      </section>
   )};
 

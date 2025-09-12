@@ -31,12 +31,14 @@ export default defineConfig({
     preprocessorOptions: {
     scss: {
   additionalData: `
+    @use "@scss/vars" as *;
+    @use "@scss/colorvars.scss" as *;
     @use 'sass:math';
     @use 'sass:map';
     @use "@scss/variables.scss" as *;
     @use "@scss/mixins.scss" as *;
     @use '@scss/_functions.scss' as fn;
-  `
+     `
 }
     },
   },

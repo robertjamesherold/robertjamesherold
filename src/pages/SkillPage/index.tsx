@@ -7,7 +7,7 @@ import { Header } from '../../layout/Header'
 export function SkillPage() {
   return (
     <main>
-      <Header title='Skills & Technologien'/>
+      <Header id='skillpage-herosection' title='Skills & Technologien'/>
       <ProgressCardGrid grid={{default:1, sm: 2, lg: 3}} isPadding={false} id='designtechnologien' data={skills.design} title='Design Technologien'/>
       <ProgressCardGrid  grid={{default:1, sm: 2, lg: 3}} isPadding={false} id='webtechnologien' data={skills.web} title='Web Technologien'/>
       <CardGrid isSection={true} grid={{default:1, sm: 2, xl: 4}} isPadding={false} id='designprozess' data={skills.process} title='Design Process'/>

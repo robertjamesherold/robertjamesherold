@@ -1,0 +1,220 @@
+:root {
+    /* PRIMARY COLOR ACCENTS  */
+    --primary-color-1: rgb(225, 150, 30);
+    --primary-color-2: rgb(194, 120, 20);
+    --primary-color-3: rgb(154, 88, 12);
+
+    /* SECONDARY COLOR ACCENTS  */
+    --secondary-color-1: rgb(30, 122, 225); 
+    --secondary-color-2: rgb(22, 101, 192);
+    --secondary-color-3: rgb(15, 73, 147);
+
+    /* TERTIARY COLOR ACCENTS  */
+    --tertiary-color-1: rgb(90, 225, 30);
+    --tertiary-color-2: rgb(75, 192, 22);
+    --tertiary-color-3: rgb(56, 142, 15);
+
+    /* NEUTRAL COLOR */
+    --neutral-color-1: rgb(250, 250, 249);      
+    --neutral-color-2: rgb(231, 229, 228);      
+    --neutral-color-3: rgb(120, 113, 108);     
+    --neutral-color-4: rgb(68, 64, 60);       
+    --neutral-color-5: rgb(28, 25, 23);       
+
+    /* SUCCESS COLOR */
+    --success-color-1: rgb(34, 197, 94);
+    --success-color-2: rgb(187, 247, 208);
+    --success-color-3: rgb(21, 128, 61);
+
+    /* ERROR COLOR */
+    --error-color-1: rgb(239, 68, 68);
+    --error-color-2: rgb(254, 202, 202);
+    --error-color-3: rgb(153, 27, 27);
+
+    /* INFO COLOR */
+    --info-color-1: rgb(96, 165, 250);
+    --info-color-2: rgb(191, 219, 254);
+    --info-color-3: rgb(15, 73, 147);
+
+    /* SURFACE COLOR */
+    --surface-color-1:: rgb(255, 255, 255);    
+    --surface-color-1:: rgb(250, 250, 249);      
+    --surface-color-3: rgb(245, 245, 244);        
+
+    /* CARD SURFACE COLOR */
+    --surface-elevated-color-1: rgb(255, 255, 255);  
+    --surface-elevated-color-2: rgb(254, 254, 253);   
+    --surface-elevated-color-3: rgb(250, 250, 249);   
+
+    /* TEXT COLOR  */
+    --text-color-1: rgb(17, 17, 17);
+    --text-color-2: rgb(170, 170, 170);
+    --text-color-3: rgb(125, 125, 125);
+}
+
+@media (prefers-color-scheme: light) {
+:root {
+    /* PRIMARY COLOR ACCENTS  */
+    --primary-color-1: rgb(225, 150, 30);
+    --primary-color-2: rgb(194, 120, 20);
+    --primary-color-3: rgb(154, 88, 12);
+
+    /* SECONDARY COLOR ACCENTS  */
+    --secondary-color-1: rgb(30, 122, 225); 
+    --secondary-color-2: rgb(22, 101, 192);
+    --secondary-color-3: rgb(15, 73, 147);
+
+    /* TERTIARY COLOR ACCENTS  */
+    --tertiary-color-1: rgb(90, 225, 30);
+    --tertiary-color-2: rgb(75, 192, 22);
+    --tertiary-color-3: rgb(56, 142, 15);
+
+    /* NEUTRAL COLOR */
+    --neutral-color-1: rgb(250, 250, 249);      
+    --neutral-color-2: rgb(231, 229, 228);      
+    --neutral-color-3: rgb(120, 113, 108);     
+    --neutral-color-4: rgb(68, 64, 60);       
+    --neutral-color-5: rgb(28, 25, 23);       
+
+    /* SUCCESS COLOR */
+    --success-color-1: rgb(34, 197, 94);
+    --success-color-2: rgb(187, 247, 208);
+    --success-color-3: rgb(21, 128, 61);
+
+    /* ERROR COLOR */
+    --error-color-1: rgb(239, 68, 68);
+    --error-color-2: rgb(254, 202, 202);
+    --error-color-3: rgb(153, 27, 27);
+
+    /* INFO COLOR */
+    --info-color-1: rgb(96, 165, 250);
+    --info-color-2: rgb(191, 219, 254);
+    --info-color-3: rgb(15, 73, 147);
+
+    /* SURFACE COLOR */
+    --surface-color-1:: rgb(255, 255, 255);    
+    --surface-color-1:: rgb(250, 250, 249);      
+    --surface-color-3: rgb(245, 245, 244);        
+
+    /* CARD SURFACE COLOR */
+    --surface-elevated-color-1: rgb(255, 255, 255);  
+    --surface-elevated-color-2: rgb(254, 254, 253);   
+    --surface-elevated-color-3: rgb(250, 250, 249);   
+
+    /* TEXT COLOR  */
+    --text-color-1: rgb(17, 17, 17);
+    --text-color-2: rgb(170, 170, 170);
+    --text-color-3: rgb(125, 125, 125);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* PRIMARY COLOR ACCENTS  */
+        --primary-color-1: rgb(225, 150, 30);
+        --primary-color-2: rgb(245, 158, 66);
+        --primary-color-3: rgb(251, 191, 126);
+
+        /* SECONDARY COLOR ACCENTS  */
+        --secondary-color-1: rgb(30, 122, 225); 
+        --secondary-color-2: rgb(96, 165, 250);
+        --secondary-color-3: rgb(147, 197, 253);
+
+        /* TERTIARY COLOR ACCENTS  */
+        --tertiary-color-1: rgb(90, 225, 30);
+        --tertiary-color-2: rgb(74, 222, 128);
+        --tertiary-color-3: rgb(134, 239, 172);
+
+        /* NEUTRAL COLOR */
+        --neutral-color-1: rgb(28, 25, 23);      
+        --neutral-color-2: rgb(68, 64, 60);      
+        --neutral-color-3: rgb(120, 113, 108);     
+        --neutral-color-4: rgb(231, 229, 228);       
+        --neutral-color-5: rgb(250, 250, 249);       
+
+
+        /* SUCCESS COLOR */
+        --success-color-1: rgb(34, 197, 94);
+        --success-color-2: rgb(21, 128, 61);
+        --success-color-3: rgb(187, 247, 208);
+
+        /* ERROR COLOR */
+        --error-color-1: rgb(239, 68, 68);
+        --error-color-2: rgb(153, 27, 27);
+        --error-color-3: rgb(254, 202, 202);
+
+        /* INFO COLOR */
+        --info-color-1: rgb(96, 165, 250);
+        --info-color-2: rgb(15, 73, 147);
+        --info-color-3: rgb(191, 219, 254);
+
+        /* SURFACE COLOR */
+        --surface-color-1:: rgb(0, 0, 0);    
+        --surface-color-1:: rgb(5, 5, 6);      
+        --surface-color-3: rgb(10, 10, 1);        
+
+        /* CARD SURFACE COLOR */
+        --surface-elevated-color-1: rgb(0, 0, 0);  
+        --surface-elevated-color-2: rgb(1, 1, 2);   
+        --surface-elevated-color-3: rgb(5, 5, 6);   
+
+        /* TEXT COLOR  */
+        --text-color-1: rgb(238, 238, 238);
+        --text-color-2: rgb(80, 80, 80);
+        --text-color-3: rgb(130, 130, 130);
+
+        }
+}
+
+
+/* PRIMARY COLOR ACCENTS  */
+$primary-color-1: var(--primary-color-1);
+$primary-color-2: var(--primary-color-2);
+$primary-color-3: var(--primary-color-3);
+
+/* SECONDARY COLOR ACCENTS  */
+$secondary-color-1: var(--secondary-color-1); 
+$secondary-color-2: var(--secondary-color-2);
+$secondary-color-3: var(--secondary-color-3);
+
+/* TERTIARY COLOR ACCENTS  */
+$tertiary-color-1: var(--tertiary-color-1);
+$tertiary-color-2: var(--tertiary-color-2);
+$tertiary-color-3: var(--tertiary-color-3);
+
+/* NEUTRAL COLOR */
+$neutral-color-1: var(--neutral-color-1);      
+$neutral-color-2: var(--neutral-color-2);      
+$neutral-color-3: var(--neutral-color-3);     
+$neutral-color-4: var(--neutral-color-4);       
+$neutral-color-5: var(--neutral-color-5);       
+
+/* SUCCESS COLOR */
+$success-color-1: var(--success-color-1);
+$success-color-2: var(--success-color-2);
+$success-color-3: var(--success-color-3);
+
+/* ERROR COLOR */
+$error-color-1: var(--error-color-1);
+$error-color-2: var(--error-color-2);
+$error-color-3: var(--error-color-3);
+
+/* INFO COLOR */
+$info-color-1: var(--info-color-1);
+$info-color-2: var(--info-color-2);
+$info-color-3: var(--info-color-3);
+
+/* SURFACE COLOR */
+$surface-color-1: var(--surface-color-1);    
+$surface-color-2: var(--surface-color-2);      
+$surface-color-3: var(--surface-color-3);        
+
+/* CARD SURFACE COLOR */
+$surface-elevated-color-1: var(--surface-elevated-color-1);  
+$surface-elevated-color-2: var(--surface-elevated-color-2);   
+$surface-elevated-color-3: var(--surface-elevated-color-3);   
+
+/* TEXT COLOR  */
+$text-color-1: var(--text-color-1);
+$text-color-2: var(--text-color-2);
+$text-color-3: var(--text-color-3);

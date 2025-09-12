@@ -1,0 +1,84 @@
+@mixin headline-display-large{
+   font-size: $headline-display-large; 
+   line-height: $display-line-height-large;
+   font-weight: 800;
+   letter-spacing: -0.025em;
+   }
+
+@mixin headline-display-medium{
+   font-size: $headline-display-medium;
+   line-height: $display-line-height-medium;
+   font-weight: 700;
+   letter-spacing: -0.02em;
+   }
+
+@mixin headline-display-small{
+   font-size: $headline-display-small; 
+   line-height: $display-line-height-small;
+   font-weight: 700;
+   letter-spacing: -0.015em;
+   }
+
+@mixin headline-large{
+   font-size: $headline-large;
+   line-height: $headline-height-large;
+   font-weight: 600;
+   }
+
+@mixin headline-medium{
+   font-size: $headline-medium; 
+   line-height: $headline-height-medium;
+   font-weight: 600;
+   letter-spacing: -0.01em;
+   }
+
+@mixin headline-small{
+   font-size: $headline-small; 
+   line-height: $headline-height-small;
+   font-weight: 600;
+   letter-spacing: 0;
+   letter-spacing: -0.005em;
+   }
+
+@mixin baseline-large{
+   font-size: $baseline-large;
+   line-height: $baseline-height-large;
+   font-weight: 400;
+   letter-spacing: 0.01em;
+   }  
+
+@mixin baseline-medium{
+   font-size: $baseline-medium;
+   line-height: $baseline-height-medium;
+   font-weight: 400;
+   letter-spacing: 0.005em;
+   }  
+
+@mixin baseline-small{
+   font-size: $baseline-small;
+   line-height: $baseline-height-small;
+   font-weight: 400;
+   letter-spacing: 0.01em;
+   }  
+
+@mixin label-large{
+   font-size: $label-large;
+   line-height: $label-line-height-large;
+   font-weight: 500;
+   letter-spacing: 0.01em;
+   } 
+
+@mixin label-medium{
+   font-size: $label-medium;
+   line-height: $label-line-height-medium;
+   font-weight: 500;
+   letter-spacing: 0.015em;
+  
+   } 
+
+@mixin label-small{
+   font-size: $label-small;
+   line-height: $label-line-height-small;
+   font-weight: 500;
+   letter-spacing: 0.02em;
+   } 

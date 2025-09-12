@@ -1,63 +1,66 @@
 @use "sass:math";
-
-:root
-{
-    --code-bg: 30, 30, 30; // rgb(30,30,30)
-    --code-white: 255, 255, 255; // rgb(248,248,242)
-    --code-red: 215, 58, 73; // rgba(225, 93, 106, 1)
-    --code-red-bright: 250, 131, 115; // rgba(250, 131, 115, 1)
-    --code-red-dark: 212, 0, 0; // rgba(212, 0, 0, 1)
-    --code-blue-bright: 97, 175, 239; // rgb(97,175,239)
-    --code-blue-dark: 86, 95, 194; // rgb(86,95,194)
-    --code-blue: 86, 95, 194; // rgb(137,221,255)
-    --code-green: 195, 232, 141; // rgba(51, 82, 4, 1)
-    --code-green-dark: 51, 82, 4 ;
-    --code-lila: 130, 170, 255; // rgb(130,170,255)
-    --code-yellow: 255, 203, 107; // rgb(255,203,107)
-    --code-orange: 255, 106, 0; // rgb(255,106,0)
-    --code-purple: 198, 120, 221; // rgb(198,120,221)
-    --code-gray: 171, 178, 191; // rgb(171,178,191)
-    --code-pink: 255, 121, 198; // rgb(255,121,198)
-    --code-none: transparent; // transparent
-    --code-text-pri: 17, 17, 17; // rgb(17,17,17)
-    --code-text-sec: 170, 170, 170; // rgb(170,170,170)
-    --code-text-ter: 125, 125, 125; // rgb(85,85,85)
-    --code-background-pri: 243, 244, 249; // rgba(243, 244, 249, 1)
-    --code-background-sec: 255, 255, 255; // rgba(255, 255, 255, 1)
-    --code-background-ter: 237, 241, 245; // rgba(237, 241, 245, 1)
-}
-@media (prefers-color-scheme: dark)
-{
-    :root
+:root {
+      --code-bg: 30, 30, 30; // rgb(30,30,30)
+      --code-white: 255, 255, 255; // rgb(248,248,242)
+      --code-red: 215, 58, 73; // rgba(225, 93, 106, 1)
+      --code-red-bright: 250, 131, 115; // rgba(250, 131, 115, 1)
+      --code-red-dark: 212, 0, 0; // rgba(212, 0, 0, 1)
+      --code-blue-bright: 97, 175, 239; // rgb(97,175,239)
+      --code-blue-dark: 86, 95, 194; // rgb(86,95,194)
+      --code-blue: 86, 95, 194; // rgb(137,221,255)
+      --code-green: 195, 232, 141; // rgba(51, 82, 4, 1)
+      --code-green-dark: 51, 82, 4 ;
+      --code-lila: 130, 170, 255; // rgb(130,170,255)
+      --code-yellow: 255, 203, 107; // rgb(255,203,107)
+      --code-orange: 255, 106, 0; // rgb(255,106,0)
+      --code-purple: 198, 120, 221; // rgb(198,120,221)
+      --code-gray: 171, 178, 191; // rgb(171,178,191)
+      --code-pink: 255, 121, 198; // rgb(255,121,198)
+      --code-none: transparent; // transparent
+      --code-text-pri: 17, 17, 17; // rgb(17,17,17)
+      --code-text-sec: 170, 170, 170; // rgb(170,170,170)
+      --code-text-ter: 125, 125, 125; // rgb(85,85,85)
+      --code-background-pri: 243, 244, 249; // rgba(243, 244, 249, 1)
+      --code-background-sec: 255, 255, 255; // rgba(255, 255, 255, 1)
+      --code-background-ter: 237, 241, 245; // rgba(237, 241, 245, 1)
+    }
+  
+@media (prefers-color-scheme: dark) {
+  :root
     {
-        --code-bg: 229, 234, 244; // rgb(229,234,244) 
-        --code-white: 255, 255, 255;
-        --code-green-dark: 153, 255, 0 ;
-        --code-red: 215, 58, 73; // rgba(225, 93, 106, 1)
-        --code-red-bright: 212, 0, 0; // rgba(250, 131, 115, 1)
-        --code-red-dark: 250, 131, 115; // rgba(212, 0, 0, 1)
-        --code-blue-bright: 86, 95, 194;// rgb(97,175,239)
-        --code-blue-dark: 97, 175, 239;  // rgb(86,95,194)
-        --code-blue: 86, 150, 240;  // rgb(97,175,239)
-        --code-green: 46, 87, 16   ; //rgba(0, 3, 4, 1)6, 1)
-        --code-lila: 198, 120, 221; // rgb(198,120,221)
-        --code-yellow: 229, 192, 123; // rgb(229,192,123)
-        --code-text: 238, 238, 238; // rgb(238,238,238)
-        --code-orange: 255, 106, 0; // rgb(209,154,102)
-        --code-purple: 198, 120, 221; // rgb(198,120,221)
-        --code-gray: 92, 99, 112; // rgb(92,99,112)
-        --code-pink: 255, 121, 198; // rgb(255,121,198)
-        --code-none: transparent; // transparent
-        --code-text-pri: 242, 242, 242; // rgb(242,242,242)
-        --code-text-sec: 239, 239, 239; // rgb(239,239,239)
-        --code-text-ter: 214, 214, 214; // rgb(214,214,214)
-        --code-background-pri: 7, 14, 32; // rgba(73, 74, 79, 1)
-        --code-background-sec: 18, 19, 12; // #12130cff
-        --code-background-ter: 30, 30, 30; // rgb(30,30,30);
+      --code-bg: 229, 234, 244; // rgb(229,234,244) 
+      --code-white: 255, 255, 255;
+      --code-green-dark: 153, 255, 0 ;
+      --code-red: 215, 58, 73; // rgba(225, 93, 106, 1)
+      --code-red-bright: 212, 0, 0; // rgba(250, 131, 115, 1)
+      --code-red-dark: 250, 131, 115; // rgba(212, 0, 0, 1)
+      --code-blue-bright: 86, 95, 194;// rgb(97,175,239)
+      --code-blue-dark: 97, 175, 239;  // rgb(86,95,194)
+      --code-blue: 86, 150, 240;  // rgb(97,175,239)
+      --code-green: 46, 87, 16   ; //rgba(0, 3, 4, 1)6, 1)
+      --code-lila: 198, 120, 221; // rgb(198,120,221)
+      --code-yellow: 229, 192, 123; // rgb(229,192,123)
+      --code-text: 238, 238, 238; // rgb(238,238,238)
+      --code-orange: 255, 106, 0; // rgb(209,154,102)
+      --code-purple: 198, 120, 221; // rgb(198,120,221)
+      --code-gray: 92, 99, 112; // rgb(92,99,112)
+      --code-pink: 255, 121, 198; // rgb(255,121,198)
+      --code-none: transparent; // transparent
+      --code-text-pri: 242, 242, 242; // rgb(242,242,242)
+      --code-text-sec: 239, 239, 239; // rgb(239,239,239)
+      --code-text-ter: 214, 214, 214; // rgb(214,214,214)
+      --code-background-pri: 7, 14, 32; // rgba(73, 74, 79, 1)
+      --code-background-sec: 18, 19, 12; // #12130cff
+      --code-background-ter: 30, 30, 30; // rgb(30,30,30);
     }
 }
 
 
+
+
+// Font-Headlines
+
+// Font-Baselines
 
 // Spacing
 $space0: 0;
@@ -156,7 +159,6 @@ $xl: 1280px;
 
 
 
-// Code Colors
 $codeBg: var(--code-bg);
 $codeWhite: var(--code-white);
 $codeRed: var(--code-red);
