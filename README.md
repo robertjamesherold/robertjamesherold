@@ -49,13 +49,14 @@
 
 ### 🏅 Certifications
 
-<p align="center">
+<p align="left">
   <a href="https://www.credly.com/badges/79b059db-e61c-456d-9cdf-8716ecf38c05/public_url">
-    <img src="https://images.credly.com/badges/79b059db-e61c-456d-9cdf-8716ecf38c05/badge.png" alt="Meta Front-End Developer Badge" width="150" />
+    <img width="360" height="360" alt="meta-front-end-developer-professional-certificate-v (1)" src="https://github.com/user-attachments/assets/efd6528a-f247-4906-a91f-e15beb9feba9" />
   </a>
   <br/>
-  <sub><b>Meta Front-End Developer</b> — issued by Meta via Coursera</sub>
 </p>
+
+#### Meta Front-End Developer</b> — issued by Meta via Coursera</sub>
 
 ---
 
